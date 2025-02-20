@@ -1,0 +1,10 @@
+@use 'variable_font_icon';
+
+// Select all "font-icon--" classes:
+[class*="font-icon--"]:not([class*="font-icon--color--"]):not(.font-icon--interface-external) {
+  font-size: 1em * variable_font_icon.$font-icon-font-scale;
+}
+
+.font-icon--interface-external {
+  font-size: 0.65em;
+}

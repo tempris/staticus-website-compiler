@@ -1,0 +1,25 @@
+<header>
+  <div class="frame--content">
+    <a class="skip_to_main button ignore--print" href="#main" title="Skip to main">Skip to main</a>
+    <nav aria-label="primary" class="clearfix">
+      <div id="nav_header__top" class="clearfix">
+        <div id="nav_header__top__left">
+          <a id="nav_header__brand" class="svg__size_to_fit" href="/index.html" title="CONFIG_CUSTOM_BRAND_NAME: Home">
+            <!-- @@include('asset/image/brand/icon.svg') -->
+            CONFIG_CUSTOM_BRAND_NAME
+          </a>
+        </div>
+
+        <!-- <div id="nav_header__top__right" class="ignore--print">
+          <a id="nav_header__toggle" class="button" href="#" title="Toggle Menu">
+            <span class="font-icon--interface-menu"></span>
+          </a>
+        </div> -->
+      </div>
+
+      <div id="nav_header__row__button" class="ignore--print">
+        @@include('_html/component/explore.html', {"header": false, "button_large": false, "about": true, "contact": true, "example": true})
+      </div>
+    </nav>
+  </div>
+</header>

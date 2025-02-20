@@ -1,0 +1,18 @@
+{
+  "require": {
+    "site": {
+      "url": "https://www.examplewebsite.com"
+    }
+  },
+
+  "option": {
+  },
+
+  "custom": {
+    "brand": {
+      "name":   "Staticus Website Compiler Minimum Example",
+      "slogan": "A minumum demonstration of Staticus Website Compiler.",
+      "color":  "#555555"
+    }
+  }
+}

@@ -1,0 +1,4 @@
+@use 'variable';
+
+$bar_height: variable.$unit_root_2 * 1.75;
+$bar_min_width: variable.$unit_root_2 * 10;

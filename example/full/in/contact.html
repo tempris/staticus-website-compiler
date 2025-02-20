@@ -1,0 +1,44 @@
+@@include('_html/frame/top.html', {
+  "title": "Contact",
+  "stylesheets": [
+    "/asset/css/content/contact.min.css",
+    "/asset/css/font_icon/font_icon_social.min.css"
+  ]
+})
+
+<section class="contact_form">
+  <h1>Contact</h1>
+  <div id="contact_form__info">
+    <table>
+      <tr>
+        <td><strong>Email:</strong></td>
+        <td><em><b>@@include('_html/config/email.html')</b></em></td>
+      </tr>
+      <tr>
+        <td><strong>Phone:</strong></td>
+        <td><em><b>@@include('_html/config/phone.html')</b></em></td>
+      </tr>
+      <tr>
+        <td><strong>Location:</strong></td>
+        <td><em><b><address>@@include('_html/config/location_link.html')</address></b></em></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          @@include('_html/config/location_embed.html')
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Social:</strong></td>
+        <td>
+          @@include('_html/config/social_link.html')
+        </td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<section>
+  @@include('_html/component/explore.html', {"header": true, "button_large": true, "about": true, "contact": false, "example": true})
+</section>
+
+@@include('_html/frame/bottom.html')

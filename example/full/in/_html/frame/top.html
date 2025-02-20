@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- <html lang="en"> -->
+<html lang="en">
+
+<head>
+  @@include('_html/frame/top_head.html', {
+    @@if (context.title) {
+      "title": "@@title"
+    }
+  })
+
+  <link rel="stylesheet" href="/asset/css/font_icon/font_icon_interface.min.css">
+
+  @@if (context.stylesheets) {
+    @@for (var i = 0; i < context.stylesheets.length; i++) {
+      <link rel="stylesheet" href="`+context.stylesheets[i]+`">
+    }
+  }
+</head>
+
+<body ontouchstart="">
+  @@include('_html/frame/top_header.html')
+  <main id="main">
+    <div class="frame--content">
+      <!-- breadcrumb -->
+
+      <!-- toc -->

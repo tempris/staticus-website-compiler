@@ -1,0 +1,9 @@
+@use '_config/variable' as config_variable;
+@use 'variable';
+
+$color_border_context: rgba(config_variable.$CONFIG_CUSTOM_SITE_COLOR_TEXT, 0.25);
+$border_context_thickness: variable.$unit_root_0_25;
+
+@mixin color_border_context() {
+  border: $border_context_thickness solid $color_border_context;
+}

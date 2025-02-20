@@ -1,0 +1,22 @@
+<!-- @@include('_html/frame/top.html', {"title": "About"}) -->
+
+@@include('_html/frame/top.html', {
+  "title": "About",
+  "stylesheets": [
+    "/asset/css/content/about.min.css"
+  ]
+})
+
+<section class="clearfix">
+  <h1>About</h1>
+
+  <img src="/asset/image/content/about/profile.png" alt="">
+
+  @@include('_html/config/about.html')
+</section>
+
+<section>
+  @@include('_html/component/explore.html', {"header": true, "button_large": true, "about": false, "contact": true, "example": true})
+</section>
+
+@@include('_html/frame/bottom.html')

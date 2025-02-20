@@ -1,0 +1,30 @@
+@use '_config/variable' as config_variable;
+@use 'variable';
+@use 'variable_color';
+@use 'mixin/media' as mixin_media;
+
+// $breakpoints: (
+//   'default': 0px,
+//   'phone': 320px,
+//   'phone-large': 480px, // Larger phones
+//   'tablet-small': 600px, // Small tablets or large phones
+//   'tablet': 768px,
+//   'tablet-large': 900px, // Larger tablets
+//   'desktop-small': 1024px, // Small desktops or large tablets
+//   'desktop': 1200px,
+//   'desktop-large': 1440px // Large desktops
+// ) !default;
+
+.overflow {
+  overflow-x: auto;
+  padding: variable.$unit_root_2;
+  border-radius: variable.$unit_root_1;
+  background-color: rgba(config_variable.$CONFIG_CUSTOM_SITE_COLOR_TEXT, 0.0875); 
+  @include variable_color.color_border_context();
+}
+
+@each $name, $value in mixin_media.$breakpoints {
+  .overflow--min--#{$name} > * {
+    min-width: $value;
+  }
+}

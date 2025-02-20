@@ -1,0 +1,15 @@
+@@if (context.header) {
+<h2>Explore</h2>
+}
+
+@@if (context.about) {
+<a class="button @@if (context.button_large) {button--large}" href="/about.html" title="About">About</a>
+}
+<!-- Reduces space by adding comment -->
+@@if (context.contact) {
+<a class="button @@if (context.button_large) {button--large}" href="/contact.html" title="Contact">Contact</a>
+}
+<!-- Reduces space by adding comment -->
+@@if (context.example) {
+<a class="button @@if (context.button_large) {button--large} package-development" href="/example.html" title="Development-Only Examples" style="background-color: rgb(64, 198, 64);color: black;">Example</a>
+}

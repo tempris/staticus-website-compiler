@@ -1,0 +1,6 @@
+@use 'variable';
+
+$list_indent: variable.$unit_relative_4;
+$list_indent_nest: variable.$unit_relative_2;
+$list_indent_type_none: variable.$unit_relative_0;
+$list_indent_type_none_nest: variable.$unit_relative_1;

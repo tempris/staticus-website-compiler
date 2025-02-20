@@ -1,0 +1,36 @@
+@use '../variable' as variable;
+@use '../mixin/media' as mixin_media;
+
+#contact_form__info {
+  td:first-child {
+    white-space: nowrap;
+  }
+}
+
+@include mixin_media.media("<phone") {
+  #contact_form__info {
+    tr, td, th {
+      display: block;
+    }
+
+    tr:first-child {
+      td:last-child {
+        border-radius: 0px;
+      }
+      &, td:first-child {
+        border-top-left-radius: variable.$unit_root_1;
+        border-top-right-radius: variable.$unit_root_1;
+      }
+    }
+
+    tr:last-child {
+      td:first-child {
+        border-radius: 0px;
+      }
+      &, td:last-child {
+        border-bottom-left-radius: variable.$unit_root_1;
+        border-bottom-right-radius: variable.$unit_root_1;
+      }
+    }
+  }
+}

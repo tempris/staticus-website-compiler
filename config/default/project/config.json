@@ -1,0 +1,87 @@
+{
+  "require": {
+    "site": {
+      "url": "https://www.staticuswebsitecompiler.com"
+    }
+  },
+
+  "option": {
+    "brand": {
+      "adjust": {
+        "foreground": {
+          "alignment": { "x": "center", "y": "center" },
+          "blur": 0,
+          "modulate": {}
+        },
+        "background": {
+          "alignment": { "x": "center", "y": "center" },
+          "apply": { "square": true, "wide": true },
+          "blur": 0,
+          "modulate": {}
+        }
+      },
+      "size": {
+        "ico": [ 16, 32, 48, 64, 96, 128 ],
+        "image": {
+          "apple-touch-icon-57x57.png":   { "width": 57,  "height": 57 },
+          "apple-touch-icon-60x60.png":   { "width": 60,  "height": 60 },
+          "apple-touch-icon-72x72.png":   { "width": 72,  "height": 72 },
+          "apple-touch-icon-76x76.png":   { "width": 76,  "height": 76 },
+          "apple-touch-icon-114x114.png": { "width": 114, "height": 114 },
+          "apple-touch-icon-120x120.png": { "width": 120, "height": 120 },
+          "apple-touch-icon-144x144.png": { "width": 144, "height": 144 },
+          "apple-touch-icon-152x152.png": { "width": 152, "height": 152 },
+          "mstile-70x70.png":             { "width": 70,  "height": 70 },
+          "favicon-192.png":              { "width": 192, "height": 192 },
+          "favicon-196.png":              { "width": 196, "height": 196 },
+          "favicon-512.png":              { "width": 512, "height": 512 },
+          "mstile-128x128.png":           { "width": 128, "height": 128 },
+          "mstile-144x144.png":           { "width": 144, "height": 144 },
+          "mstile-150x150.png":           { "width": 150, "height": 150 },
+          "mstile-270x270.png":           { "width": 270, "height": 270 },
+          "mstile-310x150.png":           { "width": 310, "height": 150 },
+          "mstile-310x310.png":           { "width": 310, "height": 310 },
+          "mstile-558x270.png":           { "width": 558, "height": 270 },
+          "mstile-558x558.png":           { "width": 558, "height": 558 },
+          "pagethumb.png":                { "width": 512, "height": 256 }
+        }
+      }
+    },
+
+    "minify": {
+      "js": {
+        "keep_classnames": false,
+        "keep_fnames": false,
+        "compress": true,
+        "mangle": false
+      }
+    },
+
+    "package": {
+      "html": {
+        "ignore_class": ["package-development"]
+      }
+    },
+
+    "path": {
+      "ignore_nav":     ["index", "404"],
+      "ignore_package": ["example"],
+      "ignore_prefix":   "_",
+      "ignore_sitemap": ["404", "503"]
+    },
+
+    "toc": {
+      "collapsible": false,
+      "depth":       4
+    },
+
+    "url": {
+      "html_extension": true
+    },
+
+    "watch": {
+      "delay_browser": 1250,
+      "delay_change": 750
+    }
+  }
+}

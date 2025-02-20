@@ -1,0 +1,49 @@
+@@include('_html/frame/top.html', {
+  "title": "404"
+})
+
+<section>
+  @@include('asset/include/content/icon/warning.svg')
+
+  <h1>Error 404 Page Not Found</h1>
+
+  <h2>CONFIG_CUSTOM_BRAND_NAME</h2>
+
+  <p><span id="page-url">This page</span> could not be located.</p>
+
+  <a class="button" href="/" title="Return to homepage">Return to homepage</a>
+</section>
+
+<style>
+  section {
+    text-align: center;
+  }
+
+  body svg {
+    height: 8em;
+    width: 8em;
+    overflow: visible;
+    shape-rendering: geometricPrecision;
+    fill: currentColor;
+  }
+
+  #page-url {
+    text-decoration: underline;
+  }
+</style>
+
+<script type="text/javascript">
+  function insertAfter(newNode, existingNode) {
+    existingNode.parentNode.insertBefore(newNode, existingNode.nextSibling);
+  }
+
+  // Extract the current URL and remove the hash
+  var url = window.location.href.split('#')[0]; 
+
+  if (url) {
+    var page_url = document.getElementById('page-url');
+    page_url.innerHTML = url;
+  }
+</script>
+
+@@include('_html/frame/bottom.html')

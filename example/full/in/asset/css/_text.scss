@@ -1,0 +1,251 @@
+@use 'sass:list';
+@use '_config/variable' as config_variable;
+@use '_variable_font_icon/interface' as font_icon__interface;
+@use 'variable';
+@use 'variable_color';
+@use 'variable_details';
+@use 'variable_frame';
+@use 'variable_header';
+
+// Header:
+
+h1, h2, h3, h4, h5, h6 {
+  @include variable_header.header_common();
+
+  .counter {
+    opacity: 0.875;
+  }
+}
+
+h1 {
+  font-size: variable_header.$header-fontsize-1;
+}
+
+h2 {
+  font-size: variable_header.$header-fontsize-2;
+}
+
+h3 {
+  font-size: variable_header.$header-fontsize-3;
+}
+
+h4 {
+  font-size: variable_header.$header-fontsize-4;
+}
+
+h5 {
+  font-size: variable_header.$header-fontsize-5;
+}
+
+h6 {
+  font-size: variable_header.$header-fontsize-6;
+}
+
+// Details & Summary:
+
+summary {
+  list-style: none; /* Removes the default marker */
+  -webkit-appearance: none; /* Removes WebKit default styles */
+  appearance: none; /* Standard removal */
+
+  &::marker {
+    content: none; /* Explicitly removes marker in some browsers */
+  }
+
+  &::-webkit-details-marker {
+    display:none;
+  }
+}
+
+// Custom marker:
+summary::before {
+  content: font_icon__interface.$font-icon--interface-arrow_fill_down_circle;
+  font-family: 'font_icon_interface';
+  display: inline-block;
+  font-size: 1em * variable_details.$details-summary-marker-scale;
+  width: variable_details.$details-summary-marker-width;
+  margin-right: variable_details.$details-summary-marker-margin;
+  transform: rotate(-90deg);
+  transition: transform 0.15s ease; /* Smooth rotation animation */
+}
+
+// Change marker when open:
+details[open] > summary::before {
+  transform: rotate(0deg);
+}
+
+// List:
+
+// Ordered and unordered lists
+@mixin generate-nested-styles($type, $levels, $styles) {
+  // Base level
+  #{$type}:not([type]) {
+    list-style-type: list.nth($styles, 1); // First style in the list
+
+    // Generate nested styles dynamically
+    @for $i from 2 through $levels {
+      #{'&' + str-repeat(' &', $i - 1)} {
+        list-style-type: list.nth($styles, (($i - 1) % list.length($styles)) + 1);
+      }
+    }
+  }
+}
+
+// Helper function for string repetition
+@function str-repeat($string, $times) {
+  $result: '';
+  @for $i from 1 through $times {
+    $result: $result + $string;
+  }
+  @return $result;
+}
+
+ul, ol {
+  list-style-position: inside;
+  padding-inline-start: 0em;
+}
+
+// Ordered lists: decimal, upper-alpha, upper-roman, lower-alpha, lower-roman
+@include generate-nested-styles('ol', 10, (decimal, upper-alpha, upper-roman, lower-alpha, lower-roman));
+
+// Unordered lists: disc, circle, square
+@include generate-nested-styles('ul', 10, (disc, circle, square));
+
+$list_line_width: variable.$unit_relative_0_5;
+
+li {
+  text-indent: -1 * variable.$unit_root_3;
+  padding-left: variable.$unit_root_3;
+
+  & > * {
+    text-indent: initial;
+    padding-left: initial;
+  }
+
+  & > ol, & > ul {
+    position: relative;
+    margin-left: -1 * variable.$unit_root_3;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      background-color: rgba(config_variable.$CONFIG_CUSTOM_SITE_COLOR_TEXT, 0.125);
+      width: $list_line_width;
+      top: 0;
+      bottom: 0;
+      border-radius: $list_line_width * 0.5;
+      // left: 0;
+    }
+  }
+
+  & > ol {
+    &:before {
+      margin-left: -1 * variable.$unit_root_2;
+    }
+  }
+
+  & > ul {
+    &:before {
+      margin-left: (-1 * variable.$unit_root_2);
+    }
+  }
+}
+
+// li {
+//   ol > & {
+//     text-indent: -1 * variable.$unit_root_3;
+//     padding-left: variable.$unit_root_3;
+
+//     & > ol, & > ul {
+//       margin-left: -1 * variable.$unit_root_3;
+//     }
+//   }
+
+//   ul > & {
+//     text-indent: -1 * variable.$unit_root_3;
+//     padding-left: variable.$unit_root_3;
+
+//     & > ol, & > ul {
+//       margin-left: -1 * variable.$unit_root_3;
+//     }
+//   }
+// }
+
+// Misc:
+
+:not(pre) > code, pre, time, var, mark, kbd, samp {
+  background-color: rgba(config_variable.$CONFIG_CUSTOM_SITE_COLOR_TEXT, 0.125);
+  @include variable_color.color_border_context();
+  border-radius: variable.$unit_relative_1 !important;
+  padding: variable.$unit_relative_0_125 variable.$unit_relative_1 * 0.75 !important;
+  display: inline-block;
+}
+
+pre {
+  overflow-x: auto;
+  padding: variable.$unit_relative_1 variable.$unit_relative_2;
+}
+
+$interact_color_mark: yellow;
+
+mark {
+  background-color: $interact_color_mark;
+  color: text-color($interact_color_mark);
+}
+
+p, hr, blockquote {
+  @include variable_frame.style_frame_content_margin();
+}
+
+:not(li) {
+  & > ol, & > ul {
+    @include variable_frame.style_frame_content_margin();
+  }
+}
+
+li {
+  & > ol, & > ul {
+    @include variable_frame.style_frame_content_margin(0.125);
+  }
+}
+
+// li {
+//   @include variable_frame.style_frame_content_margin(0.5);
+// }
+
+:not(figure) > img, figure, figcaption {
+  @include variable_frame.style_frame_content_margin();
+}
+
+$width_blockquote: variable.$unit_root_1 * 0.5;
+
+blockquote {
+  // border-left: variable.$unit_root_1 * 0.5 solid config_variable.$CONFIG_CUSTOM_SITE_COLOR_TEXT;
+  padding-left: variable.$unit_root_2 + $width_blockquote;
+
+  position: relative;
+
+  // color: shift-color(config_variable.$CONFIG_CUSTOM_SITE_COLOR_TEXT, 0.875);
+
+
+  // background-color: #fff1;
+  // border: 3px solid #fff3;
+  // border-left: 0px;
+  // border-radius: 8px;
+  // padding: 8px;
+  // padding-left: 24px;
+
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: $width_blockquote;
+    border-radius: $width_blockquote * 0.5;
+    background-color: config_variable.$CONFIG_CUSTOM_SITE_COLOR_TEXT;
+    // background-color: currentColor;
+  }
+}

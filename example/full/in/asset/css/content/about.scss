@@ -1,0 +1,22 @@
+@use '../variable' as variable;
+@use '../mixin/media' as mixin_media;
+
+img {
+  width: 100%;
+  max-width: variable.$unit_relative_2 * 22;
+  
+  display: block;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  border-radius: variable.$unit_root_2;
+}
+
+@include mixin_media.media(">tablet") {
+  img {
+    float: right;
+    margin: variable.$unit_root_2;
+    margin-left: variable.$unit_root_2;
+  }
+}

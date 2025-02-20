@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+
+<svg
+   fill="#000000"
+   version="1.1"
+   id="Capa_1"
+   width="800px"
+   height="800px"
+   viewBox="0 0 39.413 39.413"
+   xml:space="preserve"
+   sodipodi:docname="home.svg"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs1"><inkscape:path-effect
+     effect="fill_between_many"
+     method="originald"
+     linkedpaths="#path1,0,1|"
+     id="path-effect1" /></defs><sodipodi:namedview
+   id="namedview1"
+   pagecolor="#505050"
+   bordercolor="#eeeeee"
+   borderopacity="1"
+   inkscape:showpageshadow="0"
+   inkscape:pageopacity="0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#505050"
+   inkscape:zoom="0.60540376"
+   inkscape:cx="437.7244"
+   inkscape:cy="409.64397"
+   inkscape:window-width="1256"
+   inkscape:window-height="961"
+   inkscape:window-x="641"
+   inkscape:window-y="0"
+   inkscape:window-maximized="0"
+   inkscape:current-layer="Capa_1" />
+<path
+   id="path1"
+   d="m 36.949687,19.7065 c 1.397146,0 2.463313,-1.164935 2.463313,-2.463313 0,-1.050927 -0.649187,-1.771134 -1.133124,-2.074109 L 21.041615,4.0890987 c -0.324,-0.2025 -0.779934,-0.3941291 -1.335115,-0.3941291 -0.555181,0 -1.011615,0.1916291 -1.335115,0.3941291 L 1.1331237,15.169078 C 0.65120886,15.469633 0,16.179604 0,17.243187 0,18.564797 1.0537379,19.7065 2.4633125,19.7065 h 1.2316562 c 1.3757516,0 2.4633125,1.109416 2.4633125,2.463307 v 14.779875 c 0,1.339052 1.0827824,2.463313 2.4633125,2.463313 h 4.9266253 c 1.384381,0 2.463312,-1.157439 2.463312,-2.463313 v -8.621593 c 0,-2.203568 1.805915,-3.694969 3.694969,-3.694969 1.889054,0 3.694969,1.474653 3.694969,3.694969 v 8.621593 c 0,1.368265 1.112665,2.463313 2.463312,2.463313 h 4.926625 c 1.337304,0 2.463313,-1.080643 2.463313,-2.463313 v -14.77987 c -0.02296,-1.29243 0.978032,-2.401851 2.463312,-2.463312"
+   sodipodi:nodetypes="cccczcccscsssssszssssscc"
+   style="opacity:1;fill:#000000" />
+</svg>

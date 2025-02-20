@@ -1,0 +1,24 @@
+<!-- @@include('_html/frame/top.html') -->
+
+@@include('_html/frame/top.html', {
+  "stylesheets": [
+    "/asset/css/content/index.min.css",
+    "/asset/css/font_icon/font_icon_social.min.css"
+  ]
+})
+
+<section>
+  @@include('asset/include/content/icon/globe.svg')
+
+  <h1>CONFIG_CUSTOM_BRAND_NAME</h1>
+
+  <p>CONFIG_CUSTOM_BRAND_SLOGAN</p>
+
+  @@include('_html/component/explore.html', {"header": false, "button_large": true, "about": true, "contact": true, "example": true})
+
+  <div>
+    @@include('_html/config/social_link.html')
+  </div>
+</section>
+
+@@include('_html/frame/bottom.html')

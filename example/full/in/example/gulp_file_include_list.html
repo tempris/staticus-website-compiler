@@ -1,0 +1,41 @@
+<!-- @@include('_html/frame/top.html') -->
+
+@@include('_html/frame/top.html', {
+  "title": "Gulp File Include Test - Example",
+  "stylesheets": [ 
+    "/asset/module/prism/prism.min.css" 
+  ]
+})
+
+<section>
+  <h1>Gulp File Include Test</h1>
+
+  <h2>Blog Posts</h2>
+
+  @@loop('example/_gulp_file_include_list_preview.html', [
+    {
+      "title": "My First Post",
+      "text": "<p>Lorem ipsum dolor sit amet.</p>"
+    },
+    {
+      "title": "Another Post",
+      "text": "<p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+    },
+    {
+      "title": "One More Post",
+      "text": "<p>Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>"
+    }
+  ])
+</section>
+
+<section>
+  <h2>Sources</h2>
+  <div>
+    <p>This page is comprised of my own additions and either partially or heavily modified elements from the following source(s):</p>
+    <ul>
+      <li>Using gulp-file-include found here: <a class="button" href="https://www.npmjs.com/package/gulp-file-include">gulp-file-include official page <span class="font-icon--interface-external"></span></a></li>
+    </ul>
+  </div>
+</section>
+
+@@include('_html/frame/bottom.html')

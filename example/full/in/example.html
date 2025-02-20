@@ -1,0 +1,79 @@
+@@include('_html/frame/top.html', {
+  "title": "Example"
+})
+
+<section>
+  <h1>Example</h1>
+
+  <p>Below is a collection of examples. These examples are development only and are not included in the packaging process.</p>
+
+  <h2>Basic</h2>
+
+  <h3>HTML</h3>
+
+  <ul>
+    <li><a class="button" href="/example/html_style_test.html">HTML Style Test</a></li>
+    <li><a class="button" href="/example/aspect_ratio.html">Aspect Ratio</a></li>
+    <li><a class="button" href="/example/bg_pattern.html">BG Pattern</a></li> 
+  </ul>
+
+  <h3>Page Length</h3>
+
+  <ul>
+    <li><a class="button" href="/example/length_short_page_test.html">Short Page Test</a></li>
+    <li><a class="button" href="/example/length_long_page.html">Long Page Test</a></li>
+  </ul>
+
+  <h2>Modules</h2>
+
+  <h3>Syntax Highlighting</h3>
+
+  <ul>
+    <li><a class="button" href="/example/prism.html">Prism</a></li>
+    <li><a class="button" href="/example/prism_live.html">Prism Live</a></li>
+  </ul>
+
+  <h3>Other Modules</h3>
+
+  <ul>
+    <li><a class="button" href="/example/font_icon.html">Font Icon</a></li>
+    <li><a class="button" href="/example/photoswipe.html">PhotoSwipe</a></li>
+    <li><a class="button" href="/example/watermark.html">Watermark</a></li>
+  </ul>
+
+  <h2>Blog</h2>
+
+  <ul>
+    <li><a class="button" href="/example/gulp_file_include_list.html">Gulp File Include Test</a></li>
+  </ul>
+
+  <h2>Debug</h2>
+
+  <ul>
+    <li><a class="button" href="/example/browser_data.html">Browser Data</a></li>
+  </ul>
+
+  <h2>Other Pages</h2>
+
+  <ul>
+    <li><a class="button" href="/index.html">index</a></li>
+    <li><a class="button" href="/404.html">404</a></li>
+    <li><a class="button" href="/503.html">503</a></li>
+  </ul>
+</section>
+
+<section>
+  @@include('_html/component/explore.html', {"header": true, "button_large": true, "about": true, "contact": true, "example": false})
+</section>
+
+<style>
+  .aspect-preserve {
+    height: 0px;
+  }
+
+  .aspect-preserve--64453125 {
+    padding-bottom: 64.453125%;
+  }
+</style>
+
+@@include('_html/frame/bottom.html')

@@ -1,0 +1,53 @@
+#image-background {
+  background-image: url('/asset/image/content/example/html_style_test/420x420.png');
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 20rem;
+}
+
+#colorfulCanvas {
+  background: radial-gradient(black, #00000033);
+  height: 20rem;
+}
+
+.scrollbar.overflow {
+  width: 100%;
+  /* background-color: rgba(0,0,255,0.25); */
+}
+.scrollbar.overflow > * {
+  width: 100%;
+  height: 8rem;
+  border-radius: 0.25rem;
+
+  background-color: rgba(255,0,0,0.25);
+
+  /* Fallback gradient (diagonal) */
+  background: linear-gradient(to bottom right, black, red);
+
+  /* Primary gradients with blend mode */
+  background: linear-gradient(to right, black, red),
+              linear-gradient(to bottom, black, green);
+  background-blend-mode: screen;
+}
+.scrollbar.overflow--x > * {
+  min-width: 200vw;
+  min-width: 200lvw;
+}
+.scrollbar.overflow--y {
+  height: 10rem;
+}
+.scrollbar.overflow--y > * {
+  height: 20rem;
+  height: 20rem;
+}
+.interface--grab > * {
+  cursor: grab;
+}
+.interface--grab > *:active {
+  cursor: grabbing;
+}
+
+// #image-background {
+//   border-radius: 0.5rem;
+// }

@@ -1,0 +1,122 @@
+@use '_config/variable' as config_variable;
+@use 'variable';
+@use 'variable_bar';
+@use 'variable_color';
+@use 'variable_frame';
+
+meter, progress {
+  display: block;
+  @include variable_frame.style_frame_content_margin();
+  min-width: variable.$unit_root_2 * 10;
+}
+
+// Meter:
+
+meter {
+  appearance: none; /* Removes default styles */
+  overflow: hidden; /* Clips pseudo-elements */
+  background-color: config_variable.$CONFIG_CUSTOM_SITE_COLOR_BG;
+  @include variable_color.color_border_context();
+}
+
+/* Style the meter container */
+meter {
+  width: 100%;
+  height: variable_bar.$bar_height;
+  margin-top: variable.$unit_root_2;
+  margin-bottom: variable.$unit_root_2;
+  border-radius: variable_bar.$bar_height * 0.5;
+}
+
+/* Style the filled bar */
+meter::-webkit-meter-bar {
+  background-color: config_variable.$CONFIG_CUSTOM_SITE_COLOR_BG;
+  border-radius: variable_bar.$bar_height * 0.5;
+  height: variable_bar.$bar_height - variable_color.$border_context_thickness * 2;
+  background-image: none;
+  appearance: none;
+}
+
+meter::-webkit-meter-optimum-value,
+meter::-webkit-meter-suboptimum-value,
+meter::-webkit-meter-even-less-good-value {
+  border-radius: variable_bar.$bar_height * 0.5;
+}
+
+meter::-webkit-meter-optimum-value {
+  background: #8bc34a;
+}
+
+meter::-webkit-meter-suboptimum-value {
+  background: #ff9800;
+}
+
+meter::-webkit-meter-even-less-good-value {
+  background: #f44336;
+}
+
+/* For Firefox */
+meter::-moz-meter-bar {
+  background: #8bc34a;
+}
+
+// Progress:
+
+$indicator_color_progress_intermediate: rgba(config_variable.$CONFIG_CUSTOM_SITE_COLOR_BG, 0.375);
+
+@keyframes animation_progress_intermediate {
+  0% { background-position-x: variable.$unit_root_0; }
+  100% { background-position-x: variable_bar.$bar_height * 2; }
+}
+
+progress {
+  appearance: none; /* Reset the default appearance */
+  @include variable_color.color_border_context();
+  border-radius: variable_bar.$bar_height * 0.5;
+  width: 100%;
+  height: variable_bar.$bar_height;
+
+  &, &::-webkit-progress-bar, &::-webkit-progress-value {
+    border-radius: variable_bar.$bar_height * 0.5;
+  }
+
+  &::-webkit-progress-bar {
+    background: none;
+  }
+
+  &::-webkit-progress-value {
+    border-radius: variable_bar.$bar_height * 0.5;
+  }
+
+  &:not([value]) {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      bottom: 0px;
+      right: 0px;
+      border-radius: variable_bar.$bar_height * 0.5;
+
+      background-color: config_variable.$CONFIG_CUSTOM_SITE_COLOR_LINK;
+
+      background-image:
+          linear-gradient(135deg, transparent 33%, $indicator_color_progress_intermediate 33%, $indicator_color_progress_intermediate 66%, transparent 66%);
+      background-size: variable_bar.$bar_height * 2 variable_bar.$bar_height;
+    
+      animation: animation_progress_intermediate 2s linear infinite;
+    }
+  }
+
+  &[value] {
+    &::-webkit-progress-bar {
+      background-color: config_variable.$CONFIG_CUSTOM_SITE_COLOR_BG;
+    }
+
+    &::-webkit-progress-value {
+      background-color: config_variable.$CONFIG_CUSTOM_SITE_COLOR_LINK;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+@mixin style_print() {
+  background: none !important;
+  color: black !important;
+  color: initial !important;
+  opacity: 1 !important;
+}
+
+@mixin style_print_ignore() {
+  display: none !important;
+  visibility: collapse !important;
+}
+
+@mixin style_print_border($color: black) {
+  border: 1px solid $color;
+}
+
+@media print {
+  *, *::before, *::after {
+    @include style_print();
+  }
+
+  .ignore--print {
+    @include style_print_ignore();
+  }
+
+  table {
+    th, td, caption {
+      @include style_print_border();
+    }
+  }
+
+  .button, button, a.button {
+    @include style_print();
+    @include style_print_border();
+  }
+
+  code, pre {
+    @include style_print_border();
+  }
+
+  #toc a:before, .counter::before {
+    @include style_print_border();
+    opacity: 0.5 !important;
+  }
+}

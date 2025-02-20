@@ -1,0 +1,24 @@
+@use '../variable' as variable;
+@use '../mixin/button' as mixin_button;
+
+section {
+  text-align: center;
+}
+
+svg {
+  width: 100%;
+  height: auto;
+  max-width: variable.$unit_relative_2 * 16;
+
+  fill: currentColor;
+
+  display: inline-block;
+}
+
+main .button {
+  @include mixin_button.button-large;
+  @include mixin_button.button-icon;
+
+  width: 100%;
+  max-width: variable.$unit_relative_1 * 15;
+}

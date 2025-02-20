@@ -1,0 +1,81 @@
+$test_typography_color_begin: #00f;
+$test_typography_color_opacity_bg: 0.0625; // 1/16
+$test_typography_color_opacity_border: 0.25; // 1/16
+
+@function adjust-hue-by-depth($base-color, $depth, $hue-shift) {
+  @return adjust-hue($base-color, $depth * $hue-shift);
+}
+
+@mixin nested-bg-color($base-color, $hue-shift, $current-depth: 0, $max-depth: 5) {
+  // Stop recursion if the current depth exceeds max depth
+  @if $current-depth <= $max-depth {
+    background-color: adjust-hue-by-depth(rgba($base-color, $test_typography_color_opacity_bg), $current-depth, $hue-shift) !important;
+    border-color: adjust-hue-by-depth(rgba($base-color, $test_typography_color_opacity_border), $current-depth, $hue-shift) !important;
+    border-width: 1px;
+    border-style: solid;
+    color: text-color($CONFIG_CUSTOM_SITE_COLOR_BG) !important;
+
+    & > * {
+      @include nested-bg-color($base-color, $hue-shift, $current-depth + 1, $max-depth);
+    }
+  }
+}
+
+// Apply the mixin with a maximum depth of 5
+*:not(body):not(html) {
+  @include nested-bg-color($test_typography_color_begin, -30, 0, 30);
+}
+
+#control_panel {
+  position: fixed;
+  top: $unit_root_1;
+  right: $unit_root_1;
+  background-color: #000c;
+  color: white;
+  padding: $unit_root_1;
+  border: 1px solid #ccc;
+  border-radius: $unit_root_2;
+  
+  font-family: 'Courier New', Courier, monospace;
+
+  z-index: 1100000;
+
+  fieldset {
+    padding: $unit_root_1;
+    border-radius: $unit_root_1;
+  }
+
+  label {
+    display: block;
+  }
+}
+
+@mixin group-debug-styles($group, $color) {
+  &::before {
+    background-color: rgba($color, 0.25);
+    border-color: $color;
+  }
+
+  &::after {
+    content: $group;
+    color: $color;
+  }
+}
+
+html.debug {
+  &.debug--grid {
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      // background: conic-gradient(from 90deg at 2px 2px, #0001 90deg, #fff6 0) -1px -1px / 1rem 1rem;
+      background: conic-gradient(from 90deg at 1px 1px, #0002 90deg, #fff6 0) 0px 0px / 1rem 1rem,
+                  conic-gradient(from 90deg at 1px 1px, #0000 90deg, #ccc6 0) -1px -1px / 1rem 1rem;
+      pointer-events: none;
+      z-index: 1000000;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+@use '_config/variable' as config_variable;
+@use 'variable_frame';
+
+footer {
+  background-color: config_variable.$CONFIG_CUSTOM_SITE_COLOR_BG_NAV;
+  color: text-color(config_variable.$CONFIG_CUSTOM_SITE_COLOR_BG_NAV);
+  text-align: center;
+
+  clear: both;
+
+  &, .frame--content {
+    padding: variable_frame.$frame_unit;
+  }
+  
+  p {
+    margin: 0px;
+  }
+}

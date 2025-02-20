@@ -1,0 +1,16 @@
+@use '../variable';
+
+@mixin button-large {
+  padding: 1rem;
+}
+
+@mixin button-icon {
+  [class^="font-icon--"]:first-child {
+    font-size: variable.$unit_relative_2 * 2;
+
+    &::after {
+      white-space: pre-wrap;
+      content: "\A";
+    }
+  }
+}

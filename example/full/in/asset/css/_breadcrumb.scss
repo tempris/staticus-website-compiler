@@ -1,0 +1,43 @@
+@use '_config/variable' as config_variable;
+@use 'variable_frame';
+@use 'variable_interact';
+@use '_variable_font_icon/interface' as font_icon__interface;
+
+#breadcrumb {
+    ol {
+        padding-inline-start: 0px;
+        margin: -0.5 * variable_frame.$frame_unit;
+    }
+
+    li {
+        list-style: none;
+        display: inline-block;
+
+        text-indent: initial;
+        padding-left: initial;
+
+        &:not(:first-child) {
+            margin-left: variable_interact.$interact_margin;
+
+            &::before {
+                // content: '>';
+                // font-weight: bold;
+                content: font_icon__interface.$font-icon--interface-arrow_down;
+                font-family: 'font_icon_interface';
+                transform: rotate(-90deg);
+                display: inline-block;
+                font-size: 0.75em;
+                margin-right: variable_interact.$interact_margin;
+            }
+        }
+
+        &:last-child span {
+            @include variable_interact.interact_structure();
+
+            display: inline-block;
+            background-color: config_variable.$CONFIG_CUSTOM_BRAND_COLOR;
+            font-weight: bold;
+            color: rgba(config_variable.$CONFIG_CUSTOM_SITE_COLOR_TEXT, 0.875);
+        }
+    }
+}

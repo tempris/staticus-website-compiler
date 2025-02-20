@@ -1,0 +1,32 @@
+@use 'variable';
+@use 'variable_color';
+
+audio {
+  display: block;
+  width: 100%;
+  border-radius: variable.$unit_root_1;
+}
+
+img {
+  max-width: 100%;
+  border-radius: variable.$unit_root_1;
+  @include variable_color.color_border_context();
+}
+
+svg {
+  display: block;
+}
+
+video {
+  display: block;
+  width: 100%;
+  border-radius: variable.$unit_root_1;
+  @include variable_color.color_border_context();
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  border-radius: variable.$unit_root_1;
+  @include variable_color.color_border_context();
+}

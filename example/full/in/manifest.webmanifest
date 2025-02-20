@@ -1,0 +1,28 @@
+{
+  "name": "CONFIG_CUSTOM_BRAND_NAME",
+  "short_name": "CONFIG_CUSTOM_BRAND_NAME",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "CONFIG_CUSTOM_BRAND_COLOR",
+  "theme_color": "CONFIG_CUSTOM_BRAND_COLOR",
+  "description": "CONFIG_CUSTOM_BRAND_SLOGAN",
+  "icons": [
+    {
+      "src": "/asset/image/favicon/favicon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/asset/image/favicon/favicon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/asset/image/favicon/favicon-196.png",
+      "sizes": "196x196",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

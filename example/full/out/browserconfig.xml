@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+  <msapplication>
+    <tile>
+      <square70x70logo src="./image/brand/mstile-128x128.png"/>
+      <square150x150logo src="./image/brand/mstile-270x270.png"/>
+      <square310x310logo src="./image/brand/mstile-558x558.png"/>
+      <wide310x150logo src="./image/brand/mstile-558x270.png"/>
+      <TileColor>#00151F</TileColor>
+    </tile>
+  </msapplication>
+</browserconfig>
+<!-- Built with Staticus Website Compiler 1.0.0 Alpha -->

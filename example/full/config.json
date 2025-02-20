@@ -1,0 +1,77 @@
+{
+  "require": {
+    "site": {
+      "url": "https://www.examplewebsite.com"
+    }
+  },
+
+  "option": {
+    "path": {
+      "ignore_package":   ["example"]
+    },
+
+    "toc": {
+      "collapsible": true
+    }
+  },
+
+  "custom": {
+    "brand": {
+      "name":            "Staticus Website Compiler Full Example",
+      "slogan":          "A full demonstration of Staticus Website Compiler.",
+
+      "color":           "#555555",
+
+      "email":           "example@email.com",
+      "phone":           "+1 (555) 555-5555",
+      "location": {
+        "address":       "United States",
+        "zoom":          ""
+      },
+
+      "copyright_years": "2024-2025",
+
+      "social": [
+        {
+          "name": "LinkedIn",
+          "link": "https://www.linkedin.com/in/examplewebsite"
+        },
+        {
+          "name": "Facebook",
+          "link": "https://www.facebook.com/examplewebsite"
+        },
+        {
+          "name": "X",
+          "link": "https://www.x.com/examplewebsite"
+        },
+        {
+          "name": "YouTube",
+          "link": "https://www.youtube.com/examplewebsite"
+        },
+        {
+          "name": "Instagram",
+          "link": "https://www.instagram.com/examplewebsite"
+        }
+      ],
+      "about": [
+        "This is the first paragraph of the about page.",
+        "This is the second paragraph, providing more details.",
+        "This is yet another paragraph to elaborate on the topic."
+      ]
+    },
+
+    "site": {
+      "author": {
+        "name":            "Example Author",
+        "url":             "https://www.exampleauthor.com",
+        "copyright_years": "2024-2025"
+      },
+
+      "color_bg":          "#333333",
+      "color_bg_nav":      "#555555",
+      "color_fg":          "#ffffff",
+      "color_text":        "#ffffff",
+      "color_link":        "#aaccff"
+    }
+  }
+}

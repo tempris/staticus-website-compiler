@@ -1,0 +1,23 @@
+@use 'sass:math';
+@use 'variable_color';
+
+@mixin generate_bg_line($max-units) {
+  @for $i from 2 through $max-units {
+    :not(meter):not(progress):not(input[type="range"]).bg_line_vertical_#{$i}, 
+    meter.bg_line_vertical_#{$i}::-webkit-meter-bar,
+    progress[value].bg_line_vertical_#{$i}::-webkit-progress-bar {
+      background-image: linear-gradient(to right, variable_color.$color_border_context variable_color.$border_context_thickness, transparent variable_color.$border_context_thickness);
+      background-size: #{math.div(100%, $i)} 100%; /* Divides 100% by $i for x value */
+      background-position-x: -0.5 * variable_color.$border_context_thickness;
+    }
+    :not(meter):not(progress).bg_line_horizontal_#{$i}, 
+    meter.bg_line_horizontal_#{$i}::-webkit-meter-bar,
+    progress[value].bg_line_horizontal_#{$i}::-webkit-progress-bar {
+      background-image: linear-gradient(to bottom, variable_color.$color_border_context variable_color.$border_context_thickness, transparent variable_color.$border_context_thickness);
+      background-size: 100% #{math.div(100%, $i)}; /* Divides 100% by $i for x value */
+      background-position-y: -0.5 * variable_color.$border_context_thickness;
+    }
+  }
+}
+
+@include generate_bg_line(100);

@@ -1,0 +1,19 @@
+@use 'variable';
+
+$interact_margin: variable.$unit_root_0_5;
+$interact_padding_x: variable.$unit_root_1;
+$interact_padding_y: variable.$unit_root_0_5;
+
+$interact_opacity_default: 1;
+$interact_opacity_hover: 0.8;
+$interact_opacity_active: 0.625;
+$interact_opacity_disable: 0.5;
+
+@mixin interact_structure() {
+    padding: $interact_padding_y $interact_padding_x;
+    border-radius: variable.$unit_root_1;
+    margin: $interact_margin;
+}
+
+// $interact_bar_height: variable.$unit_root_2 * 1.5 + $interact_padding_y * 2;
+$interact_bar_height: variable.$unit_root_2 * 1.5;

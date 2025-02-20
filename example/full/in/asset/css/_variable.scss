@@ -1,0 +1,42 @@
+// ============================================================================
+// Font
+// ============================================================================
+
+// $page_font: 'Times New Roman', Times, serif;
+$page_font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+// ============================================================================
+// Unit
+// ============================================================================
+
+$unit_base: 0.5;
+
+$unit_base_root: $unit_base * 1rem;
+
+$unit_root_0:     $unit_base_root * 0;
+$unit_root_0_125: $unit_base_root * 0.125;
+$unit_root_0_25:  $unit_base_root * 0.25;
+$unit_root_0_5:   $unit_base_root * 0.5;
+$unit_root_1:     $unit_base_root;
+$unit_root_2:     $unit_base_root * 2;
+$unit_root_3:     $unit_base_root * 3;
+$unit_root_4:     $unit_base_root * 4;
+$unit_root_5:     $unit_base_root * 5;
+$unit_root_6:     $unit_base_root * 6;
+$unit_root_7:     $unit_base_root * 7;
+$unit_root_8:     $unit_base_root * 8;
+
+$unit_base_relative: $unit_base * 1em;
+
+$unit_relative_0:     $unit_base_relative * 0;
+$unit_relative_0_125: $unit_base_relative * 0.125;
+$unit_relative_0_25:  $unit_base_relative * 0.25;
+$unit_relative_0_5:   $unit_base_relative * 0.5;
+$unit_relative_1:     $unit_base_relative;
+$unit_relative_2:     $unit_base_relative * 2;
+$unit_relative_3:     $unit_base_relative * 3;
+$unit_relative_4:     $unit_base_relative * 4;
+$unit_relative_5:     $unit_base_relative * 5;
+$unit_relative_6:     $unit_base_relative * 6;
+$unit_relative_7:     $unit_base_relative * 7;
+$unit_relative_8:     $unit_base_relative * 8;

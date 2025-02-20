@@ -1,0 +1,51 @@
+@use 'sass:color';
+@use 'sass:math';
+
+// Function to calculate relative luminance
+@function luminance($color) {
+  // Get the RGB values of the color
+  $rgb: color.channel($color, "red", $space: rgb), color.channel($color, "green", $space: rgb), color.channel($color, "blue", $space: rgb);
+  
+  // Convert RGB to sRGB
+  $r: math.div(color.channel($color, "red", $space: rgb), 255);
+  $g: math.div(color.channel($color, "green", $space: rgb), 255);
+  $b: math.div(color.channel($color, "blue", $space: rgb), 255);
+
+  // Apply the sRGB to linear RGB conversion formula
+  @return 0.2126 * if($r <= 0.03928, math.div($r, 12.92), pow(($r + 0.055) / 1.055, 2.4)) +
+         0.7152 * if($g <= 0.03928, math.div($g, 12.92), pow(($g + 0.055) / 1.055, 2.4)) +
+         0.0722 * if($b <= 0.03928, math.div($b, 12.92), pow(($b + 0.055) / 1.055, 2.4));
+}
+
+// Function to determine text color based on background color
+@function text-color($bg-color) {
+  $luminance: luminance($bg-color);
+  
+  // Check the luminance and return black or white
+  @if ($luminance < 0.5) {
+    @return #ffffff; // Light text for dark backgrounds
+  } @else {
+    @return #000000; // Dark text for light backgrounds
+  }
+}
+
+// Shifts a color towards black or white by a specified percentage (0-1), whichever is farther.
+@function shift-color($color, $percent) {
+  @if $percent < 0 or $percent > 1 {
+    @error "Percentage must be between 0 and 1";
+  }
+
+  // Calculate relative luminance
+  $luminance: math.div(
+    color.channel($color, "red", $space: rgb) * 0.2126 + color.channel($color, "green", $space: rgb) * 0.7152 + color.channel($color, "blue", $space: rgb) * 0.0722,
+    255
+  );
+
+  @if $luminance > 0.5 {
+    // Closer to white, shift towards black
+    @return mix(black, $color, (1 - $percent) * 100%);
+  } @else {
+    // Closer to black, shift towards white
+    @return mix(white, $color, (1 - $percent) * 100%);
+  }
+}

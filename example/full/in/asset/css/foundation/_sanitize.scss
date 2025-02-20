@@ -1,0 +1,113 @@
+@use 'variable';
+@use 'variable_list';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+
+  margin: 0;
+  padding: 0;
+
+  line-height: 1.5;
+  font-size: variable.$unit_relative_2;
+
+  word-break: break-word;
+
+  // appearance: none;
+  // -webkit-appearance: none;
+  // -moz-appearance: none;
+
+  // border-radius: variable.$unit_root_1; // breaks <progress>
+}
+
+html {
+  position: relative;
+}
+
+table {
+  border-collapse: collapse;
+
+  caption, td, th {
+    padding: variable.$unit_relative_2;
+  }
+
+  td, th {
+    overflow-wrap: break-word;
+    overflow-wrap: normal;
+    word-break: normal;
+
+    &:not(:first-child) {
+      padding-left: variable.$unit_relative_1;
+    }
+    &:not(:last-child) {
+      padding-right: variable.$unit_relative_1;
+    }
+  }
+}
+
+fieldset {
+  padding: 0px variable.$unit_root_2;
+
+  legend {
+    padding: 0px variable.$unit_root_1;
+    // margin-bottom: 0px !important;
+
+    // & + * {
+    //   margin-top: 0px !important;
+    // }
+  }
+}
+
+[type=checkbox],
+[type=radio] {
+  width: variable.$unit_relative_2;
+  height: variable.$unit_relative_2;
+}
+
+button, input {
+  line-height: 1.5;
+  border: none;
+}
+
+ul, ol {
+  padding-inline-start: variable_list.$list_indent;
+
+  li > & {
+    padding-inline-start: variable_list.$list_indent_nest;
+  }
+
+  &[type="none"] {
+    padding-inline-start: variable_list.$list_indent_type_none;
+
+    li > & {
+      padding-inline-start: variable_list.$list_indent_type_none_nest;
+    }
+  }
+}
+
+embed, iframe {
+  display: block;
+}
+
+q {
+  display: inline;
+
+  &::before {
+    content: open-quote;
+  }
+
+  &::after {
+    content: close-quote;
+  }
+}
+
+cite, dfn, em, i, var {
+  font-style: italic;
+}
+
+del, s {
+  text-decoration: line-through;
+}
+
+ins, u {
+  text-decoration: underline;
+}

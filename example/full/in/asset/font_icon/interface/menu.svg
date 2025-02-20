@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+
+<svg
+   width="800px"
+   height="800px"
+   viewBox="0 0 48 48"
+   version="1.1"
+   id="svg3"
+   sodipodi:docname="menu.svg"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs3" />
+  <sodipodi:namedview
+     id="namedview3"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="0.91875"
+     inkscape:cx="399.45578"
+     inkscape:cy="400"
+     inkscape:window-width="1920"
+     inkscape:window-height="974"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3" />
+  <title
+     id="title1">menu-hamburger-solid</title>
+  <path
+     id="path1"
+     d="M 2.6667188,5.33328 A 2.6666667,2.6666669 0 0 0 0,7.999999 2.6666667,2.6666669 0 0 0 2.6667188,10.666718 H 45.333281 A 2.6666667,2.6666669 0 0 0 48,7.999999 2.6666667,2.6666669 0 0 0 45.333281,5.33328 Z m 0,16.000001 A 2.6666667,2.6666669 0 0 0 0,24.000001 2.6666667,2.6666669 0 0 0 2.6667188,26.666719 H 45.333281 A 2.6666667,2.6666669 0 0 0 48,24.000001 2.6666667,2.6666669 0 0 0 45.333281,21.333281 Z m 0,16.000002 A 2.6666667,2.6666669 0 0 0 0,40.000002 2.6666667,2.6666669 0 0 0 2.6667188,42.66672 H 45.333281 A 2.6666667,2.6666669 0 0 0 48,40.000002 2.6666667,2.6666669 0 0 0 45.333281,37.333283 Z"
+     style="stroke-width:1.33333" />
+</svg>

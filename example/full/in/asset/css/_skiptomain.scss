@@ -1,0 +1,14 @@
+@use '_config/variable' as config_variable;
+@use 'variable';
+
+.skip_to_main {
+  position: fixed;
+  top: -1000%;
+  transform: translateX(-50%);
+  z-index: 200;
+  box-shadow: 0px 0px 0px variable.$unit_root_2 * 0.75 config_variable.$CONFIG_CUSTOM_SITE_COLOR_BG_NAV;
+
+  &:focus {
+    top: variable.$unit_root_2;
+  }
+}

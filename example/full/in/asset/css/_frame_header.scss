@@ -1,0 +1,25 @@
+@use '_config/variable' as config_variable;
+@use 'variable';
+@use 'variable_frame';
+@use 'variable_header';
+
+header {
+  background-color: config_variable.$CONFIG_CUSTOM_SITE_COLOR_BG_NAV;
+  color: text-color(config_variable.$CONFIG_CUSTOM_SITE_COLOR_BG_NAV);
+  text-align: center;
+
+  &, .frame--content {
+    padding: variable_frame.$frame_unit;
+  }
+
+  // #nav_header__toggle {
+  //   line-height: 1;
+  // }
+
+  #nav_header__brand {
+    @include variable_header.header_common();
+    font-size: variable_header.$header-fontsize-1;
+    display: inline-block;
+    margin-top: 0px;
+  }
+}

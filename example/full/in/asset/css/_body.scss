@@ -1,0 +1,20 @@
+@use '_config/variable' as config_variable;
+@use 'variable';
+
+html {
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  background-image: url('/asset/image/interface/background.png');
+  background-position: top center;
+  background-repeat: no-repeat;
+
+  background-color: config_variable.$CONFIG_CUSTOM_SITE_COLOR_BG;
+
+  color: config_variable.$CONFIG_CUSTOM_SITE_COLOR_TEXT;
+
+  margin: 0px;
+
+  font-family: variable.$page_font;
+}

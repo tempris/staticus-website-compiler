@@ -1,0 +1,434 @@
+@@include('_html/frame/top.html', {
+  "title": "Photo Gallery - Example",
+  "stylesheets": [ 
+    "/asset/module/prism/prism.min.css",
+    "/asset/module/photoswipe/photoswipe.css",
+    "/asset/css/module/photoswipe.min.css" ]
+})
+
+<section>
+	<h1>PhotoSwipe</h1>
+
+  <p>This section showcases various images displayed using the PhotoSwipe library. Each image opens in a full-screen lightbox for a detailed view. Explore the different layouts and features below.</p>
+</section>
+
+<section>
+  <h2>Demonstration</h2>
+
+  <p>In this section, you will see images arranged in different layouts and styles.</p>
+
+  <h3>Default</h3>
+
+  <p>This default gallery presents images in a responsive grid layout. Click on any image to open it in a full-screen lightbox.</p>
+
+  <div class="pswp-gallery">
+    <a class="pswp-gallery__item" href="/asset/image/content/example/photoswipe/512x1024_no_caption.png" data-pswp-width="512" data-pswp-height="1024">
+      <img src="/asset/image/content/example/photoswipe/128x256_no_caption.png" alt="" />
+    </a>
+    <a class="pswp-gallery__item" href="/asset/image/content/example/photoswipe/1024x1024_no_caption.png" data-pswp-width="1024" data-pswp-height="1024">
+      <img src="/asset/image/content/example/photoswipe/256x256_no_caption.png" alt="" />
+    </a>
+    <a class="pswp-gallery__item" href="/asset/image/content/example/photoswipe/2048x1024_no_caption.png" data-pswp-width="2048" data-pswp-height="1024">
+      <img src="/asset/image/content/example/photoswipe/512x256_no_caption.png" alt="" />
+    </a>
+  </div>
+
+  <hr>
+
+  <h3>Captions</h3>
+
+  <p>This gallery includes captions for each image, providing additional context or information. Use the checkbox below to toggle the visibility of the captions.</p>
+
+  <p>The last item has no caption.</p>
+
+  <form>
+    <fieldset>
+      <legend>Toggle Captions</legend>
+      <label>
+        <input type="checkbox" id="toggle-captions" checked>
+        Display captions on page
+      </label>
+    </fieldset>
+  </form>  
+
+  <div class="pswp-gallery">
+    <figure class="col-default-12 col-phone-6 col-tablet-4 col-desktop-small-3">
+      <a class="pswp-gallery__item" href="/asset/image/content/example/photoswipe/512x1024.png" data-pswp-width="512" data-pswp-height="1024">
+        <img src="/asset/image/content/example/photoswipe/128x256.png" alt="" />
+      </a>
+      <figcaption>A wide image with a <a href="" onclick="return false;">link</a></figcaption>
+    </figure>
+
+    <figure class="col-default-12 col-phone-6 col-tablet-4 col-desktop-small-3">
+      <a class="pswp-gallery__item" href="/asset/image/content/example/photoswipe/1024x1024.png" data-pswp-width="1024" data-pswp-height="1024">
+        <img src="/asset/image/content/example/photoswipe/256x256.png" alt="" />
+      </a>
+      <figcaption>A square image.</figcaption>
+    </figure>
+
+    <figure class="col-default-12 col-phone-6 col-tablet-4 col-desktop-small-3">
+      <a class="pswp-gallery__item" href="/asset/image/content/example/photoswipe/2048x1024.png" data-pswp-width="2048" data-pswp-height="1024">
+        <img src="/asset/image/content/example/photoswipe/512x256.png" alt="" />
+      </a>
+      <figcaption>A tall image.</figcaption>
+    </figure>
+
+    <figure class="col-default-12 col-phone-6 col-tablet-4 col-desktop-small-3">
+      <a class="pswp-gallery__item" href="/asset/image/content/example/photoswipe/1024x1024_no_caption.png" data-pswp-width="1024" data-pswp-height="1024">
+        <img src="/asset/image/content/example/photoswipe/256x256_no_caption.png" alt="" />
+      </a>
+    </figure>
+  </div>
+
+  <hr>
+
+  <h3>Google Map</h3>
+
+  <p>In this example an interactive Google Map is inserted into the second slot of the gallery. Swipe gestures between the lightbox and Google Maps frame can interfere with each other in this implementation, for this reason either additional modifications or avoiding this approach is recommended in user-facing production environments. However, this currently serves as a strong demonstration of the flexibility of the PhotoSwipe codebase.</p>
+
+  <div class="pswp-gallery">
+    <a class="pswp-gallery__item" href="/asset/image/content/example/photoswipe/512x1024_no_caption.png" data-pswp-width="512" data-pswp-height="1024">
+      <img src="/asset/image/content/example/photoswipe/128x256_no_caption.png" alt="" />
+    </a>
+    <a class="pswp-gallery__item" data-pswp-type="google-map" data-google-map-url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46830151.11795828!2d-119.8093025!3d44.24236485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited%20States!5e0!3m2!1sen!2sus!4v1727488562483!5m2!1sen!2sus" href="https://maps.google.com/maps?ll=44.242365,-119.809302&z=2&t=m&hl=en&gl=US&mapclient=embed&q=United%20States" target="_blank"><img src="/asset/image/content/example/photoswipe/map_thumb.png" alt=""></a>
+    <a class="pswp-gallery__item" href="/asset/image/content/example/photoswipe/1024x1024_no_caption.png" data-pswp-width="1024" data-pswp-height="1024">
+      <img src="/asset/image/content/example/photoswipe/256x256_no_caption.png" alt="" />
+    </a>
+    <a class="pswp-gallery__item" href="/asset/image/content/example/photoswipe/2048x1024_no_caption.png" data-pswp-width="2048" data-pswp-height="1024">
+      <img src="/asset/image/content/example/photoswipe/512x256_no_caption.png" alt="" />
+    </a>
+
+    <figure class="col-default-12 col-phone-6 col-tablet-4 col-desktop-small-3">
+      <a class="pswp-gallery__item" href="/asset/image/content/example/photoswipe/1024x1024_no_caption.png" data-pswp-width="1024" data-pswp-height="1024">
+        <img src="/asset/image/content/example/photoswipe/256x256_no_caption.png" alt="" />
+      </a>
+      <figcaption>A square image.</figcaption>
+    </figure>
+  </div>
+
+  <hr>
+
+  <h3>Jump Links</h3>
+
+  <p>This section demonstrates the use of jump links within the gallery. Clicking the button below will directly open the second photo in the second gallery.</p>
+
+  <p>
+    <a class="button" href="" onclick="event.preventDefault(); PSWP_Open(2, 2)">Open Gallery 2, Item 2</a>
+  </p>
+
+  <p>
+    <a class="button" href="" onclick="event.preventDefault(); PSWP_Open(0, 2)">Open Gallery 1, Item 3</a>
+  </p>
+
+  <p>This method uses a custom JavaScript function <code class="language-javascript">PSWP_Open(gallery, item)</code> to directly open the specified gallery item.</p>
+</section>
+
+<section>
+  <h2>Implementation Details</h2>
+  <p>The structure of this photo gallery has been carefully designed to provide a seamless user experience across various devices while ensuring accessibility and ease of use. Below are the key considerations and decisions made during the implementation:</p>
+
+  <h3>PhotoSwipe Integration</h3>
+  <p>PhotoSwipe is a powerful library that provides a full-screen lightbox effect for images. Integrating PhotoSwipe enhances the user experience by allowing users to view images in greater detail. The lightbox setup is initialized with specific gallery and item selectors to ensure that the right elements are targeted for the lightbox effect.</p>
+
+  <h3>Captions and Accessibility</h3>
+  <p>Including captions for images provides additional context and information, enhancing the overall user experience. The <code>figcaption</code> element is used to semantically associate the caption with the image, which is beneficial for screen readers and improves accessibility. The checkbox for the <a href="#photo-gallery-demonstration-captions">Captions gallery</a> demonstrates that captions can be hidden until the user enlarges an image or is using a screen reader. This feature ensures a cleaner interface while still providing necessary information when needed.</p>
+
+  <h3>Screen Reader Compatibility</h3>
+  <p>Accessibility is a crucial aspect of web design. The gallery structure ensures compatibility with screen readers by using semantic HTML elements like <code>figure</code> and <code>figcaption</code>. The alt attributes in the <code>img</code> tags provide descriptive text for screen readers, making the gallery accessible to visually impaired users. The dynamic caption feature in the PhotoSwipe lightbox further enhances accessibility by updating the caption content based on the current slide.</p>
+
+  <h3>Performance Optimization</h3>
+  <p>To ensure optimal performance, external stylesheets and scripts are loaded only when necessary. This minimizes the initial load time and improves the overall performance of the gallery. Additionally, the use of smaller placeholder images for thumbnails and larger images for the lightbox view balances image quality with loading speed.</p>
+</section>
+
+<section>
+  <h2>The Code</h2>
+
+  <h3>Base Files</h3>
+  
+  <p>All base files can be found at <a class="button button--small" href="https://photoswipe.com/">https://photoswipe.com/ <span class="font-icon--interface-external"></span></a>. The files I used were <code>photoswipe.css</code>, <code>photoswipe.umd.min.js</code>, and <code>photoswipe-lightbox.umd.min.js</code>. I load them in that order, with the CSS in the <code>head</code> of the webpage and the JavaScript at the end of the webpage.</p>
+
+  <h3>HTML</h3>
+
+  <pre id="clickable-html" class="line-numbers linkable-line-numbers" data-line="null"><code class="language-html">&lt;h3&gt;Default&lt;&#x2F;h3&gt;
+
+&lt;div class=&quot;pswp-gallery&quot; id=&quot;pswp-gallery-default&quot;&gt;
+  &lt;a class=&quot;col-default-12 col-phone-6 col-tablet-4 col-desktop-small-3&quot; href=&quot;https:&#x2F;&#x2F;dummyimage.com&#x2F;1200x600&#x2F;422&#x2F;fff&quot; data-pswp-width=&quot;1200&quot; data-pswp-height=&quot;600&quot;&gt;
+    &lt;img src=&quot;https:&#x2F;&#x2F;dummyimage.com&#x2F;120x60&#x2F;422&#x2F;fff&quot; alt=&quot;&quot; &#x2F;&gt;
+  &lt;&#x2F;a&gt;
+  &lt;a class=&quot;col-default-12 col-phone-6 col-tablet-4 col-desktop-small-3&quot; href=&quot;https:&#x2F;&#x2F;dummyimage.com&#x2F;1200x1200&#x2F;242&#x2F;fff&quot; data-pswp-width=&quot;1200&quot; data-pswp-height=&quot;1200&quot;&gt;
+    &lt;img src=&quot;https:&#x2F;&#x2F;dummyimage.com&#x2F;60x60&#x2F;242&#x2F;fff&quot; alt=&quot;&quot; &#x2F;&gt;
+  &lt;&#x2F;a&gt;
+  &lt;a class=&quot;col-default-12 col-phone-6 col-tablet-4 col-desktop-small-3&quot; href=&quot;https:&#x2F;&#x2F;dummyimage.com&#x2F;600x1200&#x2F;224&#x2F;fff&quot; data-pswp-width=&quot;600&quot; data-pswp-height=&quot;1200&quot;&gt;
+    &lt;img src=&quot;https:&#x2F;&#x2F;dummyimage.com&#x2F;30x60&#x2F;224&#x2F;fff&quot; alt=&quot;&quot; &#x2F;&gt;
+  &lt;&#x2F;a&gt;
+&lt;&#x2F;div&gt;
+
+&lt;h3&gt;Captions&lt;&#x2F;h3&gt;
+
+&lt;div class=&quot;pswp-gallery&quot; id=&quot;pswp-gallery-caption&quot;&gt;
+  &lt;figure class=&quot;col-default-12 col-phone-6 col-tablet-4 col-desktop-small-3&quot;&gt;
+    &lt;a class=&quot;pswp-gallery__item&quot; href=&quot;https:&#x2F;&#x2F;dummyimage.com&#x2F;1200x600&#x2F;422&#x2F;fff&quot; data-pswp-width=&quot;1200&quot; data-pswp-height=&quot;600&quot;&gt;
+      &lt;img src=&quot;https:&#x2F;&#x2F;dummyimage.com&#x2F;120x60&#x2F;422&#x2F;fff&quot; alt=&quot;&quot; &#x2F;&gt;
+    &lt;&#x2F;a&gt;
+    &lt;figcaption&gt;A wide image with a &lt;a class=&quot;button button--small&quot; href=&quot;&quot; onclick=&quot;return false;&quot;&gt;button&lt;&#x2F;a&gt;&lt;&#x2F;figcaption&gt;
+  &lt;&#x2F;figure&gt;
+
+  &lt;figure class=&quot;col-default-12 col-phone-6 col-tablet-4 col-desktop-small-3&quot;&gt;
+    &lt;a class=&quot;pswp-gallery__item&quot; href=&quot;https:&#x2F;&#x2F;dummyimage.com&#x2F;1200x1200&#x2F;242&#x2F;fff&quot; data-pswp-width=&quot;1200&quot; data-pswp-height=&quot;1200&quot;&gt;
+      &lt;img src=&quot;https:&#x2F;&#x2F;dummyimage.com&#x2F;60x60&#x2F;242&#x2F;fff&quot; alt=&quot;&quot; &#x2F;&gt;
+    &lt;&#x2F;a&gt;
+    &lt;figcaption&gt;A square image.&lt;&#x2F;figcaption&gt;
+  &lt;&#x2F;figure&gt;
+
+  &lt;figure class=&quot;col-default-12 col-phone-6 col-tablet-4 col-desktop-small-3&quot;&gt;
+    &lt;a class=&quot;pswp-gallery__item&quot; href=&quot;https:&#x2F;&#x2F;dummyimage.com&#x2F;600x1200&#x2F;224&#x2F;fff&quot; data-pswp-width=&quot;600&quot; data-pswp-height=&quot;1200&quot;&gt;
+      &lt;img src=&quot;https:&#x2F;&#x2F;dummyimage.com&#x2F;30x60&#x2F;224&#x2F;fff&quot; alt=&quot;&quot; &#x2F;&gt;
+    &lt;&#x2F;a&gt;
+    &lt;figcaption&gt;A tall image.&lt;&#x2F;figcaption&gt;
+  &lt;&#x2F;figure&gt;
+&lt;&#x2F;div&gt;</code></pre>
+
+  <h3>Custom CSS</h3>
+
+  <p>The below CSS is what I used to get PhotoSwipe to work with my site.</p>
+
+  <pre id="clickable-css" class="line-numbers linkable-line-numbers" data-line="null"><code class="language-css">[class^=pswp],
+[class*=pswp] {
+  font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif !important;
+  font-size: inherit !important
+}
+
+.pswp__container {
+  margin: 0px !important
+}
+
+.pswp__top-bar {
+  padding: 0px;
+  margin: 0px !important
+}
+
+.pswp svg {
+  pointer-events: none;
+  cursor: pointer
+}
+
+.pswp svg use {
+  pointer-events: none;
+  cursor: pointer
+}
+
+.pswp__button {
+  background: rgba(127, 127, 127, .3725490196) !important;
+  border-radius: .25em;
+  margin: 8px;
+  padding: 8px;
+  height: 50px
+}
+
+.pswp__icn {
+  top: 9px
+}
+
+.pswp__button,
+.pswp__button:link,
+.pswp__button:visited,
+.pswp__button:hover,
+.pswp__button:focus,
+.pswp__button:active {
+  -webkit-box-shadow: 0 4px 2px rgba(0, 0, 0, .15);
+  box-shadow: 0 4px 2px rgba(0, 0, 0, .15)
+}
+
+.pswp__button--arrow {
+  top: calc(50% - 48px);
+  width: 60px;
+  height: 80px;
+  position: absolute !important
+}
+
+.pswp__button--arrow--prev .pswp__icn {
+  left: 8px
+}
+
+.pswp__button--arrow--next .pswp__icn {
+  right: 8px
+}
+
+.pswp__preloader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  width: 128px;
+  height: 128px;
+  opacity: .625
+}
+
+.pswp__preloader .pswp__icn {
+  -webkit-animation: none !important;
+  animation: none !important;
+  background-image: url(&quot;&#x2F;image&#x2F;interface&#x2F;animation&#x2F;busy&#x2F;001_light_128px.gif&quot;);
+  width: 128px;
+  height: 128px;
+  top: 0;
+  left: 0
+}
+
+.pswp__preloader .pswp__icn path {
+  display: none !important
+}
+
+.pswp__counter {
+  margin-right: auto
+}
+
+.pswp__top-bar {
+  height: 100%
+}
+
+.pswp__custom-caption {
+  background: rgba(34, 34, 34, .4980392157);
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 16px;
+  border-radius: 4px;
+  width: calc(100% - 16px);
+  max-width: 400px;
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  text-align: center
+}
+
+.pswp__zoom-level-indicator {
+  background: rgba(34, 34, 34, .4980392157);
+  color: #fff;
+  font-size: 1rem;
+  line-height: 18px;
+  padding: 16px;
+  border-radius: 4px;
+  margin: 8px;
+  height: 50px
+}</code></pre>
+
+  <h3>JavaScript</h3>
+
+  <p>Here is the JavaScript used to initialize the above galleries with PhotoSwipe lightbox.</p>
+
+  <pre id="clickable-javascript" class="line-numbers linkable-line-numbers" data-line="null"><code class="language-javascript">var lightbox = new PhotoSwipeLightbox({
+  gallery: &#39;#pswp-gallery-default&#39;,
+  children: &#39;a&#39;,
+  &#x2F;&#x2F; dynamic import is not supported in UMD version
+  pswpModule: PhotoSwipe
+  &#x2F;&#x2F; history: true
+});
+lightbox.on(&#39;uiRegister&#39;, function() {
+  lightbox.pswp.ui.registerElement({
+    name: &#39;zoom-level-indicator&#39;,
+    order: 9,
+    onInit: (el, pswp) =&gt; {
+      pswp.on(&#39;zoomPanUpdate&#39;, (e) =&gt; {
+        if (e.slide === pswp.currSlide) {
+          el.innerText = &#39;Zoom: &#39; + Math.round(pswp.currSlide.currZoomLevel * 100) + &#39;%&#39;;
+        }
+      });
+    }
+  });
+});
+lightbox.init();
+
+var lightbox_captions = new PhotoSwipeLightbox({
+  gallery: &#39;#pswp-gallery-caption&#39;,
+  children: &#39;.pswp-gallery__item&#39;,
+  &#x2F;&#x2F; dynamic import is not supported in UMD version
+  pswpModule: PhotoSwipe
+  &#x2F;&#x2F; history: true
+});
+lightbox_captions.on(&#39;uiRegister&#39;, function() {
+  lightbox_captions.pswp.ui.registerElement({
+    name: &#39;zoom-level-indicator&#39;,
+    order: 9,
+    onInit: (el, pswp) =&gt; {
+      pswp.on(&#39;zoomPanUpdate&#39;, (e) =&gt; {
+        if (e.slide === pswp.currSlide) {
+          el.innerText = &#39;Zoom: &#39; + Math.round(pswp.currSlide.currZoomLevel * 100) + &#39;%&#39;;
+        }
+      });
+    }
+  });
+});
+lightbox_captions.on(&#39;uiRegister&#39;, function() {
+  lightbox_captions.pswp.ui.registerElement({
+    name: &#39;custom-caption&#39;,
+    order: 9,
+    isButton: false,
+    appendTo: &#39;root&#39;,
+    html: &#39;Caption text&#39;,
+    onInit: (el, pswp) =&gt; {
+      lightbox_captions.pswp.on(&#39;change&#39;, () =&gt; {
+        const currSlideElement = lightbox_captions.pswp.currSlide.data.element;
+        let captionHTML = &#39;&#39;;
+        if (currSlideElement) {
+          const captionElement = currSlideElement.parentElement.querySelector(&#39;figcaption&#39;);
+          if (captionElement) {
+            &#x2F;&#x2F; get caption from figcaption element
+            captionHTML = captionElement.innerHTML;
+          } else {
+            &#x2F;&#x2F; get caption from alt attribute
+            captionHTML = currSlideElement.querySelector(&#39;img&#39;).getAttribute(&#39;alt&#39;);
+          }
+        }
+        if (captionHTML) {
+          el.innerHTML = captionHTML;
+          el.style.display = &#39;block&#39;;
+        } else {
+          el.style.display = &#39;none&#39;;
+        }
+      });
+    }
+  });
+});
+lightbox_captions.init();</code></pre>
+
+</section>
+
+<section>
+  <h2>Sources</h2>
+  
+  <div>
+    <p>This page is comprised of my own additions and either partially or heavily modified elements from the following source(s):</p>
+    
+    <ul>
+      <li>Source: <a class="button" href="https://photoswipe.com/">https://photoswipe.com/ <span class="font-icon--interface-external"></span></a></li>
+    </ul>
+  </div>
+</section>
+
+@@include('_html/frame/bottom.html', {
+  "scripts": [ 
+    "/asset/module/prism/prism.min.js",
+    "/asset/module/photoswipe/photoswipe.umd.min.js",
+    "/asset/module/photoswipe/photoswipe-lightbox.umd.min.js",
+    "/asset/js/module/photoswipe.custom.min.js"
+  ]
+})
+
+<script type="text/javascript">
+  document.getElementById('toggle-captions').addEventListener('change', function() {
+    var figcaptions = document.querySelectorAll('figcaption');
+    figcaptions.forEach(function(figcaption) {
+      if (this.checked) {
+        figcaption.style.opacity = '1';
+        figcaption.style.pointerEvents = 'auto';
+      } else {
+        figcaption.style.opacity = '0';
+        figcaption.style.pointerEvents = 'none';
+      }
+    }, this);
+  });
+</script>

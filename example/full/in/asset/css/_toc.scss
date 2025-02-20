@@ -1,0 +1,107 @@
+@use '_config/variable' as config_variable;
+@use 'variable';
+@use 'variable_details';
+@use 'variable_header';
+
+#toc-title {
+    @include variable_header.header_common();
+    font-size: variable_header.$header-fontsize-3;
+}
+
+// Counter Style:
+$counter-font-size: 0.875em;
+
+@mixin counter() {
+    content: "";
+    border-radius: variable.$unit_relative_1;
+    color: config_variable.$CONFIG_CUSTOM_SITE_COLOR_BG;
+    font-size: $counter-font-size;
+    font-weight: bold;
+    margin-right: 0.375em;
+    padding: 0px 0.25em;
+    transform: translateY(-0.5 * (1em - $counter-font-size));
+    display: inline-block;
+}
+
+// Header counter style (syncronises with Table of Contents):
+h2, h3, h4, h5, h6 {
+    &:not(.toc-ignore) .counter:before {
+        @include counter();
+        background: config_variable.$CONFIG_CUSTOM_SITE_COLOR_TEXT;
+    }
+}
+
+#toc a {
+    text-decoration: none;
+    margin: 0px;
+}
+
+// Table of Contents counter style:
+#toc > details > *:not(:first-child) a,
+#toc > details > a {
+    &:before {
+        @include counter();
+        background: config_variable.$CONFIG_CUSTOM_SITE_COLOR_LINK;
+    }
+}
+
+$toc-margin: 1em;
+
+// Table of Contents indentation:
+#toc details {
+    & > :not(summary) {
+        padding-left: $toc-margin;
+        display: block;
+        // Spacing for focus outline:
+        margin-top: variable.$unit_root_1;
+        margin-bottom: variable.$unit_root_1;
+    }
+    & > a {
+        margin-left: ((variable_details.$details-summary-marker-width + variable_details.$details-summary-marker-margin) * variable_details.$details-summary-marker-scale);
+    }
+}
+
+// Counter counting:
+body {counter-reset: counter_header_2}
+h2:not(.toc-ignore) {counter-reset: counter_header_3}
+h3:not(.toc-ignore) {counter-reset: counter_header_4}
+h4:not(.toc-ignore) {counter-reset: counter_header_5}
+h5:not(.toc-ignore) {counter-reset: counter_header_6}
+
+h2:not(.toc-ignore) .counter:before {counter-increment: counter_header_2; content: counter(counter_header_2)}
+h3:not(.toc-ignore) .counter:before {counter-increment: counter_header_3; content: counter(counter_header_2) "." counter(counter_header_3)}
+h4:not(.toc-ignore) .counter:before {counter-increment: counter_header_4; content: counter(counter_header_2) "." counter(counter_header_3) "." counter(counter_header_4)}
+h5:not(.toc-ignore) .counter:before {counter-increment: counter_header_5; content: counter(counter_header_2) "." counter(counter_header_3) "." counter(counter_header_4) "." counter(counter_header_5)}
+h6:not(.toc-ignore) .counter:before {counter-increment: counter_header_6; content: counter(counter_header_2) "." counter(counter_header_3) "." counter(counter_header_4) "." counter(counter_header_5) "." counter(counter_header_6)}
+
+#toc > details {counter-reset: counter_toc_2}
+#toc > details > details {counter-reset: counter_toc_3}
+#toc > details > details > details {counter-reset: counter_toc_4}
+#toc > details > details > details > details {counter-reset: counter_toc_5}
+#toc > details > details > details > details > details {counter-reset: counter_toc_6}
+
+#toc > details > *:not(:first-child) > summary a:before,
+#toc > details > a:before {
+    counter-increment: counter_toc_2;
+    content: counter(counter_toc_2);
+}
+#toc > details > details > *:not(:first-child) > summary a:before,
+#toc > details > *:not(:first-child) > a:before {
+    counter-increment: counter_toc_3;
+    content: counter(counter_toc_2) "." counter(counter_toc_3);
+}
+#toc > details > details > details > *:not(:first-child) > summary a:before,
+#toc > details > details > *:not(:first-child) > a:before {
+    counter-increment: counter_toc_4;
+    content: counter(counter_toc_2) "." counter(counter_toc_3) "." counter(counter_toc_4);
+}
+#toc > details > details > details > details > *:not(:first-child) > summary a:before,
+#toc > details > details > details > *:not(:first-child) > a:before {
+    counter-increment: counter_toc_5;
+    content: counter(counter_toc_2) "." counter(counter_toc_3) "." counter(counter_toc_4) "." counter(counter_toc_5);
+}
+#toc > details > details > details > details > details > *:not(:first-child) > summary a:before,
+#toc > details > details > details > details > *:not(:first-child) > a:before {
+    counter-increment: counter_toc_6;
+    content: counter(counter_toc_2) "." counter(counter_toc_3) "." counter(counter_toc_4) "." counter(counter_toc_5) "." counter(counter_toc_6);
+}

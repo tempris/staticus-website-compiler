@@ -1,0 +1,8 @@
+@use '_config/variable' as config_variable;
+
+::selection {
+  // background-color: config_variable.$CONFIG_CUSTOM_BRAND_COLOR !important;
+  // // color: #e8e6e3 !important;
+  background-color: config_variable.$CONFIG_CUSTOM_SITE_COLOR_TEXT !important;
+  color: config_variable.$CONFIG_CUSTOM_SITE_COLOR_BG !important;
+}

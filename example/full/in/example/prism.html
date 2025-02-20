@@ -1,0 +1,212 @@
+<!-- @@include('_html/frame/top.html') -->
+
+@@include('_html/frame/top.html', {
+  "title": "Prism - Example",
+  "stylesheets": [ "/asset/module/prism/prism.min.css" ]
+})
+
+<section>
+  <h1>Prism</h1>
+
+  <h2>Unformatted</h2>
+
+  <pre><code>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</code></pre>
+
+  <pre><code>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</code></pre>
+
+  <!-- <hr> -->
+
+</section>
+<section>
+
+  <h2>Formatted</h2>
+
+  <h3>CSS</h3>
+
+  <pre><code class="language-css">.example-gradient {
+  background: -webkit-linear-gradient(left,     #cb60b3 0%, #c146a1 50%, #a80077 51%, #db36a4 100%); /* Chrome10+, Safari5.1+ */
+  background:    -moz-linear-gradient(left,     #cb60b3 0%, #c146a1 50%, #a80077 51%, #db36a4 100%); /* FF3.6+ */
+  background:     -ms-linear-gradient(left,     #cb60b3 0%, #c146a1 50%, #a80077 51%, #db36a4 100%); /* IE10+ */
+  background:      -o-linear-gradient(left,     #cb60b3 0%, #c146a1 50%, #a80077 51%, #db36a4 100%); /* Opera 11.10+ */
+  background:         linear-gradient(to right, #cb60b3 0%, #c146a1 50%, #a80077 51%, #db36a4 100%); /* W3C */
+}
+.example-angle {
+  transform: rotate(15deg);
+}
+.example-color {
+  color: rgba(255, 0, 0, 0.2);
+  background: purple;
+  border: 1px solid hsl(100, 70%, 40%);
+}
+.example-easing {
+  transition-timing-function: ease-in-out;
+}
+.example-time {
+  transition-duration: 3s;
+}</code></pre>
+
+  <h3>Javascript</h3>
+
+  <pre><code class="language-javascript">function jsSep() {
+  return src( jsSepSRC )
+    // .pipe( cache( 'scriptsSeparate' ) )
+    // .pipe( plumber() )
+    .pipe( rename( { suffix: '.min' } ) )
+    .pipe( gulpif( options.has( 'production' ), stripDebug() ) )
+    .pipe( sourcemaps.init({ loadMaps: true }) )
+    .pipe( uglify() )
+    .pipe( sourcemaps.write( mapURL ) )
+    .pipe( dest( jsURL ) )
+    .pipe( browserSync.stream() );
+};</code></pre>
+
+  <!-- <hr> -->
+
+</section>
+<section>
+
+  <h2>Plugins</h2>
+
+  <h3>match-braces</h3>
+
+  <p><a class="button" href="https://prismjs.com/plugins/match-braces/">https://prismjs.com/plugins/match-braces/</a></p>
+
+  <p>To enable this plugin add the <code class=" language-markup">match-braces</code> class to a code block:</p>
+
+  <p>The plugin will highlight brace pairs when the cursor hovers over one of the braces. The highlighting effect will disappear as soon as the cursor leaves the brace pair.<br>
+  The hover effect can be disabled by adding the <code class=" language-markup">no-brace-hover</code> to the code block. This class can also be inherited.</p>
+
+  <pre><code class="language-javascript match-braces">function determineResizeAnim() {
+  var current_size = window.innerWidth + window.innerHeight;
+
+  if (Math.abs(last_resize_size - current_size) > 100) {
+    root.classList.remove('show-resize-anim');
+  } else {
+    root.classList.add('show-resize-anim');
+  }
+
+  last_resize_size = current_size;
+}</code></pre>
+
+  <hr>
+
+  <h3>no-whitespace-normalization</h3>
+
+  <p><a class="button" href="https://prismjs.com/plugins/normalize-whitespace/">https://prismjs.com/plugins/normalize-whitespace/</a></p>
+
+  <p>Obviously, this is supposed to work only for code blocks (<code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pre</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">&gt;</span></span></code>) and not for inline code.</p>
+
+  <p>By default the plugin trims all leading and trailing whitespace of every code block.
+  It also removes extra indents and trailing whitespace on every line.</p>
+
+  <p>The plugin can be disabled for a particular code block by adding the class <code class=" language-markup">no-whitespace-normalization</code> to
+  either the <code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pre</span><span class="token punctuation">&gt;</span></span></code> or <code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">&gt;</span></span></code> tag.</p>
+
+  <pre><code class="language-javascript no-whitespace-normalization">
+    function getScrollY() {
+      return window.scrollY || document.documentElement.scrollTop;
+    }
+  </code></pre>
+
+  <hr>
+
+  <h3>Download Button</h3>
+
+  <p><a class="button" href="https://prismjs.com/plugins/download-button/">https://prismjs.com/plugins/download-button/</a></p>
+
+  <p>Use the <code class=" language-markup">data-src</code> and <code class=" language-markup">data-download-link</code> attribute on a <code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pre</span><span class="token punctuation">&gt;</span></span></code> elements similar to <a href="plugins/autoloader/">Autoloader</a>, like so:</p>
+
+  <div class="code-toolbar" style="margin: 8px 0px;"><pre class=" language-markup" style="margin: 0px;"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pre</span> <span class="token attr-name">data-src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>myfile.js<span class="token punctuation">"</span></span> <span class="token attr-name">data-download-link</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>pre</span><span class="token punctuation">&gt;</span></span></code></pre><div class="toolbar"></div></div>
+
+  <p>Optionally, the text of the button can also be customized by using a <code class=" language-markup">data-download-link-label</code> attribute.</p>
+
+  <pre><code class=" language-markup">&lt;pre data-src="myfile.js" data-download-link data-download-link-label="Download this file">&lt;/pre></code></pre>
+
+  <hr>
+
+  <h3>line-numbers</h3>
+
+  <h4>Default line-numbers</h4>
+
+  <p><a class="button" href="https://prismjs.com/plugins/line-numbers/">https://prismjs.com/plugins/line-numbers/</a></p>
+
+  <p>Obviously, this is supposed to work only for code blocks (<code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pre</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">&gt;</span></span></code>) and not for inline code.</p>
+
+  <p>Add the <code class=" language-markup">line-numbers</code> class to your desired <code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pre</span><span class="token punctuation">&gt;</span></span></code> or any of its ancestors, and the Line Numbers plugin will take care of the rest. To give all code blocks line numbers, add the <code class=" language-markup">line-numbers</code> class to the <code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span></code> of the page. This is part of a general activation mechanism where adding the <code class=" language-markup">line-numbers</code> (or <code class=" language-markup">no-line-numbers</code>) class to any element will enable (or disable) the Line Numbers plugin for all code blocks in that element. <br> Example:</p>
+
+  <pre class="line-numbers"><code class=" language-scss">h1, h2, h3, h4, h5, h6 {
+  line-height: 1.5em;
+}
+
+h1:after {
+  content: " ";
+  display: block;
+  background: #000;
+  height: 0.05em;
+  margin-top: 0.375em;
+}
+
+img {
+  max-width: 100%;
+  width: map-get($breakpoints, "tablet") * 0.675;
+}</code></pre>
+
+  <h4>linkable-line-numbers</h4>
+
+  <pre id="linkable-line-numbers" class="line-numbers linkable-line-numbers" data-line="null"><code class=" language-scss">.line-numbers .line-numbers-rows {
+  background: adjust-color( $body_bg_color, $lightness: -7%, $alpha: -0.075 );
+  border-top-left-radius: $radius_content;
+  border-bottom-left-radius: $radius_content;
+}
+
+.backdropfilter .line-numbers .line-numbers-rows {
+  background: adjust-color( $body_bg_color, $lightness: -7%, $alpha: -0.25 );
+  backdrop-filter: blur(10px);
+}</code></pre>
+
+  <hr>
+
+  <h3>line-highlight</h3>
+
+  <h4>Without Line Numbers</h4>
+
+  <pre data-line="1,5"><code class=" language-js">document.addEventListener("keydown", function(event) {
+  if ( event.keyCode == 9 ) {
+    root.classList.add('show-nav-outline');
+  }
+});
+
+document.addEventListener('click', ()=>{
+  root.classList.remove('show-nav-outline');
+});</code></pre>
+
+  <h4>With Line Numbers</h4>
+
+  <pre class="line-numbers no-whitespace-normalization" data-line="1,5"><code class=" language-js">document.addEventListener("keydown", function(event) {
+  if ( event.keyCode == 9 ) {
+    root.classList.add('show-nav-outline');
+  }
+});
+
+document.addEventListener('click', ()=>{
+  root.classList.remove('show-nav-outline');
+});</code></pre>
+
+</section>
+
+<section>
+  <h2>Sources</h2>
+  <div>
+    <p>This page is comprised of my own additions and either partially or heavily modified elements from the following source(s):</p>
+    <ul>
+      <li>Source: <a class="button" href="https://prismjs.com/">https://prismjs.com/ <span class="font-icon--interface-external"></span></a></li>
+    </ul>
+  </div>
+</section>
+
+@@include('_html/frame/bottom.html', {
+  "scripts": [ "/asset/module/prism/prism.min.js" ]
+})

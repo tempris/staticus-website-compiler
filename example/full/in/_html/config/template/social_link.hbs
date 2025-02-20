@@ -1,0 +1,9 @@
+{{#each brand.social}}
+<a class="button font-icon--color--social-{{lowercase name}}--background"
+   href="{{link}}" 
+   title="Visit {{../brand.name}} on {{name}}">
+    <span class="font-icon--social-{{lowercase name}}"></span> 
+    {{name}} 
+    <span class="font-icon--interface-external"></span>
+</a>
+{{/each}}

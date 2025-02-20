@@ -1,0 +1,22 @@
+{{#if site.author}}
+<span>
+    Content © 
+    <span id="copyrightyears__author">{{site.author.copyright_years}}</span>
+    <a href="{{site.author.url}}" title="{{site.author.name}}: Home">
+        {{site.author.name}}
+        {{#if (notEquals site.author.url ../require.site.url)}}
+            <span class="font-icon--interface-external"></span>
+        {{/if}}
+    </a>
+    <!-- Remove added space -->
+    <span>, All Rights Reserved.</span>
+</span>
+{{/if}}
+
+<span class="copyright">
+    {{#if site.author}}Website {{/if}}© 
+    <span id="copyrightyears__brand">{{brand.copyright_years}}</span>
+    <a href="/" title="{{brand.name}}: Home">{{brand.name}}</a>
+    <!-- Remove added space -->
+    <span>, All Rights Reserved.</span>
+</span>

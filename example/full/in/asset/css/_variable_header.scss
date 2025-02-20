@@ -1,0 +1,23 @@
+@use 'sass:math';
+@use 'variable';
+
+$largest_size: variable.$unit_relative_7 * 0.5;  // Font size for h1
+$smallest_size: variable.$unit_relative_2 * 0.875; // Font size for h6
+$heading_levels: 6;   // Total number of heading levels
+
+// Calculate the size decrement per level
+$step_size: math.div($largest_size - $smallest_size, $heading_levels - 1);
+
+$header-fontsize-1: $largest_size;
+$header-fontsize-2: $largest_size - ($step_size * 1);
+$header-fontsize-3: $largest_size - ($step_size * 2);
+$header-fontsize-4: $largest_size - ($step_size * 3);
+$header-fontsize-5: $largest_size - ($step_size * 4);
+$header-fontsize-6: $smallest_size;
+
+@mixin header_common() {
+  display: block;
+  font-weight: bold;
+  margin-top: variable.$unit_relative_3;
+  margin-bottom: variable.$unit_relative_1;
+}

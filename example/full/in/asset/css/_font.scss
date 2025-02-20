@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'evgeny';
+  src: url('./../font/evgeny/evgeny.eot?#iefix') format('embedded-opentype'), /* IE9 Compat Modes */
+       local('☺'), /* css hack to divert IE6-8 from downloading fonts it can't use */
+       url('./../font/evgeny/evgeny.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./../font/evgeny/evgeny.woff') format('woff'), /* Pretty Modern Browsers */
+       url('./../font/evgeny/evgeny.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./../font/evgeny/evgeny.svg') format('svg'); /* Legacy iOS */
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-evgeny {
+  font-family: 'evgeny', 'Comic Sans', 'Comic Sans MS', 'Chalkboard', 'ChalkboardSE-Regular', 'Marker Felt', 'Purisa', 'URW Chancery L', cursive;
+}

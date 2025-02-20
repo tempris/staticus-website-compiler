@@ -1,0 +1,13 @@
+@use 'variable';
+@use 'variable_color';
+
+embed, iframe, object {
+  border-radius: variable.$unit_root_1;
+  max-width: 100%;
+  @include variable_color.color_border_context();
+  width: 100%;
+  max-height: 70vh;
+  max-height: 70svh;
+  height: 70vh;
+  height: 70svh;
+}

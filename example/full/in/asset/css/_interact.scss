@@ -1,0 +1,379 @@
+@use 'sass:color';
+@use '_config/variable' as config_variable;
+@use '_variable_font_icon/interface' as font_icon__interface;
+@use 'function/color' as function_color;
+@use 'variable';
+@use 'variable_bar';
+@use 'variable_color';
+@use 'variable_interact';
+@use 'mixin/button' as mixin_button;
+
+$color_interact_background_alpha: 0.0625;
+$color_interact_background_hover: rgba(config_variable.$CONFIG_CUSTOM_SITE_COLOR_LINK, $color_interact_background_alpha);
+$color_interact_background_focus: rgba(config_variable.$CONFIG_CUSTOM_SITE_COLOR_LINK, $color_interact_background_alpha);
+$color_interact_placeholder: color.adjust(function_color.text-color(config_variable.$CONFIG_CUSTOM_SITE_COLOR_LINK), $whiteness: 37.5%, $blackness: 37.5%);
+$color_interact_border: rgba(config_variable.$CONFIG_CUSTOM_SITE_COLOR_TEXT, 0.625);
+
+@mixin style_interact_hover() {
+  opacity: variable_interact.$interact_opacity_hover;
+  background-color: $color_interact_background_hover;
+}
+
+a, label[for], summary {
+  color: config_variable.$CONFIG_CUSTOM_SITE_COLOR_LINK;
+  border-radius: variable.$unit_relative_1;
+}
+
+a, label[for]:not(.disabled), input, button, summary:not(:has(a:hover)), 
+.interact_arrow /*, 
+:not(.interact_arrow) > select*/ {
+  cursor: pointer;
+
+  &:hover {
+    opacity: variable_interact.$interact_opacity_hover;
+  }
+  &:active {
+    opacity: variable_interact.$interact_opacity_active;
+  }
+}
+
+input, label {
+  vertical-align: middle;
+}
+
+label {
+  margin: variable_interact.$interact_margin;
+  vertical-align: middle;
+}
+
+:not(.interact_arrow) > select /*, optgroup, option*/ {
+  cursor: pointer;
+}
+
+// highlight clickable areas on hover
+a, label[for]:not(.disabled), summary:not(:has(a:hover)) {
+  &:not(.button) {
+    &:hover {
+      background-color: $color_interact_background_hover;
+    }
+    .input-keyboard &:focus-visible {
+      background-color: $color_interact_background_hover;
+    }
+  }
+}
+
+a {
+  display: inline-block;
+  margin: variable_interact.$interact_margin;
+}
+
+p a {
+  margin: 0px;
+}
+
+// Prevent <summary> hover styles when <a> is hovered
+summary:not(:has(a:hover)) {
+  &:active {
+    opacity: variable_interact.$interact_opacity_active;
+  }
+}
+
+button, .button, input, select,
+textarea {
+  @include variable_interact.interact_structure();
+}
+
+button, .button, input, select, textarea {
+  display: inline-block;
+  background-color: config_variable.$CONFIG_CUSTOM_SITE_COLOR_LINK;
+  color: function_color.text-color(config_variable.$CONFIG_CUSTOM_SITE_COLOR_LINK);
+  text-decoration: none;
+  border: none;
+}
+
+textarea {
+  @include variable_color.color_border_context();
+  border-color: config_variable.$CONFIG_CUSTOM_SITE_COLOR_LINK;
+}
+
+button, .button, input, select {
+  &.button--large {
+    @include mixin_button.button-large;
+  }
+  &.button--icon {
+    @include mixin_button.button-icon;
+  }
+}
+
+input {
+  color: function_color.text-color(config_variable.$CONFIG_CUSTOM_SITE_COLOR_LINK);
+}
+
+input[type="button"], input[type="submit"], input[type="reset"] {
+  color: function_color.text-color(config_variable.$CONFIG_CUSTOM_SITE_COLOR_LINK);
+}
+
+::placeholder {
+  color: $color_interact_placeholder;
+  opacity: 1; /* Firefox */
+}
+
+::-ms-input-placeholder { /* Edge 12 -18 */
+  color: $color_interact_placeholder;
+}
+
+textarea {
+  width: 100%;
+
+  &, &[disabled="disabled"] {
+    background-color: config_variable.$CONFIG_CUSTOM_SITE_COLOR_LINK;
+    color: function_color.text-color(config_variable.$CONFIG_CUSTOM_SITE_COLOR_LINK);
+
+    &::placeholder {
+      color: rgba(function_color.text-color(config_variable.$CONFIG_CUSTOM_SITE_COLOR_LINK), 0.5);
+    }
+  }
+}
+
+.disabled, :not(.disabled) [disabled="disabled"] {
+  cursor: not-allowed;
+  opacity: variable_interact.$interact_opacity_disable;
+}
+
+// Focus:
+
+*:not(body), textarea, input {
+  &:focus-visible, &:focus, &:active/*, &:not(:active):focus*/ {
+    outline-offset: variable.$unit_root_0_5;
+    outline: none;
+  
+    .input-keyboard &, &:focus { /* Custom outline style */
+      outline-width: variable.$unit_root_0_5;
+      outline-style: solid;
+      outline-color: #ffff00;
+    }
+  }
+}
+
+input, textarea {
+  // &:focus {
+  //   opacity: 1;
+  // }
+
+  // &:not(:placeholder-shown) {
+    &.valid/*, &:valid*/, 
+    &.invalid/*, &:invalid*/ {
+      :not(.input-keyboard) &:not(:focus-visible):not(:focus) {
+        outline-width: variable.$unit_root_0_5 *0.5;
+        outline-style: solid;
+        outline-offset: 0px;
+      }
+    }
+
+    &.valid/*, &:valid*/ {
+      outline-color: #00ff00 !important;
+      background-color: color-mix(in srgb, #ccffcc 50%, config_variable.$CONFIG_CUSTOM_SITE_COLOR_LINK);
+    }
+
+    &.invalid/*, &:invalid*/ {
+      outline-color: #ff0000 !important;
+      outline-style: dotted !important;
+      background-color: color-mix(in srgb, #ffcccc 50%, config_variable.$CONFIG_CUSTOM_SITE_COLOR_LINK);
+    }
+  // }
+}
+
+// Input Types:
+
+input[type="color"] {
+  height: variable.$unit_root_4;
+  width: 100%;
+  max-width: variable.$unit_root_4 * 3;
+  display: inline-block;
+  padding: variable.$unit_root_0_5 * 0.625 variable.$unit_root_0_5;
+  padding: variable.$unit_root_0_5;
+}
+
+// Form:
+
+$interact_border_thickness: variable.$unit_root_0_25;
+
+fieldset {
+  border: $interact_border_thickness solid $color_interact_border;
+  border-radius: variable.$unit_root_1;
+}
+
+legend {
+  background-color: $color_interact_border;
+  color: function_color.text-color($color_interact_border);
+  border-radius: variable.$unit_root_1;
+}
+
+// Horizontal Rule:
+
+hr {
+  border: none;
+  height: $interact_border_thickness;
+  background-color: $color_interact_border;
+  border-radius: $interact_border_thickness * 0.5;
+}
+
+// Checkbox & Radio
+
+$interact_checkbox_size: variable.$unit_root_3;
+$interact_checkbox_border_radius: $interact_checkbox_size * 0.33;
+$interact_checkbox_checked_padding: variable_color.$border_context_thickness; // variable_color.$border_context_thickness
+
+input[type="checkbox"], input[type="radio"] {
+  appearance: none;
+  width: $interact_checkbox_size;
+  height: $interact_checkbox_size;
+  vertical-align: middle;
+  background-color: config_variable.$CONFIG_CUSTOM_SITE_COLOR_BG;
+  @include variable_color.color_border_context();
+
+  position: relative;
+
+  &:checked:after {
+    background-color: config_variable.$CONFIG_CUSTOM_SITE_COLOR_LINK;
+    content: '';
+
+    position: absolute;
+    top: $interact_checkbox_checked_padding;
+    bottom: $interact_checkbox_checked_padding;
+    left: $interact_checkbox_checked_padding;
+    right: $interact_checkbox_checked_padding;
+  }
+}
+
+input[type="checkbox"] {
+  border-radius: $interact_checkbox_border_radius;
+
+  &.switch {
+    border-radius: $interact_checkbox_size * 0.5;
+    width: $interact_checkbox_size * 1.75;
+  }
+
+  &:checked:after {
+    border-radius: $interact_checkbox_border_radius - variable_color.$border_context_thickness - $interact_checkbox_checked_padding;
+  }
+}
+
+$interact_radio_border_radius: $interact_checkbox_size * 0.5;
+
+input[type="radio"] {
+  border-radius: $interact_radio_border_radius;
+
+  &:checked:after {
+    border-radius: $interact_radio_border_radius - variable_color.$border_context_thickness - $interact_checkbox_checked_padding;
+  }
+}
+
+.interact_arrow {
+  position: relative;
+  display: inline-block;
+  margin: variable_interact.$interact_margin;
+  border-radius: variable.$unit_relative_1;
+  
+  & > select {
+    appearance: none;
+    margin: 0px;
+
+    cursor: pointer;
+
+    padding-right: calc(variable_interact.$interact_padding_x + variable_interact.$interact_margin + 0.75em);
+  }
+
+  &::after {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    content: font_icon__interface.$font-icon--interface-arrow_down;
+    font-family: 'font_icon_interface';
+    display: inline-block;
+    font-size: 0.75em;
+    padding-right: variable_interact.$interact_padding_x;
+    color: function_color.text-color(config_variable.$CONFIG_CUSTOM_SITE_COLOR_LINK);
+    pointer-events: none;
+    vertical-align: middle;
+    line-height: 2.25em;
+    // font-size: 1em;
+    // line-height: 1.75em;
+  }
+}
+
+// Slider
+
+$interact_slider_track_thickness: variable_bar.$bar_height;
+$interact_slider_thumb_thickness: variable_bar.$bar_height - variable_color.$border_context_thickness * 2;
+
+// $interact_border_thickness: variable.$unit_root_0_25;
+
+/* Style the range slider container */
+input[type="range"] {
+  appearance: none; /* Remove default styling for WebKit browsers */
+  height: $interact_slider_track_thickness; /* Slider track height */
+  background-color: config_variable.$CONFIG_CUSTOM_SITE_COLOR_BG;
+  @include variable_color.color_border_context();
+  padding: 0px;
+  border-radius: $interact_slider_track_thickness * 0.5;
+  min-width: variable_bar.$bar_min_width;
+
+  cursor: grab;
+
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+@mixin interact_range_track() {
+  width: 100%;
+  height: $interact_slider_track_thickness - $interact_border_thickness * 2;
+  border-radius: $interact_slider_track_thickness * 0.5;
+}
+
+/* Style the track for WebKit browsers */
+input[type="range"]::-webkit-slider-runnable-track {
+  @include interact_range_track();
+}
+
+/* Style the track for Firefox */
+input[type="range"]::-moz-range-track {
+  @include interact_range_track();
+}
+
+/* Style the track for IE/Edge */
+input[type="range"]::-ms-track {
+  @include interact_range_track();
+}
+
+@mixin interact_range_thumb() {
+  appearance: none;
+  width: $interact_slider_thumb_thickness; /* Thumb width */
+  height: $interact_slider_thumb_thickness; /* Thumb height */
+  background-color: config_variable.$CONFIG_CUSTOM_SITE_COLOR_LINK;
+  border-radius: 50%;
+  // margin-top: variable_color.$border_context_thickness * 0.5;
+}
+
+/* Style the slider thumb */
+input[type="range"]::-webkit-slider-thumb {
+  @include interact_range_thumb();
+}
+
+input[type="range"]::-moz-range-thumb {
+  @include interact_range_thumb();
+}
+
+input[type="range"]::-ms-thumb {
+  @include interact_range_thumb();
+}
+
+// input calendar
+
+// input[type=date] {
+//   position: relative;
+// }
+
+// input[type=date]::-webkit-calendar-picker-indicator {
+// }

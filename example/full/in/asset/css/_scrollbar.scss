@@ -1,0 +1,258 @@
+@use 'sass:meta';
+@use 'sass:string';
+@use '_config/variable' as config_variable;
+@use 'variable';
+@use 'variable_interact';
+
+$scrollbar_width: variable.$unit_root_2 * 1.25;
+
+$scrollbar_padding_thumb: $scrollbar_width * 0.15;
+$scrollbar_padding_thumb_hover: $scrollbar_padding_thumb; //* 0.75;
+
+$scrollbar_border_radius: $scrollbar_width * 0.5;
+
+$scrollbar_color_bg: config_variable.$CONFIG_CUSTOM_SITE_COLOR_BG;
+$scrollbar_color_fg: config_variable.$CONFIG_CUSTOM_SITE_COLOR_LINK;
+
+$scrollbar_color_interactive_background_default: rgba($scrollbar_color_bg, 0.25);
+$scrollbar_color_interactive_background_hover: rgba($scrollbar_color_fg, 0.25 * variable_interact.$interact_opacity_hover);
+$scrollbar_color_interactive_background_active: rgba($scrollbar_color_fg, 0.25 * variable_interact.$interact_opacity_active);
+
+$scrollbar_color_interactive_default: $scrollbar_color_fg;
+$scrollbar_color_interactive_hover: rgba($scrollbar_color_fg, variable_interact.$interact_opacity_hover);
+$scrollbar_color_interactive_active: rgba($scrollbar_color_fg, variable_interact.$interact_opacity_active);
+
+
+/* WebKit Browsers */
+::-webkit-scrollbar {
+  display: block;
+  width: $scrollbar_width;
+  height: $scrollbar_width;
+  background-color: $scrollbar_color_interactive_background_default;
+  border-radius: inherit;
+}
+
+::-webkit-scrollbar:not(:hover) {
+  border: 1px solid $scrollbar_color_interactive_background_active;
+}
+
+::-webkit-scrollbar:hover {
+  background-color: $scrollbar_color_interactive_background_hover;
+}
+
+// ::-webkit-scrollbar-track {
+//   background: $scrollbar_color_interactive_background_default;
+// }
+
+::-webkit-scrollbar-track-piece {
+  // margin: 1em;
+  border-radius: $scrollbar_border_radius;
+  background-clip: padding-box;
+  border: $scrollbar_padding_thumb solid transparent;
+}
+
+::-webkit-scrollbar-track-piece:hover {
+  background-color: $scrollbar_color_interactive_background_hover;
+}
+
+::-webkit-scrollbar-track-piece:active {
+  background-color: $scrollbar_color_interactive_background_active;
+}
+
+$scrollbar_thumb_min_percent: 30%;
+$scrollbar_thumb_min_unit: variable.$unit_root_2 * 4;
+
+::-webkit-scrollbar-thumb {
+  background-color: $scrollbar_color_interactive_default;
+  border-radius: $scrollbar_width * 0.5;
+  // border: $scrollbar_padding_thumb solid $scrollbar_color_interactive_background_default;
+  min-width: $scrollbar_thumb_min_percent;
+  min-height: $scrollbar_thumb_min_percent;
+  // min-width: variable.$unit_root_2 * 4;
+  // min-height: variable.$unit_root_2 * 4;
+  min-width: min($scrollbar_thumb_min_percent, $scrollbar_thumb_min_unit);
+  min-height: min($scrollbar_thumb_min_percent, $scrollbar_thumb_min_unit);
+  border: $scrollbar_padding_thumb solid transparent;
+  background-clip: padding-box;
+  transition: all 0.5s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: $scrollbar_color_interactive_hover;
+  border: $scrollbar_padding_thumb_hover solid transparent;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: $scrollbar_color_interactive_active;
+}
+
+::-webkit-scrollbar-corner {
+  width: $scrollbar_width;
+  height: $scrollbar_width;
+  background-color: rgba(0,0,0,0);
+}
+
+// Helper function for string replacement
+@function str-replace($string, $search, $replace) {
+  $string: meta.inspect($string); // Ensure input is treated as a string
+  @if string.index($string, $search) {
+    @return string.slice($string, 1, string.index($string, $search) - 1) + $replace +
+           string.slice($string, string.index($string, $search) + string.length($search));
+  }
+  @return $string;
+}
+
+// ::-webkit-resizer {
+//   background-color: $scrollbar_color_interactive_background_default; /* Set the base background color */
+//   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cline x1='1' y1='8' x2='8' y2='1' stroke='#{str-replace($scrollbar_color_interactive_hover, '#', '%23')}' stroke-width='0.1rem' stroke-linecap='round'/%3E%3Cline x1='5' y1='8' x2='8' y2='5' stroke='#{str-replace($scrollbar_color_interactive_hover, '#', '%23')}' stroke-width='0.1rem' stroke-linecap='round'/%3E%3C/svg%3E");
+//   background-repeat: no-repeat;
+//   background-position: center;
+//   background-size: 100%; /* Adjust size as needed */
+
+//   width: $scrollbar_width;
+//   height: $scrollbar_width;
+//   border-radius: inherit;
+// }
+
+// ::-webkit-resizer:hover {
+//   background-color: $scrollbar_color_interactive_background_hover;
+// }
+
+/* General Scrollbar Button Styles */
+::-webkit-scrollbar-button:single-button {
+  // background-color: $scrollbar_color_interactive_background_default;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: $scrollbar_width;
+  height: $scrollbar_width;
+  border-radius: inherit;
+}
+
+::-webkit-scrollbar-button:single-button:hover {
+  background-color: $scrollbar_color_interactive_background_hover;
+}
+
+::-webkit-scrollbar-button:single-button:active {
+  background-color: $scrollbar_color_interactive_background_active;
+}
+
+$scrollbar_arrow_shift_x: 0;
+$scrollbar_arrow_shift_y: -6.25;
+
+$scrollbar_arrow_top_x: 50 + $scrollbar_arrow_shift_x; /* Top point of the triangle */
+$scrollbar_arrow_top_y: 25 + $scrollbar_arrow_shift_y;
+
+$scrollbar_arrow_bottom_left_x: 12.5 + $scrollbar_arrow_shift_x; /* Bottom-left point of the triangle */
+$scrollbar_arrow_bottom_left_y: 75 + $scrollbar_arrow_shift_y;
+
+$scrollbar_arrow_bottom_right_x: 87.5 + $scrollbar_arrow_shift_x; /* Bottom-right point of the triangle */
+$scrollbar_arrow_bottom_right_y: 75 + $scrollbar_arrow_shift_y;
+
+// Mixin to generate SVG with directional points and state-specific colors
+@mixin generate-svg($direction, $state: default) {
+  $points: "";
+  $fill-color: $scrollbar_color_interactive_default;
+
+  // Set points based on direction
+  @if $direction == up {
+    $points: "#{$scrollbar_arrow_top_x},#{$scrollbar_arrow_top_y} #{$scrollbar_arrow_bottom_left_x},#{$scrollbar_arrow_bottom_left_y} #{$scrollbar_arrow_bottom_right_x},#{$scrollbar_arrow_bottom_right_y}";
+  } @else if $direction == down {
+    $points: "#{$scrollbar_arrow_top_x},#{100 - $scrollbar_arrow_top_y} #{$scrollbar_arrow_bottom_left_x},#{100 - $scrollbar_arrow_bottom_left_y} #{$scrollbar_arrow_bottom_right_x},#{100 - $scrollbar_arrow_bottom_right_y}";
+  } @else if $direction == left {
+    $points: "#{$scrollbar_arrow_top_y},#{$scrollbar_arrow_top_x} #{$scrollbar_arrow_bottom_left_y},#{$scrollbar_arrow_bottom_right_x} #{$scrollbar_arrow_bottom_right_y},#{$scrollbar_arrow_bottom_left_x}";
+  } @else if $direction == right {
+    $points: "#{100 - $scrollbar_arrow_top_y},#{$scrollbar_arrow_top_x} #{100 - $scrollbar_arrow_bottom_left_y},#{$scrollbar_arrow_bottom_right_x} #{100 - $scrollbar_arrow_bottom_right_y},#{$scrollbar_arrow_bottom_left_x}";
+  } @else {
+    @error "Invalid direction: #{$direction}. Valid values are 'up', 'down', 'left', 'right'.";
+  }
+
+  // Set color based on state
+  @if $state == default {
+    $fill-color: $scrollbar_color_interactive_default;
+  } @else if $state == hover {
+    $fill-color: $scrollbar_color_interactive_hover;
+  } @else if $state == active {
+    $fill-color: $scrollbar_color_interactive_active;
+  } @else {
+    @error "Invalid state: #{$state}. Valid values are 'default', 'hover', 'active'.";
+  }
+
+  // URL-encode the hex color
+  $encoded-fill-color: str-replace($fill-color, "#", "%23");
+
+  // Apply background image with calculated points and fill color
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='#{$encoded-fill-color}'><polygon points='#{$points}'/></svg>");
+}
+
+// Usage Examples
+// Vertical Scrollbar Buttons
+// Up Button
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+  @include generate-svg(up, default);
+
+  // border-top-left-radius: $scrollbar_border_radius;
+  // border-top-right-radius: $scrollbar_border_radius;
+}
+
+::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+  @include generate-svg(up, hover);
+}
+
+::-webkit-scrollbar-button:single-button:vertical:decrement:active {
+  @include generate-svg(up, active);
+}
+
+// Down Button
+::-webkit-scrollbar-button:single-button:vertical:increment {
+  @include generate-svg(down, default);
+
+  // border-bottom-left-radius: $scrollbar_border_radius;
+  // border-bottom-right-radius: $scrollbar_border_radius;
+}
+
+::-webkit-scrollbar-button:single-button:vertical:increment:hover {
+  @include generate-svg(down, hover);
+}
+
+::-webkit-scrollbar-button:single-button:vertical:increment:active {
+  @include generate-svg(down, active);
+}
+
+// Horizontal Scrollbar Buttons
+// Left Button
+::-webkit-scrollbar-button:single-button:horizontal:decrement {
+  @include generate-svg(left, default);
+
+  // border-top-left-radius: $scrollbar_border_radius;
+  // border-bottom-left-radius: $scrollbar_border_radius;
+}
+
+::-webkit-scrollbar-button:single-button:horizontal:decrement:hover {
+  @include generate-svg(left, hover);
+}
+
+::-webkit-scrollbar-button:single-button:horizontal:decrement:active {
+  @include generate-svg(left, active);
+}
+
+// Right Button
+::-webkit-scrollbar-button:single-button:horizontal:increment {
+  @include generate-svg(right, default);
+
+  // border-top-right-radius: $scrollbar_border_radius;
+  // border-bottom-right-radius: $scrollbar_border_radius;
+}
+
+::-webkit-scrollbar-button:single-button:horizontal:increment:hover {
+  @include generate-svg(right, hover);
+}
+
+::-webkit-scrollbar-button:single-button:horizontal:increment:active {
+  @include generate-svg(right, active);
+}
+
+/* Firefox */
+// body {
+//   scrollbar-width: thin;
+//   scrollbar-color: $scrollbar-thumb-color $scrollbar-track-color;
+// }

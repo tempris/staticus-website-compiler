@@ -1,0 +1,178 @@
+<!-- @@include('_html/frame/top.html') -->
+
+@@include('_html/frame/top.html', {
+  "title": "Browser Data - Example",
+  "stylesheets": [ "/asset/module/prism/prism.min.css" ]
+})
+
+<section>
+	<h1>Browser Data</h1>
+
+  <p class="note note--dark">All information is processed locally, and no data is collected from this page. This page is intended solely for debugging and testing purposes. It also demonstrates the type of information that can be easily gathered by other websites.</p>
+
+  <div class="overflow overflow--min--phone-large">
+    <table>
+      <thead>
+        <tr>
+          <th>Property</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody id="infoTable"></tbody>
+    </table>
+  </div>
+</section>
+
+<style>
+  table th, table td {
+    text-align: left;
+  }
+  table td:first-child {
+    white-space: normal;
+    word-break: normal;
+    overflow-wrap: normal;
+  }
+  .value {
+    color: white;
+  }
+  .value__boolean_true {
+    background-color: #207d20;
+  }
+  .value__boolean_false {
+    background-color: #ae2727;
+  }
+  .value__na {
+    /* opacity: 0.5; */
+    background-color: #282828;
+  }
+  table code {
+    display: block;
+  }
+</style>
+
+<script>
+async function getBrowserInfo() {
+  const canvas = document.createElement('canvas');
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  const debugInfo = gl && gl.getExtension('WEBGL_debug_renderer_info');
+  const battery = navigator.getBattery ? await navigator.getBattery() : null;
+  const memory = performance.memory || { jsHeapSizeLimit: 'N/A', totalJSHeapSize: 'N/A', usedJSHeapSize: 'N/A' };
+  const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection || {};
+  const mediaDevices = await navigator.mediaDevices.enumerateDevices();
+  const audioDevices = mediaDevices.filter(device => device.kind === 'audioinput').length;
+  const videoDevices = mediaDevices.filter(device => device.kind === 'videoinput').length;
+
+  const info = {
+    'User Agent': navigator.userAgent,
+    'App Name': navigator.appName,
+    'App Code Name': navigator.appCodeName,
+    'App Version': navigator.appVersion,
+    'Platform': navigator.platform,
+    'Language': navigator.language,
+    'Languages': navigator.languages ? navigator.languages.join(', ') : 'N/A',
+    'Cookies Enabled': navigator.cookieEnabled,
+    'Online Status': navigator.onLine,
+    'Java Enabled': navigator.javaEnabled(),
+    'Product': navigator.product,
+    'Product Sub': navigator.productSub,
+    'Vendor': navigator.vendor,
+    'Vendor Sub': navigator.vendorSub,
+    'Screen Width': screen.width,
+    'Screen Height': screen.height,
+    'Available Screen Width': screen.availWidth,
+    'Available Screen Height': screen.availHeight,
+    'Color Depth': screen.colorDepth,
+    'Pixel Depth': screen.pixelDepth,
+    'Window Inner Width': window.innerWidth,
+    'Window Inner Height': window.innerHeight,
+    'Window Outer Width': window.outerWidth,
+    'Window Outer Height': window.outerHeight,
+    'History Length': history.length,
+    'Location Href': location.href,
+    'Location Hostname': location.hostname,
+    'Location Pathname': location.pathname,
+    'Location Protocol': location.protocol,
+    'Location Port': location.port,
+    'Referrer': document.referrer,
+    'Timezone Offset (minutes)': new Date().getTimezoneOffset(),
+    'Local Storage Support': typeof localStorage !== 'undefined',
+    'Session Storage Support': typeof sessionStorage !== 'undefined',
+    'Service Worker Support': 'serviceWorker' in navigator,
+    'Max Touch Points': navigator.maxTouchPoints || 'N/A',
+    'Hardware Concurrency': navigator.hardwareConcurrency || 'N/A',
+    'Device Memory': navigator.deviceMemory ? `${navigator.deviceMemory} GB` : 'N/A',
+    'Vendor WebGL': gl && debugInfo ? gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL) : 'N/A',
+    'Renderer WebGL': gl && debugInfo ? gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL) : 'N/A',
+    'Network Connection Type': connection.effectiveType || 'N/A',
+    'Network Downlink Max': connection.downlinkMax ? `${connection.downlinkMax} Mbps` : 'N/A',
+    'Network Downlink': connection.downlink ? `${connection.downlink} Mbps` : 'N/A',
+    'Network Round Trip Time': connection.rtt ? `${connection.rtt} ms` : 'N/A',
+    'Network Save Data': connection.saveData || 'N/A',
+    'Battery Charging': battery ? battery.charging : 'N/A',
+    'Battery Level': battery ? `${battery.level * 100}%` : 'N/A',
+    'Do Not Track': navigator.doNotTrack,
+    'Vendor Name': gl ? gl.getParameter(gl.VENDOR) : 'N/A',
+    'Renderer Name': gl ? gl.getParameter(gl.RENDERER) : 'N/A',
+    'WebGL Version': gl ? gl.getParameter(gl.VERSION) : 'N/A',
+    'Shading Language Version': gl ? gl.getParameter(gl.SHADING_LANGUAGE_VERSION) : 'N/A',
+    'Supported Extensions': gl ? gl.getSupportedExtensions().join(', ') : 'N/A',
+    'JavaScript Heap Size Limit': memory.jsHeapSizeLimit,
+    'Total JavaScript Heap Size': memory.totalJSHeapSize,
+    'Used JavaScript Heap Size': memory.usedJSHeapSize,
+    'Audio Input Devices': audioDevices,
+    'Video Input Devices': videoDevices,
+    'Touch Support': 'ontouchstart' in window,
+    'Pointer Support': 'PointerEvent' in window,
+    'Bluetooth Support': 'bluetooth' in navigator,
+    'Vibration Support': 'vibrate' in navigator,
+    'Geolocation Support': 'geolocation' in navigator,
+    'WebAssembly Support': 'WebAssembly' in window,
+    'Gamepad Support': 'getGamepads' in navigator,
+    'IndexedDB Support': 'indexedDB' in window,
+    'WebRTC Support': 'RTCPeerConnection' in window,
+    'WebSocket Support': 'WebSocket' in window,
+    'Notification Support': 'Notification' in window,
+    'Permissions API Support': 'permissions' in navigator,
+    'WebGL 2 Support': canvas.getContext('webgl2') ? true : false,
+  };
+
+  return info;
+}
+
+async function displayBrowserInfo() {
+  const infoTable = document.getElementById('infoTable');
+  const browserInfo = await getBrowserInfo();
+  
+  for (const [key, value] of Object.entries(browserInfo)) {
+    const row = document.createElement('tr');
+    const cellKey = document.createElement('td');
+    const cellValue = document.createElement('td');
+    
+    cellKey.textContent = key;
+
+    const valueElement = document.createElement('code');
+    valueElement.className = `value`;
+    if (value === null || value === undefined || value === '') {
+      valueElement.className += ` value__na`;
+      valueElement.textContent = 'N/A';
+    } else {
+      valueElement.textContent = value;
+    }
+    if (typeof value === 'boolean') {
+      valueElement.className += ` value__boolean_${!!value}`;
+    }
+    cellValue.appendChild(valueElement);
+
+    row.appendChild(cellKey);
+    row.appendChild(cellValue);
+    infoTable.appendChild(row);
+  }
+}
+
+displayBrowserInfo();
+
+</script>
+
+@@include('_html/frame/bottom.html', {
+  "scripts": [ "asset/module/prism/prism.min.js" ]
+})

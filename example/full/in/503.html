@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>Error 503 Service Unavailable - CONFIG_CUSTOM_BRAND_NAME</title>
+  </head>
+   
+  <body>
+    @@include('asset/include/content/icon/warning.svg')
+
+    <h1>Error 503 Service Unavailable</h1>
+    
+    <h2>CONFIG_CUSTOM_BRAND_NAME<br>Temporarily down for maintenance</h2>
+    
+    <p>This site is down for maintenance.<br>Sorry for the inconvenience.</p>
+  </body>
+
+  <style>
+    body {
+      margin: 2rem 1rem;
+
+      background: CONFIG_CUSTOM_SITE_COLOR_BG;
+      color: CONFIG_CUSTOM_SITE_COLOR_FG;
+
+      text-align: center;
+      overflow-wrap: break-word; /* Allow long words to break and wrap onto the next line */
+      word-break: break-word;    /* Break words at the end of the line if needed */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+
+      line-height: 1.5;
+    }
+    
+    body > * {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    body svg {
+      height: 8em;
+      width: 8em;
+      overflow: visible;
+      shape-rendering: geometricPrecision;
+      fill: currentColor;
+    }
+  </style>
+</html>

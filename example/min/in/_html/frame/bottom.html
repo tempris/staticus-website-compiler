@@ -1,0 +1,21 @@
+    </div> <!-- .frame--content -->
+  </main>
+
+  <footer>
+    <div class="frame--content">
+      <p>
+        Website © <span id="copyrightyears__brand">2024-2025</span> <a href="/" title="CONFIG_CUSTOM_BRAND_NAME: Home">CONFIG_CUSTOM_BRAND_NAME</a> <span>, All Rights Reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/asset/js/main.min.js?v=1.0.1"></script>
+
+  @@if (context.scripts) {
+    @@for (var i = 0; i < context.scripts.length; i++) {
+      <script src="`+context.scripts[i]+`"></script>
+    }
+  }
+
+</body>
+</html>

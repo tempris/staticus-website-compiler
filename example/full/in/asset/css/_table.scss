@@ -1,0 +1,81 @@
+@use '_config/variable' as config_variable;
+@use 'variable';
+
+table {
+  border-spacing: 0;
+  border-collapse: separate;
+
+  // Table Background Color:
+  caption {
+    background-color: rgba(config_variable.$CONFIG_CUSTOM_SITE_COLOR_TEXT, 0.1);
+  }
+
+  thead, tfoot {
+    tr {
+      background-color: rgba(config_variable.$CONFIG_CUSTOM_SITE_COLOR_TEXT, 0.2);
+    }
+  }
+
+  tbody {
+    tr {
+      &:nth-child(even) {
+        background-color: rgba(config_variable.$CONFIG_CUSTOM_SITE_COLOR_TEXT, 0.1);
+      }
+
+      &:nth-child(odd) {
+        background-color: rgba(config_variable.$CONFIG_CUSTOM_SITE_COLOR_TEXT, 0.05);
+      }
+    }
+  }
+
+  thead, tbody, tfoot {
+    tr {
+      &:hover {
+        background-color: rgba(config_variable.$CONFIG_CUSTOM_SITE_COLOR_TEXT, 0.25);
+      }
+    }
+  }
+
+  // Table Border Radius:
+  & > *{
+    &:first-child {
+      border-top-left-radius: variable.$unit_root_1;
+      border-top-right-radius: variable.$unit_root_1;
+
+      tr:first-child {
+        th, td {
+          &:first-child {
+            border-top-left-radius: variable.$unit_root_1;
+          }
+        }
+        th, td {
+          &:last-child {
+            border-top-right-radius: variable.$unit_root_1;
+          }
+        }
+      }
+    }
+
+    &:last-child {
+      border-bottom-left-radius: variable.$unit_root_1;
+      border-bottom-right-radius: variable.$unit_root_1;
+
+      tr:last-child {
+        th, td {
+          &:first-child {
+            border-bottom-left-radius: variable.$unit_root_1;
+          }
+        }
+        th, td {
+          &:last-child {
+            border-bottom-right-radius: variable.$unit_root_1;
+          }
+        }
+      }
+    }
+  }
+
+  caption, th, td {
+    border: 1px solid rgba(config_variable.$CONFIG_CUSTOM_SITE_COLOR_TEXT, 0.1);
+  }
+}

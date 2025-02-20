@@ -1,0 +1,70 @@
+<%
+var pathParts = fontPath.split('/'); // Split the fontPath by '/'
+var subDir = pathParts[pathParts.length - 2]; // Get the second last part, which is 'subdir'
+function isHexColor(color) { // Function to check if a string is a valid hex color code
+    return /^([0-9A-F]{6})$/i.test(color);
+}
+function getAutoGenColor(hexColor) { // Function to check brightness of hex color and return appropriate text color
+    hexColor = hexColor.replace('#', '');
+    var r = parseInt(hexColor.substring(0, 2), 16);
+    var g = parseInt(hexColor.substring(2, 4), 16);
+    var b = parseInt(hexColor.substring(4, 6), 16);
+    var brightness = (r * 299 + g * 587 + b * 114) / 1000;
+    return brightness > 128 ? '#000000' : '#ffffff';
+    // return brightness > 167 ? '#000000' : '#ffffff';
+}
+
+%>@font-face {
+    font-family: '<%= fontName %>';
+    src: url('<%= fontPath %><%= fontName %>.eot'); /* IE9 Compat Modes */
+    src: url('<%= fontPath %><%= fontName %>.eot?#iefix') format('embedded-opentype'),
+         local('☺'), /* css hack to divert IE6-8 from downloading fonts it can't use */
+         url('<%= fontPath %><%= fontName %>.woff2') format('woff2'), /* Super Modern Browsers */
+         url('<%= fontPath %><%= fontName %>.woff') format('woff'), /* Pretty Modern Browsers */
+         url('<%= fontPath %><%= fontName %>.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('<%= fontPath %><%= fontName %>.svg#<%= fontName %>') format('svg'); /* Legacy iOS */
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="font-icon--<%= subDir %>-"], [class*=" font-icon--<%= subDir %>-"] {
+    font-family: '<%= fontName %>';
+}
+<% console.log(glyphs); %><% glyphs.forEach(function(glyph) { 
+    var fileName = glyph.fileName;
+    var fileColor = null;
+    var fileColorAuto = null;
+    var hexColorMatch = fileName.match(/-(\w{6})$/);
+    if (hexColorMatch && isHexColor(hexColorMatch[1])) {
+        fileColor = `#${hexColorMatch[1]}`;
+        fileName = fileName.replace(/-(\w{6})$/, '');
+        fileColorAuto = getAutoGenColor(fileColor);
+    }%>
+.font-icon--<%= subDir %>-<%= fileName %>:before {
+    content: "\<%= glyph.codePoint %>";
+}
+<% if (fileColor) { %>
+.font-icon--color--<%= subDir %>-<%= fileName %> {
+    color: <%= fileColor %> !important;
+}
+.font-icon--color--<%= subDir %>-<%= fileName %>--alt {
+    color: <%= fileColorAuto %> !important;
+}
+.font-icon--color--<%= subDir %>-<%= fileName %>--background {
+    color: <%= fileColorAuto %> !important;
+    background-color: <%= fileColor %> !important;
+}
+.font-icon--color--<%= subDir %>-<%= fileName %>--background--alt {
+    color: <%= fileColor %> !important;
+    background-color: <%= fileColorAuto %> !important;
+}
+.font-icon--color--<%= subDir %>-<%= fileName %>--background--accent {
+    color: <%= fileColorAuto %> !important;
+    background-color: <%= fileColor %>7f !important;
+}
+.font-icon--color--<%= subDir %>-<%= fileName %>--background--accent--alt {
+    color: <%= fileColor %> !important;
+    background-color: <%= fileColorAuto %>7f !important;
+}
+<% } %>
+<% }); %>

@@ -1,0 +1,9 @@
+@use 'variable';
+
+$frame_unit: variable.$unit_root_1;
+$frame_content_margin: variable.$unit_relative_2;
+
+@mixin style_frame_content_margin($scale: 1) {
+  margin-top: variable.$unit_relative_2 * $scale;
+  margin-bottom: variable.$unit_relative_2 * $scale;
+}

@@ -1,0 +1,1244 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta name="format-detection" content="telephone=no"><meta name="format-detection" content="date=no"><meta name="format-detection" content="address=no"><meta name="format-detection" content="email=no"><meta name="HandheldFriendly" content="true"><meta name="theme-color" content="#555555"><meta property="og:site_name" content="Inline Block List - Example - Staticus Website Compiler Full Example"><meta property="og:title" content="Inline Block List - Example - Staticus Website Compiler Full Example"><title>Inline Block List - Example - Staticus Website Compiler Full Example</title><meta property="og:image" content="/asset/image/favicon/pagethumb.png"><meta property="og:description" content="A full demonstration of Staticus Website Compiler."><meta property="og:url" content="https://www.examplewebsite.com/example/inline_block_list.html"><meta property="og:type" content="website"><link rel="&#x201D;image_src&#x201D;" href="/asset/image/favicon/pagethumb.png"><link rel="manifest" href="/manifest.webmanifest"><link rel="stylesheet" href="/asset/css/style.min.css?v=1.0.1"><link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" sizes="57x57" href="/asset/image/favicon/apple-touch-icon-57x57.png"><link rel="apple-touch-icon" sizes="114x114" href="/asset/image/favicon/apple-touch-icon-114x114.png"><link rel="apple-touch-icon" sizes="72x72" href="/asset/image/favicon/apple-touch-icon-72x72.png"><link rel="apple-touch-icon" sizes="144x144" href="/asset/image/favicon/apple-touch-icon-144x144.png"><link rel="apple-touch-icon" sizes="60x60" href="/asset/image/favicon/apple-touch-icon-60x60.png"><link rel="apple-touch-icon" sizes="120x120" href="/asset/image/favicon/apple-touch-icon-120x120.png"><link rel="apple-touch-icon" sizes="76x76" href="/asset/image/favicon/apple-touch-icon-76x76.png"><link rel="apple-touch-icon" sizes="152x152" href="/asset/image/favicon/apple-touch-icon-152x152.png"><meta name="msapplication-TileColor" content="#555555"><meta name="msapplication-TileImage" content="/mstile-144x144.png"><meta name="msapplication-config" content="browserconfig.xml"><meta name="Description" content="A full demonstration of Staticus Website Compiler."><link rel="stylesheet" href="/asset/css/font_icon/font_icon_interface.min.css"><link rel="stylesheet" href="/asset/module/prism/prism.min.css"></head><body ontouchstart><header><div class="frame--content"><a class="skip_to_main button ignore--print" href="#main" title="Skip to main">Skip to main</a><nav aria-label="primary" class="clearfix"><div id="nav_header__top" class="clearfix"><div id="nav_header__top__left"><a id="nav_header__brand" class="svg__size_to_fit" href="/index.html" title="Staticus Website Compiler Full Example: Home">Staticus Website Compiler Full Example</a></div></div><div id="nav_header__row__button" class="ignore--print"><a class="button" href="/about.html" title="About">About</a><a class="button" href="/contact.html" title="Contact">Contact</a><a class="button package-development" href="/example.html" title="Development-Only Examples" style="background-color:#40c640;color:#000">Example</a></div></nav></div></header><main id="main"><div class="frame--content"><section id="breadcrumb"><nav aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a class="button" href="/" title="Home"><span class="font-icon--interface-home"></span> Home</a></li><li class="breadcrumb-item"><a class="button" href="/example.html">Example</a></li><li class="breadcrumb-item active"><span>Inline Block List</span></li></ol></nav></section><section id="section-toc"><span id="toc-title">Table of Contents</span><div id="toc"><details class="nav sidenav"><summary><a class="toc__link" href="#inline-block-list">Inline Block List</a></summary><details class="nav"><summary><a class="toc__link" href="#inline-block-list-normal-lists">Normal Lists</a></summary><details class="nav"><summary><a class="toc__link" href="#inline-block-list-normal-lists-lists">Lists</a></summary><a class="toc__link" href="#inline-block-list-normal-lists-lists-ordered-lists">Ordered Lists</a> <a class="toc__link" href="#inline-block-list-normal-lists-lists-unordered-lists">Unordered Lists</a></details><details class="nav"><summary><a class="toc__link" href="#inline-block-list-normal-lists-nested-lists">Nested Lists</a></summary><a class="toc__link" href="#inline-block-list-normal-lists-nested-lists-ordered-list">Ordered List</a> <a class="toc__link" href="#inline-block-list-normal-lists-nested-lists-unordered-list">Unordered List</a></details><details class="nav"><summary><a class="toc__link" href="#inline-block-list-normal-lists-column-lists">Column Lists</a></summary><a class="toc__link" href="#inline-block-list-normal-lists-column-lists-column-list">Column List</a> <a class="toc__link" href="#inline-block-list-normal-lists-column-lists-nested-column-list">Nested Column List</a></details></details><details class="nav"><summary><a class="toc__link" href="#inline-block-list-inline-block-lists">Inline Block Lists</a></summary><details class="nav"><summary><a class="toc__link" href="#inline-block-list-inline-block-lists-lists-1">Lists</a></summary><a class="toc__link" href="#inline-block-list-inline-block-lists-lists-1-ordered-lists-1">Ordered Lists</a> <a class="toc__link" href="#inline-block-list-inline-block-lists-lists-1-unordered-lists-1">Unordered Lists</a></details><details class="nav"><summary><a class="toc__link" href="#inline-block-list-inline-block-lists-nested-lists-1">Nested Lists</a></summary><a class="toc__link" href="#inline-block-list-inline-block-lists-nested-lists-1-ordered-list-1">Ordered List</a> <a class="toc__link" href="#inline-block-list-inline-block-lists-nested-lists-1-unordered-list-1">Unordered List</a></details><details class="nav"><summary><a class="toc__link" href="#inline-block-list-inline-block-lists-column-lists-1">Column Lists</a></summary><a class="toc__link" href="#inline-block-list-inline-block-lists-column-lists-1-column-list-1">Column List</a> <a class="toc__link" href="#inline-block-list-inline-block-lists-column-lists-1-nested-column-list-1">Nested Column List</a></details></details><details class="nav"><summary><a class="toc__link" href="#inline-block-list-the-code">The Code</a></summary><a class="toc__link" href="#inline-block-list-the-code-html">HTML</a> <a class="toc__link" href="#inline-block-list-the-code-css">CSS</a> <a class="toc__link" href="#inline-block-list-the-code-sass-scss">SASS (SCSS)</a></details></details></div></section><section><h1 id="inline-block-list"><span class="counter"></span>Inline Block List<span> <a href="#inline-block-list" name="inline-block-list" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h1><div class="row"><div class="col-default-12 col-tablet-6"><h2 id="inline-block-list-normal-lists"><span class="counter"></span>Normal Lists<span> <a href="#inline-block-list-normal-lists" name="inline-block-list-normal-lists" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h2><h3 id="inline-block-list-normal-lists-lists"><span class="counter"></span>Lists<span> <a href="#inline-block-list-normal-lists-lists" name="inline-block-list-normal-lists-lists" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h3><div><h4 id="inline-block-list-normal-lists-lists-ordered-lists"><span class="counter"></span>Ordered Lists<span> <a href="#inline-block-list-normal-lists-lists-ordered-lists" name="inline-block-list-normal-lists-lists-ordered-lists" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h4><h5 id="inline-block-list-normal-lists-lists-ordered-lists-numerical"><span class="counter"></span>Numerical<span> <a href="#inline-block-list-normal-lists-lists-ordered-lists-numerical" name="inline-block-list-normal-lists-lists-ordered-lists-numerical" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h5><ol type="1"><li>List Item 1</li><li>List Item 2</li><li>List Item 3</li></ol><h5 id="inline-block-list-normal-lists-lists-ordered-lists-alphabetical-uppercase"><span class="counter"></span>Alphabetical Uppercase<span> <a href="#inline-block-list-normal-lists-lists-ordered-lists-alphabetical-uppercase" name="inline-block-list-normal-lists-lists-ordered-lists-alphabetical-uppercase" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h5><ol type="A"><li>List Item 1</li><li>List Item 2</li><li>List Item 3</li></ol><h5 id="inline-block-list-normal-lists-lists-ordered-lists-alphabetical-lowercase"><span class="counter"></span>Alphabetical Lowercase<span> <a href="#inline-block-list-normal-lists-lists-ordered-lists-alphabetical-lowercase" name="inline-block-list-normal-lists-lists-ordered-lists-alphabetical-lowercase" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h5><ol type="a"><li>List Item 1</li><li>List Item 2</li><li>List Item 3</li></ol><h5 id="inline-block-list-normal-lists-lists-ordered-lists-roman-numeral-uppercase"><span class="counter"></span>Roman Numeral Uppercase<span> <a href="#inline-block-list-normal-lists-lists-ordered-lists-roman-numeral-uppercase" name="inline-block-list-normal-lists-lists-ordered-lists-roman-numeral-uppercase" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h5><ol type="I"><li>List Item 1</li><li>List Item 2</li><li>List Item 3</li></ol><h5 id="inline-block-list-normal-lists-lists-ordered-lists-roman-numeral-lowercase"><span class="counter"></span>Roman Numeral Lowercase<span> <a href="#inline-block-list-normal-lists-lists-ordered-lists-roman-numeral-lowercase" name="inline-block-list-normal-lists-lists-ordered-lists-roman-numeral-lowercase" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h5><ol type="i"><li>List Item 1</li><li>List Item 2</li><li>List Item 3</li></ol><h4 id="inline-block-list-normal-lists-lists-unordered-lists"><span class="counter"></span>Unordered Lists<span> <a href="#inline-block-list-normal-lists-lists-unordered-lists" name="inline-block-list-normal-lists-lists-unordered-lists" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h4><h5 id="inline-block-list-normal-lists-lists-unordered-lists-disc"><span class="counter"></span>disc<span> <a href="#inline-block-list-normal-lists-lists-unordered-lists-disc" name="inline-block-list-normal-lists-lists-unordered-lists-disc" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h5><ul type="disc"><li>List Item 1</li><li>List Item 2</li><li>List Item 3</li></ul><h5 id="inline-block-list-normal-lists-lists-unordered-lists-circle"><span class="counter"></span>circle<span> <a href="#inline-block-list-normal-lists-lists-unordered-lists-circle" name="inline-block-list-normal-lists-lists-unordered-lists-circle" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h5><ul type="circle"><li>List Item 1</li><li>List Item 2</li><li>List Item 3</li></ul><h5 id="inline-block-list-normal-lists-lists-unordered-lists-square"><span class="counter"></span>square<span> <a href="#inline-block-list-normal-lists-lists-unordered-lists-square" name="inline-block-list-normal-lists-lists-unordered-lists-square" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h5><ul type="square"><li>List Item 1</li><li>List Item 2</li><li>List Item 3</li></ul><h5 id="inline-block-list-normal-lists-lists-unordered-lists-none"><span class="counter"></span>none<span> <a href="#inline-block-list-normal-lists-lists-unordered-lists-none" name="inline-block-list-normal-lists-lists-unordered-lists-none" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h5><ul type="none"><li>List Item 1</li><li>List Item 2</li><li>List Item 3</li></ul></div><p><a href="#top">[Top]</a></p><hr><h3 id="inline-block-list-normal-lists-nested-lists"><span class="counter"></span>Nested Lists<span> <a href="#inline-block-list-normal-lists-nested-lists" name="inline-block-list-normal-lists-nested-lists" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h3><div><h4 id="inline-block-list-normal-lists-nested-lists-ordered-list"><span class="counter"></span>Ordered List<span> <a href="#inline-block-list-normal-lists-nested-lists-ordered-list" name="inline-block-list-normal-lists-nested-lists-ordered-list" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h4><div class="overflow"><ol><li>Lorem ipsum</li><li>dolor sit amet,<ol><li>consectetur adipisicing elit,</li><li>sed do eiusmod tempor incididunt ut<ol><li>labore et dolore magna aliqua.</li><li>Ut enim ad minim veniam,<ol><li>quis nostrud exercitation</li><li>ullamco laboris nisi ut<ol><li>aliquip ex ea commodo consequat.</li><li>Duis aute irure dolor in reprehenderit<ol><li>in voluptate velit</li><li>esse cillum dolore eu fugiat nulla pariatur.<ol><li>Excepteur sint occaecat</li><li>cupidatat non proident,<ol><li>sunt in culpa qui</li><li>officia deserunt mollit anim id est laborum.</li></ol></li><li>aliquip ex ea commodo consequat</li></ol></li><li>in voluptate velit</li></ol></li><li>Excepteur sint occaecat</li></ol></li><li>quis nostrud exercitation</li></ol></li><li>sunt in culpa qui</li></ol></li><li>officia deserunt mollit anim id est laborum.</li></ol></li><li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</li></ol></div><h4 id="inline-block-list-normal-lists-nested-lists-unordered-list"><span class="counter"></span>Unordered List<span> <a href="#inline-block-list-normal-lists-nested-lists-unordered-list" name="inline-block-list-normal-lists-nested-lists-unordered-list" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h4><div class="overflow"><ul><li>Lorem ipsum</li><li>dolor sit amet,<ul><li>consectetur adipisicing elit,</li><li>sed do eiusmod tempor incididunt ut<ul><li>labore et dolore magna aliqua.</li><li>Ut enim ad minim veniam,<ul><li>quis nostrud exercitation</li><li>ullamco laboris nisi ut<ul><li>aliquip ex ea commodo consequat.</li><li>Duis aute irure dolor in reprehenderit<ul><li>in voluptate velit</li><li>esse cillum dolore eu fugiat nulla pariatur.<ul><li>Excepteur sint occaecat</li><li>cupidatat non proident,<ul><li>sunt in culpa qui</li><li>officia deserunt mollit anim id est laborum.</li></ul></li><li>aliquip ex ea commodo consequat</li></ul></li><li>in voluptate velit</li></ul></li><li>Excepteur sint occaecat</li></ul></li><li>quis nostrud exercitation</li></ul></li><li>sunt in culpa qui</li></ul></li><li>officia deserunt mollit anim id est laborum.</li></ul></li><li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</li></ul></div></div><hr><h3 id="inline-block-list-normal-lists-column-lists"><span class="counter"></span>Column Lists<span> <a href="#inline-block-list-normal-lists-column-lists" name="inline-block-list-normal-lists-column-lists" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h3><p><code class="language-html">&lt;ul class=&quot;list--columns col-default-1 col-phone-2 col-tablet-3 col-desktop-small-4&quot;&gt;</code></p><h4 id="inline-block-list-normal-lists-column-lists-column-list"><span class="counter"></span>Column List<span> <a href="#inline-block-list-normal-lists-column-lists-column-list" name="inline-block-list-normal-lists-column-lists-column-list" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h4><div class="overflow"><ol class="list--columns col-default-1 col-phone-2 col-tablet-3 col-desktop-small-4"><li>Lorem ipsum</li><li>dolor sit amet,</li><li>consectetur adipisicing elit,</li><li>sed do eiusmod tempor incididunt ut</li><li>labore et dolore magna aliqua.</li><li>Ut enim ad minim veniam,</li><li>quis nostrud exercitation</li><li>ullamco laboris nisi ut</li><li>aliquip ex ea commodo consequat.</li><li>Duis aute irure dolor in reprehenderit</li><li>in voluptate velit</li><li>esse cillum dolore eu fugiat nulla pariatur.</li><li>Excepteur sint occaecat</li><li>cupidatat non proident,</li><li>sunt in culpa qui</li><li>officia deserunt mollit anim id est laborum.</li><li>aliquip ex ea commodo consequat</li><li>in voluptate velit</li><li>Excepteur sint occaecat</li><li>quis nostrud exercitation</li><li>sunt in culpa qui</li><li>officia deserunt mollit anim id est laborum.</li><li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</li></ol></div><h4 id="inline-block-list-normal-lists-column-lists-nested-column-list"><span class="counter"></span>Nested Column List<span> <a href="#inline-block-list-normal-lists-column-lists-nested-column-list" name="inline-block-list-normal-lists-column-lists-nested-column-list" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h4><div class="overflow"><p><code class="language-html">&lt;ul&gt;</code></p><p class="colorbox" style="background:rgba(255,0,0,.125)"><code class="language-html">&lt;ul class=&quot;list--columns col-default-1 col-phone-2&quot;&gt;&lt;/ul&gt;</code></p><p class="colorbox" style="background:rgba(255,0,255,.125)"><code class="language-html">&lt;ul class=&quot;list--columns col-default-2 col-phone-1 col-tablet-2&quot;&gt;&lt;/ul&gt;</code></p><p><code class="language-html">&lt;/ul&gt;</code></p></div><div class="overflow"><ol><li>Lorem ipsum</li><li>dolor sit amet,</li><li>consectetur adipisicing elit,</li><li>sed do eiusmod tempor incididunt ut<ol class="list--columns col-default-1 col-phone-2" style="background:rgba(255,0,0,.125)"><li>labore et dolore magna aliqua.</li><li>Ut enim ad minim veniam,</li><li>quis nostrud exercitation</li><li>ullamco laboris nisi ut<ol><li>aliquip ex ea commodo consequat.</li><li>Duis aute irure dolor in reprehenderit</li><li>in voluptate velit</li><li>esse cillum dolore eu fugiat nulla pariatur.<ol class="list--columns col-default-2 col-phone-1 col-tablet-2" style="background:rgba(0,0,255,.125)"><li>Excepteur sint occaecat</li><li>cupidatat non proident,</li><li>sunt in culpa qui</li><li>officia deserunt mollit anim id est laborum.</li><li>aliquip ex ea commodo consequat</li></ol></li><li>in voluptate velit</li><li>Excepteur sint occaecat</li></ol></li><li>quis nostrud exercitation</li><li>sunt in culpa qui</li></ol></li><li>officia deserunt mollit anim id est laborum.</li><li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</li></ol></div></div><div class="col-default-12 col-tablet-6"><h2 id="inline-block-list-inline-block-lists"><span class="counter"></span>Inline Block Lists<span> <a href="#inline-block-list-inline-block-lists" name="inline-block-list-inline-block-lists" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h2><h3 id="inline-block-list-inline-block-lists-lists-1"><span class="counter"></span>Lists<span> <a href="#inline-block-list-inline-block-lists-lists-1" name="inline-block-list-inline-block-lists-lists-1" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h3><div><h4 id="inline-block-list-inline-block-lists-lists-1-ordered-lists-1"><span class="counter"></span>Ordered Lists<span> <a href="#inline-block-list-inline-block-lists-lists-1-ordered-lists-1" name="inline-block-list-inline-block-lists-lists-1-ordered-lists-1" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h4><h5 id="inline-block-list-inline-block-lists-lists-1-ordered-lists-1-numerical-1"><span class="counter"></span>Numerical<span> <a href="#inline-block-list-inline-block-lists-lists-1-ordered-lists-1-numerical-1" name="inline-block-list-inline-block-lists-lists-1-ordered-lists-1-numerical-1" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h5><ol class="list--inline-block" type="1"><li>List Item 1</li><li>List Item 2</li><li>List Item 3</li></ol><h5 id="inline-block-list-inline-block-lists-lists-1-ordered-lists-1-alphabetical-uppercase-1"><span class="counter"></span>Alphabetical Uppercase<span> <a href="#inline-block-list-inline-block-lists-lists-1-ordered-lists-1-alphabetical-uppercase-1" name="inline-block-list-inline-block-lists-lists-1-ordered-lists-1-alphabetical-uppercase-1" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h5><ol class="list--inline-block list--upper-alpha" type="A"><li>List Item 1</li><li>List Item 2</li><li>List Item 3</li></ol><h5 id="inline-block-list-inline-block-lists-lists-1-ordered-lists-1-alphabetical-lowercase-1"><span class="counter"></span>Alphabetical Lowercase<span> <a href="#inline-block-list-inline-block-lists-lists-1-ordered-lists-1-alphabetical-lowercase-1" name="inline-block-list-inline-block-lists-lists-1-ordered-lists-1-alphabetical-lowercase-1" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h5><ol class="list--inline-block list--lower-alpha" type="a"><li>List Item 1</li><li>List Item 2</li><li>List Item 3</li></ol><h5 id="inline-block-list-inline-block-lists-lists-1-ordered-lists-1-roman-numeral-uppercase-1"><span class="counter"></span>Roman Numeral Uppercase<span> <a href="#inline-block-list-inline-block-lists-lists-1-ordered-lists-1-roman-numeral-uppercase-1" name="inline-block-list-inline-block-lists-lists-1-ordered-lists-1-roman-numeral-uppercase-1" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h5><ol class="list--inline-block list--upper-roman" type="I"><li>List Item 1</li><li>List Item 2</li><li>List Item 3</li></ol><h5 id="inline-block-list-inline-block-lists-lists-1-ordered-lists-1-roman-numeral-lowercase-1"><span class="counter"></span>Roman Numeral Lowercase<span> <a href="#inline-block-list-inline-block-lists-lists-1-ordered-lists-1-roman-numeral-lowercase-1" name="inline-block-list-inline-block-lists-lists-1-ordered-lists-1-roman-numeral-lowercase-1" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h5><ol class="list--inline-block list--lower-roman" type="i"><li>List Item 1</li><li>List Item 2</li><li>List Item 3</li></ol><h4 id="inline-block-list-inline-block-lists-lists-1-unordered-lists-1"><span class="counter"></span>Unordered Lists<span> <a href="#inline-block-list-inline-block-lists-lists-1-unordered-lists-1" name="inline-block-list-inline-block-lists-lists-1-unordered-lists-1" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h4><h5 id="inline-block-list-inline-block-lists-lists-1-unordered-lists-1-disc-1"><span class="counter"></span>disc<span> <a href="#inline-block-list-inline-block-lists-lists-1-unordered-lists-1-disc-1" name="inline-block-list-inline-block-lists-lists-1-unordered-lists-1-disc-1" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h5><ul class="list--inline-block" type="disc"><li>List Item 1</li><li>List Item 2</li><li>List Item 3</li></ul><h5 id="inline-block-list-inline-block-lists-lists-1-unordered-lists-1-circle-1"><span class="counter"></span>circle<span> <a href="#inline-block-list-inline-block-lists-lists-1-unordered-lists-1-circle-1" name="inline-block-list-inline-block-lists-lists-1-unordered-lists-1-circle-1" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h5><ul class="list--inline-block" type="circle"><li>List Item 1</li><li>List Item 2</li><li>List Item 3</li></ul><h5 id="inline-block-list-inline-block-lists-lists-1-unordered-lists-1-square-1"><span class="counter"></span>square<span> <a href="#inline-block-list-inline-block-lists-lists-1-unordered-lists-1-square-1" name="inline-block-list-inline-block-lists-lists-1-unordered-lists-1-square-1" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h5><ul class="list--inline-block" type="square"><li>List Item 1</li><li>List Item 2</li><li>List Item 3</li></ul><h5 id="inline-block-list-inline-block-lists-lists-1-unordered-lists-1-none-1"><span class="counter"></span>none<span> <a href="#inline-block-list-inline-block-lists-lists-1-unordered-lists-1-none-1" name="inline-block-list-inline-block-lists-lists-1-unordered-lists-1-none-1" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h5><ul class="list--inline-block" type="none"><li>List Item 1</li><li>List Item 2</li><li>List Item 3</li></ul></div><p><a href="#top">[Top]</a></p><hr><h3 id="inline-block-list-inline-block-lists-nested-lists-1"><span class="counter"></span>Nested Lists<span> <a href="#inline-block-list-inline-block-lists-nested-lists-1" name="inline-block-list-inline-block-lists-nested-lists-1" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h3><div><h4 id="inline-block-list-inline-block-lists-nested-lists-1-ordered-list-1"><span class="counter"></span>Ordered List<span> <a href="#inline-block-list-inline-block-lists-nested-lists-1-ordered-list-1" name="inline-block-list-inline-block-lists-nested-lists-1-ordered-list-1" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h4><div class="overflow"><ol class="list--inline-block"><li>Lorem ipsum</li><li>dolor sit amet,<ol><li>consectetur adipisicing elit,</li><li>sed do eiusmod tempor incididunt ut<ol><li>labore et dolore magna aliqua.</li><li>Ut enim ad minim veniam,<ol><li>quis nostrud exercitation</li><li>ullamco laboris nisi ut<ol><li>aliquip ex ea commodo consequat.</li><li>Duis aute irure dolor in reprehenderit<ol><li>in voluptate velit</li><li>esse cillum dolore eu fugiat nulla pariatur.<ol><li>Excepteur sint occaecat</li><li>cupidatat non proident,<ol><li>sunt in culpa qui</li><li>officia deserunt mollit anim id est laborum.</li></ol></li><li>aliquip ex ea commodo consequat</li></ol></li><li>in voluptate velit</li></ol></li><li>Excepteur sint occaecat</li></ol></li><li>quis nostrud exercitation</li></ol></li><li>sunt in culpa qui</li></ol></li><li>officia deserunt mollit anim id est laborum.</li></ol></li><li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</li></ol></div><h4 id="inline-block-list-inline-block-lists-nested-lists-1-unordered-list-1"><span class="counter"></span>Unordered List<span> <a href="#inline-block-list-inline-block-lists-nested-lists-1-unordered-list-1" name="inline-block-list-inline-block-lists-nested-lists-1-unordered-list-1" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h4><div class="overflow"><ul class="list--inline-block"><li>Lorem ipsum</li><li>dolor sit amet,<ul><li>consectetur adipisicing elit,</li><li>sed do eiusmod tempor incididunt ut<ul><li>labore et dolore magna aliqua.</li><li>Ut enim ad minim veniam,<ul><li>quis nostrud exercitation</li><li>ullamco laboris nisi ut<ul><li>aliquip ex ea commodo consequat.</li><li>Duis aute irure dolor in reprehenderit<ul><li>in voluptate velit</li><li>esse cillum dolore eu fugiat nulla pariatur.<ul><li>Excepteur sint occaecat</li><li>cupidatat non proident,<ul><li>sunt in culpa qui</li><li>officia deserunt mollit anim id est laborum.</li></ul></li><li>aliquip ex ea commodo consequat</li></ul></li><li>in voluptate velit</li></ul></li><li>Excepteur sint occaecat</li></ul></li><li>quis nostrud exercitation</li></ul></li><li>sunt in culpa qui</li></ul></li><li>officia deserunt mollit anim id est laborum.</li></ul></li><li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</li></ul></div></div><hr><h3 id="inline-block-list-inline-block-lists-column-lists-1"><span class="counter"></span>Column Lists<span> <a href="#inline-block-list-inline-block-lists-column-lists-1" name="inline-block-list-inline-block-lists-column-lists-1" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h3><p><code class="language-html">&lt;ul class=&quot;list--columns col-default-1 col-phone-2 col-tablet-3 col-desktop-small-4&quot;&gt;</code></p><h4 id="inline-block-list-inline-block-lists-column-lists-1-column-list-1"><span class="counter"></span>Column List<span> <a href="#inline-block-list-inline-block-lists-column-lists-1-column-list-1" name="inline-block-list-inline-block-lists-column-lists-1-column-list-1" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h4><div class="overflow"><ol class="list--inline-block list--columns col-default-1 col-phone-2 col-tablet-3 col-desktop-small-4"><li>Lorem ipsum</li><li>dolor sit amet,</li><li>consectetur adipisicing elit,</li><li>sed do eiusmod tempor incididunt ut</li><li>labore et dolore magna aliqua.</li><li>Ut enim ad minim veniam,</li><li>quis nostrud exercitation</li><li>ullamco laboris nisi ut</li><li>aliquip ex ea commodo consequat.</li><li>Duis aute irure dolor in reprehenderit</li><li>in voluptate velit</li><li>esse cillum dolore eu fugiat nulla pariatur.</li><li>Excepteur sint occaecat</li><li>cupidatat non proident,</li><li>sunt in culpa qui</li><li>officia deserunt mollit anim id est laborum.</li><li>aliquip ex ea commodo consequat</li><li>in voluptate velit</li><li>Excepteur sint occaecat</li><li>quis nostrud exercitation</li><li>sunt in culpa qui</li><li>officia deserunt mollit anim id est laborum.</li><li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</li></ol></div><h4 id="inline-block-list-inline-block-lists-column-lists-1-nested-column-list-1"><span class="counter"></span>Nested Column List<span> <a href="#inline-block-list-inline-block-lists-column-lists-1-nested-column-list-1" name="inline-block-list-inline-block-lists-column-lists-1-nested-column-list-1" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h4><div class="overflow"><p><code class="language-html">&lt;ul class=&quot;list--inline-block&quot;&gt;</code></p><p class="colorbox" style="background:rgba(255,0,0,.125)"><code class="language-html">&lt;ul class=&quot;list--columns col-default-1 col-phone-2&quot;&gt;&lt;/ul&gt;</code></p><p class="colorbox" style="background:rgba(255,0,255,.125)"><code class="language-html">&lt;ul class=&quot;list--columns col-default-2 col-phone-1 col-tablet-2&quot;&gt;&lt;/ul&gt;</code></p><p><code class="language-html">&lt;/ul&gt;</code></p></div><div class="overflow"><ol class="list--inline-block"><li>Lorem ipsum</li><li>dolor sit amet,</li><li>consectetur adipisicing elit,</li><li>sed do eiusmod tempor incididunt ut<ol class="list--columns col-default-1 col-phone-2" style="background:rgba(255,0,0,.125)"><li>labore et dolore magna aliqua.</li><li>Ut enim ad minim veniam,</li><li>quis nostrud exercitation</li><li>ullamco laboris nisi ut<ol><li>aliquip ex ea commodo consequat.</li><li>Duis aute irure dolor in reprehenderit</li><li>in voluptate velit</li><li>esse cillum dolore eu fugiat nulla pariatur.<ol class="list--columns col-default-2 col-phone-1 col-tablet-2" style="background:rgba(0,0,255,.125)"><li>Excepteur sint occaecat</li><li>cupidatat non proident,</li><li>sunt in culpa qui</li><li>officia deserunt mollit anim id est laborum.</li><li>aliquip ex ea commodo consequat</li></ol></li><li>in voluptate velit</li><li>Excepteur sint occaecat</li></ol></li><li>quis nostrud exercitation</li><li>sunt in culpa qui</li></ol></li><li>officia deserunt mollit anim id est laborum.</li><li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</li></ol></div></div></div></section><section><h2 id="inline-block-list-the-code"><span class="counter"></span>The Code<span> <a href="#inline-block-list-the-code" name="inline-block-list-the-code" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h2><h3 id="inline-block-list-the-code-html"><span class="counter"></span>HTML<span> <a href="#inline-block-list-the-code-html" name="inline-block-list-the-code-html" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h3><pre id="clickable-html" class="line-numbers linkable-line-numbers" data-line="null"><code class="language-html">&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-default-12 col-tablet-6&quot;&gt;
+    &lt;div&gt;
+      &lt;h2&gt;Normal Lists&lt;/h2&gt;
+
+      &lt;h3&gt;Lists&lt;/h3&gt;
+
+      &lt;div&gt;
+        &lt;!-- &lt;h4&gt;Definition list&lt;/h4&gt;
+        &lt;dl&gt;
+          &lt;dt&gt;Definition List Title&lt;/dt&gt;
+          &lt;dd&gt;This is a definition list division.&lt;/dd&gt;
+        &lt;/dl&gt; --&gt;
+        &lt;h4&gt;Ordered Lists&lt;/h4&gt;
+        &lt;h5&gt;Numerical&lt;/h5&gt;
+        &lt;ol type=&quot;1&quot;&gt;
+          &lt;li&gt;List Item 1&lt;/li&gt;
+          &lt;li&gt;List Item 2&lt;/li&gt;
+          &lt;li&gt;List Item 3&lt;/li&gt;
+        &lt;/ol&gt;
+        &lt;h5&gt;Alphabetical Uppercase&lt;/h5&gt;
+        &lt;ol type=&quot;A&quot;&gt;
+          &lt;li&gt;List Item 1&lt;/li&gt;
+          &lt;li&gt;List Item 2&lt;/li&gt;
+          &lt;li&gt;List Item 3&lt;/li&gt;
+        &lt;/ol&gt;
+        &lt;h5&gt;Alphabetical Lowercase&lt;/h5&gt;
+        &lt;ol type=&quot;a&quot;&gt;
+          &lt;li&gt;List Item 1&lt;/li&gt;
+          &lt;li&gt;List Item 2&lt;/li&gt;
+          &lt;li&gt;List Item 3&lt;/li&gt;
+        &lt;/ol&gt;
+        &lt;h5&gt;Roman Numeral Uppercase&lt;/h5&gt;
+        &lt;ol type=&quot;I&quot;&gt;
+          &lt;li&gt;List Item 1&lt;/li&gt;
+          &lt;li&gt;List Item 2&lt;/li&gt;
+          &lt;li&gt;List Item 3&lt;/li&gt;
+        &lt;/ol&gt;
+        &lt;h5&gt;Roman Numeral Lowercase&lt;/h5&gt;
+        &lt;ol type=&quot;i&quot;&gt;
+          &lt;li&gt;List Item 1&lt;/li&gt;
+          &lt;li&gt;List Item 2&lt;/li&gt;
+          &lt;li&gt;List Item 3&lt;/li&gt;
+        &lt;/ol&gt;
+        &lt;h4&gt;Unordered Lists&lt;/h4&gt;
+        &lt;h5&gt;disc&lt;/h5&gt;
+        &lt;ul type=&quot;disc&quot;&gt;
+          &lt;li&gt;List Item 1&lt;/li&gt;
+          &lt;li&gt;List Item 2&lt;/li&gt;
+          &lt;li&gt;List Item 3&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;h5&gt;circle&lt;/h5&gt;
+        &lt;ul type=&quot;circle&quot;&gt;
+          &lt;li&gt;List Item 1&lt;/li&gt;
+          &lt;li&gt;List Item 2&lt;/li&gt;
+          &lt;li&gt;List Item 3&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;h5&gt;square&lt;/h5&gt;
+        &lt;ul type=&quot;square&quot;&gt;
+          &lt;li&gt;List Item 1&lt;/li&gt;
+          &lt;li&gt;List Item 2&lt;/li&gt;
+          &lt;li&gt;List Item 3&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;h5&gt;none&lt;/h5&gt;
+        &lt;ul type=&quot;none&quot;&gt;
+          &lt;li&gt;List Item 1&lt;/li&gt;
+          &lt;li&gt;List Item 2&lt;/li&gt;
+          &lt;li&gt;List Item 3&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+      &lt;p&gt;&lt;a href=&quot;#top&quot;&gt;[Top]&lt;/a&gt;&lt;/p&gt;
+
+      &lt;hr&gt;
+
+      &lt;h3&gt;Nested Lists&lt;/h3&gt;
+      &lt;div&gt;
+        &lt;h4&gt;Ordered List&lt;/h4&gt;
+        &lt;div class=&quot;overflow&quot;&gt;
+          &lt;ol&gt;
+            &lt;li&gt;Lorem ipsum&lt;/li&gt;
+            &lt;li&gt;dolor sit amet,
+              &lt;ol&gt;
+                &lt;li&gt;consectetur adipisicing elit,&lt;/li&gt;
+                &lt;li&gt;sed do eiusmod tempor incididunt ut
+                  &lt;ol&gt;
+                    &lt;li&gt;labore et dolore magna aliqua.&lt;/li&gt;
+                    &lt;li&gt;Ut enim ad minim veniam,
+                      &lt;ol&gt;
+                        &lt;li&gt;quis nostrud exercitation&lt;/li&gt;
+                        &lt;li&gt;ullamco laboris nisi ut
+                          &lt;ol&gt;
+                            &lt;li&gt;aliquip ex ea commodo consequat.&lt;/li&gt;
+                            &lt;li&gt;Duis aute irure dolor in reprehenderit
+                              &lt;ol&gt;
+                                &lt;li&gt;in voluptate velit&lt;/li&gt;
+                                &lt;li&gt;esse cillum dolore eu fugiat nulla pariatur.
+                                  &lt;ol&gt;
+                                    &lt;li&gt;Excepteur sint occaecat&lt;/li&gt;
+                                    &lt;li&gt;cupidatat non proident,
+                                      &lt;ol&gt;
+                                        &lt;li&gt;sunt in culpa qui&lt;/li&gt;
+                                        &lt;li&gt;officia deserunt mollit anim id est laborum.&lt;/li&gt;
+                                      &lt;/ol&gt;
+                                    &lt;/li&gt;
+                                    &lt;li&gt;aliquip ex ea commodo consequat&lt;/li&gt;
+                                  &lt;/ol&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;in voluptate velit&lt;/li&gt;
+                              &lt;/ol&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;Excepteur sint occaecat&lt;/li&gt;
+                          &lt;/ol&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;quis nostrud exercitation&lt;/li&gt;
+                      &lt;/ol&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;sunt in culpa qui&lt;/li&gt;
+                  &lt;/ol&gt;
+                &lt;/li&gt;
+                &lt;li&gt;officia deserunt mollit anim id est laborum.&lt;/li&gt;
+              &lt;/ol&gt;
+            &lt;/li&gt;
+            &lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.&lt;/li&gt;
+          &lt;/ol&gt;
+        &lt;/div&gt;
+        &lt;h4&gt;Unordered List&lt;/h4&gt;
+        &lt;div class=&quot;overflow&quot;&gt;
+          &lt;ul&gt;
+            &lt;li&gt;Lorem ipsum&lt;/li&gt;
+            &lt;li&gt;dolor sit amet,
+              &lt;ul&gt;
+                &lt;li&gt;consectetur adipisicing elit,&lt;/li&gt;
+                &lt;li&gt;sed do eiusmod tempor incididunt ut
+                  &lt;ul&gt;
+                    &lt;li&gt;labore et dolore magna aliqua.&lt;/li&gt;
+                    &lt;li&gt;Ut enim ad minim veniam,
+                      &lt;ul&gt;
+                        &lt;li&gt;quis nostrud exercitation&lt;/li&gt;
+                        &lt;li&gt;ullamco laboris nisi ut
+                          &lt;ul&gt;
+                            &lt;li&gt;aliquip ex ea commodo consequat.&lt;/li&gt;
+                            &lt;li&gt;Duis aute irure dolor in reprehenderit
+                              &lt;ul&gt;
+                                &lt;li&gt;in voluptate velit&lt;/li&gt;
+                                &lt;li&gt;esse cillum dolore eu fugiat nulla pariatur.
+                                  &lt;ul&gt;
+                                    &lt;li&gt;Excepteur sint occaecat&lt;/li&gt;
+                                    &lt;li&gt;cupidatat non proident,
+                                      &lt;ul&gt;
+                                        &lt;li&gt;sunt in culpa qui&lt;/li&gt;
+                                        &lt;li&gt;officia deserunt mollit anim id est laborum.&lt;/li&gt;
+                                      &lt;/ul&gt;
+                                    &lt;/li&gt;
+                                    &lt;li&gt;aliquip ex ea commodo consequat&lt;/li&gt;
+                                  &lt;/ul&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;in voluptate velit&lt;/li&gt;
+                              &lt;/ul&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;Excepteur sint occaecat&lt;/li&gt;
+                          &lt;/ul&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;quis nostrud exercitation&lt;/li&gt;
+                      &lt;/ul&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;sunt in culpa qui&lt;/li&gt;
+                  &lt;/ul&gt;
+                &lt;/li&gt;
+                &lt;li&gt;officia deserunt mollit anim id est laborum.&lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;hr&gt;
+
+      &lt;h3&gt;Column Lists&lt;/h3&gt;
+
+      &lt;p&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;ul class=&amp;quot;list--columns col-default-1 col-phone-2 col-tablet-3 col-desktop-small-4&amp;quot;&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+      &lt;h4&gt;Column List&lt;/h4&gt;
+      &lt;div class=&quot;overflow&quot;&gt;
+        &lt;ol class=&quot;list--columns col-default-1 col-phone-2 col-tablet-3 col-desktop-small-4&quot;&gt;
+          &lt;li&gt;Lorem ipsum&lt;/li&gt;
+          &lt;li&gt;dolor sit amet,&lt;/li&gt;
+          &lt;li&gt;consectetur adipisicing elit,&lt;/li&gt;
+          &lt;li&gt;sed do eiusmod tempor incididunt ut&lt;/li&gt;
+          &lt;li&gt;labore et dolore magna aliqua.&lt;/li&gt;
+          &lt;li&gt;Ut enim ad minim veniam,&lt;/li&gt;
+          &lt;li&gt;quis nostrud exercitation&lt;/li&gt;
+          &lt;li&gt;ullamco laboris nisi ut&lt;/li&gt;
+          &lt;li&gt;aliquip ex ea commodo consequat.&lt;/li&gt;
+          &lt;li&gt;Duis aute irure dolor in reprehenderit&lt;/li&gt;
+          &lt;li&gt;in voluptate velit&lt;/li&gt;
+          &lt;li&gt;esse cillum dolore eu fugiat nulla pariatur.&lt;/li&gt;
+          &lt;li&gt;Excepteur sint occaecat&lt;/li&gt;
+          &lt;li&gt;cupidatat non proident,&lt;/li&gt;
+          &lt;li&gt;sunt in culpa qui&lt;/li&gt;
+          &lt;li&gt;officia deserunt mollit anim id est laborum.&lt;/li&gt;
+          &lt;li&gt;aliquip ex ea commodo consequat&lt;/li&gt;
+          &lt;li&gt;in voluptate velit&lt;/li&gt;
+          &lt;li&gt;Excepteur sint occaecat&lt;/li&gt;
+          &lt;li&gt;quis nostrud exercitation&lt;/li&gt;
+          &lt;li&gt;sunt in culpa qui&lt;/li&gt;
+          &lt;li&gt;officia deserunt mollit anim id est laborum.&lt;/li&gt;
+          &lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/div&gt;
+      &lt;h4&gt;Nested Column List&lt;/h4&gt;
+      &lt;div class=&quot;overflow&quot;&gt;
+        &lt;ol&gt;
+          &lt;li&gt;Lorem ipsum&lt;/li&gt;
+          &lt;li&gt;dolor sit amet,
+          &lt;li&gt;consectetur adipisicing elit,&lt;/li&gt;
+          &lt;li&gt;sed do eiusmod tempor incididunt ut
+            &lt;ol class=&quot;list--columns col-default-1 col-phone-2&quot; style=&quot;background:rgba(255,0,0,0.125);&quot;&gt;
+              &lt;li&gt;labore et dolore magna aliqua.&lt;/li&gt;
+              &lt;li&gt;Ut enim ad minim veniam,
+              &lt;li&gt;quis nostrud exercitation&lt;/li&gt;
+              &lt;li&gt;ullamco laboris nisi ut
+                &lt;ol&gt;
+                  &lt;li&gt;aliquip ex ea commodo consequat.&lt;/li&gt;
+                  &lt;li&gt;Duis aute irure dolor in reprehenderit
+                  &lt;li&gt;in voluptate velit&lt;/li&gt;
+                  &lt;li&gt;esse cillum dolore eu fugiat nulla pariatur.
+                    &lt;ol class=&quot;list--columns col-default-2 col-phone-1 col-tablet-2&quot; style=&quot;background:rgba(0,0,255,0.125);&quot;&gt;
+                      &lt;li&gt;Excepteur sint occaecat&lt;/li&gt;
+                      &lt;li&gt;cupidatat non proident,
+                      &lt;li&gt;sunt in culpa qui&lt;/li&gt;
+                      &lt;li&gt;officia deserunt mollit anim id est laborum.&lt;/li&gt;
+                      &lt;li&gt;aliquip ex ea commodo consequat&lt;/li&gt;
+                    &lt;/ol&gt;
+                  &lt;/li&gt;
+                  &lt;li&gt;in voluptate velit&lt;/li&gt;
+                  &lt;li&gt;Excepteur sint occaecat&lt;/li&gt;
+                &lt;/ol&gt;
+              &lt;/li&gt;
+              &lt;li&gt;quis nostrud exercitation&lt;/li&gt;
+              &lt;li&gt;sunt in culpa qui&lt;/li&gt;
+            &lt;/ol&gt;
+          &lt;/li&gt;
+          &lt;li&gt;officia deserunt mollit anim id est laborum.&lt;/li&gt;
+          &lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;col-default-12 col-tablet-6&quot;&gt;
+    &lt;div&gt;
+      &lt;h2&gt;Inline Block Lists&lt;/h2&gt;
+
+      &lt;h3&gt;Lists&lt;/h3&gt;
+
+      &lt;div&gt;
+        &lt;!-- &lt;h4&gt;Definition list&lt;/h4&gt;
+        &lt;dl&gt;
+          &lt;dt&gt;Definition List Title&lt;/dt&gt;
+          &lt;dd&gt;This is a definition list division.&lt;/dd&gt;
+        &lt;/dl&gt; --&gt;
+        &lt;h4&gt;Ordered Lists&lt;/h4&gt;
+        &lt;h5&gt;Numerical&lt;/h5&gt;
+        &lt;ol class=&quot;list--inline-block&quot; type=&quot;1&quot;&gt;
+          &lt;li&gt;List Item 1&lt;/li&gt;
+          &lt;li&gt;List Item 2&lt;/li&gt;
+          &lt;li&gt;List Item 3&lt;/li&gt;
+        &lt;/ol&gt;
+        &lt;h5&gt;Alphabetical Uppercase&lt;/h5&gt;
+        &lt;ol class=&quot;list--inline-block list--upper-alpha&quot; type=&quot;A&quot;&gt;
+          &lt;li&gt;List Item 1&lt;/li&gt;
+          &lt;li&gt;List Item 2&lt;/li&gt;
+          &lt;li&gt;List Item 3&lt;/li&gt;
+        &lt;/ol&gt;
+        &lt;h5&gt;Alphabetical Lowercase&lt;/h5&gt;
+        &lt;ol class=&quot;list--inline-block list--lower-alpha&quot; type=&quot;a&quot;&gt;
+          &lt;li&gt;List Item 1&lt;/li&gt;
+          &lt;li&gt;List Item 2&lt;/li&gt;
+          &lt;li&gt;List Item 3&lt;/li&gt;
+        &lt;/ol&gt;
+        &lt;h5&gt;Roman Numeral Uppercase&lt;/h5&gt;
+        &lt;ol class=&quot;list--inline-block list--upper-roman&quot; type=&quot;I&quot;&gt;
+          &lt;li&gt;List Item 1&lt;/li&gt;
+          &lt;li&gt;List Item 2&lt;/li&gt;
+          &lt;li&gt;List Item 3&lt;/li&gt;
+        &lt;/ol&gt;
+        &lt;h5&gt;Roman Numeral Lowercase&lt;/h5&gt;
+        &lt;ol class=&quot;list--inline-block list--lower-roman&quot; type=&quot;i&quot;&gt;
+          &lt;li&gt;List Item 1&lt;/li&gt;
+          &lt;li&gt;List Item 2&lt;/li&gt;
+          &lt;li&gt;List Item 3&lt;/li&gt;
+        &lt;/ol&gt;
+        &lt;h4&gt;Unordered Lists&lt;/h4&gt;
+        &lt;h5&gt;disc&lt;/h5&gt;
+        &lt;ul class=&quot;list--inline-block&quot; type=&quot;disc&quot;&gt;
+          &lt;li&gt;List Item 1&lt;/li&gt;
+          &lt;li&gt;List Item 2&lt;/li&gt;
+          &lt;li&gt;List Item 3&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;h5&gt;circle&lt;/h5&gt;
+        &lt;ul class=&quot;list--inline-block&quot; type=&quot;circle&quot;&gt;
+          &lt;li&gt;List Item 1&lt;/li&gt;
+          &lt;li&gt;List Item 2&lt;/li&gt;
+          &lt;li&gt;List Item 3&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;h5&gt;square&lt;/h5&gt;
+        &lt;ul class=&quot;list--inline-block&quot; type=&quot;square&quot;&gt;
+          &lt;li&gt;List Item 1&lt;/li&gt;
+          &lt;li&gt;List Item 2&lt;/li&gt;
+          &lt;li&gt;List Item 3&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;h5&gt;none&lt;/h5&gt;
+        &lt;ul class=&quot;list--inline-block&quot; type=&quot;none&quot;&gt;
+          &lt;li&gt;List Item 1&lt;/li&gt;
+          &lt;li&gt;List Item 2&lt;/li&gt;
+          &lt;li&gt;List Item 3&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+      &lt;p&gt;&lt;a href=&quot;#top&quot;&gt;[Top]&lt;/a&gt;&lt;/p&gt;
+
+      &lt;hr&gt;
+
+      &lt;h3&gt;Nested Lists&lt;/h3&gt;
+      &lt;div&gt;
+        &lt;h4&gt;Ordered List&lt;/h4&gt;
+        &lt;div class=&quot;overflow&quot;&gt;
+          &lt;ol class=&quot;list--inline-block&quot;&gt;
+            &lt;li&gt;Lorem ipsum&lt;/li&gt;
+            &lt;li&gt;dolor sit amet,
+              &lt;ol&gt;
+                &lt;li&gt;consectetur adipisicing elit,&lt;/li&gt;
+                &lt;li&gt;sed do eiusmod tempor incididunt ut
+                  &lt;ol&gt;
+                    &lt;li&gt;labore et dolore magna aliqua.&lt;/li&gt;
+                    &lt;li&gt;Ut enim ad minim veniam,
+                      &lt;ol&gt;
+                        &lt;li&gt;quis nostrud exercitation&lt;/li&gt;
+                        &lt;li&gt;ullamco laboris nisi ut
+                          &lt;ol&gt;
+                            &lt;li&gt;aliquip ex ea commodo consequat.&lt;/li&gt;
+                            &lt;li&gt;Duis aute irure dolor in reprehenderit
+                              &lt;ol&gt;
+                                &lt;li&gt;in voluptate velit&lt;/li&gt;
+                                &lt;li&gt;esse cillum dolore eu fugiat nulla pariatur.
+                                  &lt;ol&gt;
+                                    &lt;li&gt;Excepteur sint occaecat&lt;/li&gt;
+                                    &lt;li&gt;cupidatat non proident,
+                                      &lt;ol&gt;
+                                        &lt;li&gt;sunt in culpa qui&lt;/li&gt;
+                                        &lt;li&gt;officia deserunt mollit anim id est laborum.&lt;/li&gt;
+                                      &lt;/ol&gt;
+                                    &lt;/li&gt;
+                                    &lt;li&gt;aliquip ex ea commodo consequat&lt;/li&gt;
+                                  &lt;/ol&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;in voluptate velit&lt;/li&gt;
+                              &lt;/ol&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;Excepteur sint occaecat&lt;/li&gt;
+                          &lt;/ol&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;quis nostrud exercitation&lt;/li&gt;
+                      &lt;/ol&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;sunt in culpa qui&lt;/li&gt;
+                  &lt;/ol&gt;
+                &lt;/li&gt;
+                &lt;li&gt;officia deserunt mollit anim id est laborum.&lt;/li&gt;
+              &lt;/ol&gt;
+            &lt;/li&gt;
+            &lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.&lt;/li&gt;
+          &lt;/ol&gt;
+        &lt;/div&gt;
+        &lt;h4&gt;Unordered List&lt;/h4&gt;
+        &lt;div class=&quot;overflow&quot;&gt;
+          &lt;ul class=&quot;list--inline-block&quot;&gt;
+            &lt;li&gt;Lorem ipsum&lt;/li&gt;
+            &lt;li&gt;dolor sit amet,
+              &lt;ul&gt;
+                &lt;li&gt;consectetur adipisicing elit,&lt;/li&gt;
+                &lt;li&gt;sed do eiusmod tempor incididunt ut
+                  &lt;ul&gt;
+                    &lt;li&gt;labore et dolore magna aliqua.&lt;/li&gt;
+                    &lt;li&gt;Ut enim ad minim veniam,
+                      &lt;ul&gt;
+                        &lt;li&gt;quis nostrud exercitation&lt;/li&gt;
+                        &lt;li&gt;ullamco laboris nisi ut
+                          &lt;ul&gt;
+                            &lt;li&gt;aliquip ex ea commodo consequat.&lt;/li&gt;
+                            &lt;li&gt;Duis aute irure dolor in reprehenderit
+                              &lt;ul&gt;
+                                &lt;li&gt;in voluptate velit&lt;/li&gt;
+                                &lt;li&gt;esse cillum dolore eu fugiat nulla pariatur.
+                                  &lt;ul&gt;
+                                    &lt;li&gt;Excepteur sint occaecat&lt;/li&gt;
+                                    &lt;li&gt;cupidatat non proident,
+                                      &lt;ul&gt;
+                                        &lt;li&gt;sunt in culpa qui&lt;/li&gt;
+                                        &lt;li&gt;officia deserunt mollit anim id est laborum.&lt;/li&gt;
+                                      &lt;/ul&gt;
+                                    &lt;/li&gt;
+                                    &lt;li&gt;aliquip ex ea commodo consequat&lt;/li&gt;
+                                  &lt;/ul&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;in voluptate velit&lt;/li&gt;
+                              &lt;/ul&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;Excepteur sint occaecat&lt;/li&gt;
+                          &lt;/ul&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;quis nostrud exercitation&lt;/li&gt;
+                      &lt;/ul&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;sunt in culpa qui&lt;/li&gt;
+                  &lt;/ul&gt;
+                &lt;/li&gt;
+                &lt;li&gt;officia deserunt mollit anim id est laborum.&lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;hr&gt;
+
+      &lt;h3&gt;Column Lists&lt;/h3&gt;
+
+      &lt;p&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;ul class=&amp;quot;list--columns col-default-1 col-phone-2 col-tablet-3 col-desktop-small-4&amp;quot;&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+      &lt;h4&gt;Column List&lt;/h4&gt;
+      &lt;div class=&quot;overflow&quot;&gt;
+        &lt;ol class=&quot;list--inline-block list--columns col-default-1 col-phone-2 col-tablet-3 col-desktop-small-4&quot;&gt;
+          &lt;li&gt;Lorem ipsum&lt;/li&gt;
+          &lt;li&gt;dolor sit amet,&lt;/li&gt;
+          &lt;li&gt;consectetur adipisicing elit,&lt;/li&gt;
+          &lt;li&gt;sed do eiusmod tempor incididunt ut&lt;/li&gt;
+          &lt;li&gt;labore et dolore magna aliqua.&lt;/li&gt;
+          &lt;li&gt;Ut enim ad minim veniam,&lt;/li&gt;
+          &lt;li&gt;quis nostrud exercitation&lt;/li&gt;
+          &lt;li&gt;ullamco laboris nisi ut&lt;/li&gt;
+          &lt;li&gt;aliquip ex ea commodo consequat.&lt;/li&gt;
+          &lt;li&gt;Duis aute irure dolor in reprehenderit&lt;/li&gt;
+          &lt;li&gt;in voluptate velit&lt;/li&gt;
+          &lt;li&gt;esse cillum dolore eu fugiat nulla pariatur.&lt;/li&gt;
+          &lt;li&gt;Excepteur sint occaecat&lt;/li&gt;
+          &lt;li&gt;cupidatat non proident,&lt;/li&gt;
+          &lt;li&gt;sunt in culpa qui&lt;/li&gt;
+          &lt;li&gt;officia deserunt mollit anim id est laborum.&lt;/li&gt;
+          &lt;li&gt;aliquip ex ea commodo consequat&lt;/li&gt;
+          &lt;li&gt;in voluptate velit&lt;/li&gt;
+          &lt;li&gt;Excepteur sint occaecat&lt;/li&gt;
+          &lt;li&gt;quis nostrud exercitation&lt;/li&gt;
+          &lt;li&gt;sunt in culpa qui&lt;/li&gt;
+          &lt;li&gt;officia deserunt mollit anim id est laborum.&lt;/li&gt;
+          &lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/div&gt;
+      &lt;h4&gt;Nested Column List&lt;/h4&gt;
+      &lt;div class=&quot;overflow&quot;&gt;
+        &lt;ol class=&quot;list--inline-block&quot;&gt;
+          &lt;li&gt;Lorem ipsum&lt;/li&gt;
+          &lt;li&gt;dolor sit amet,
+          &lt;li&gt;consectetur adipisicing elit,&lt;/li&gt;
+          &lt;li&gt;sed do eiusmod tempor incididunt ut
+            &lt;ol class=&quot;list--columns col-default-1 col-phone-2&quot; style=&quot;background:rgba(255,0,0,0.125);&quot;&gt;
+              &lt;li&gt;labore et dolore magna aliqua.&lt;/li&gt;
+              &lt;li&gt;Ut enim ad minim veniam,
+              &lt;li&gt;quis nostrud exercitation&lt;/li&gt;
+              &lt;li&gt;ullamco laboris nisi ut
+                &lt;ol&gt;
+                  &lt;li&gt;aliquip ex ea commodo consequat.&lt;/li&gt;
+                  &lt;li&gt;Duis aute irure dolor in reprehenderit
+                  &lt;li&gt;in voluptate velit&lt;/li&gt;
+                  &lt;li&gt;esse cillum dolore eu fugiat nulla pariatur.
+                    &lt;ol class=&quot;list--columns col-default-2 col-phone-1 col-tablet-2&quot; style=&quot;background:rgba(0,0,255,0.125);&quot;&gt;
+                      &lt;li&gt;Excepteur sint occaecat&lt;/li&gt;
+                      &lt;li&gt;cupidatat non proident,
+                      &lt;li&gt;sunt in culpa qui&lt;/li&gt;
+                      &lt;li&gt;officia deserunt mollit anim id est laborum.&lt;/li&gt;
+                      &lt;li&gt;aliquip ex ea commodo consequat&lt;/li&gt;
+                    &lt;/ol&gt;
+                  &lt;/li&gt;
+                  &lt;li&gt;in voluptate velit&lt;/li&gt;
+                  &lt;li&gt;Excepteur sint occaecat&lt;/li&gt;
+                &lt;/ol&gt;
+              &lt;/li&gt;
+              &lt;li&gt;quis nostrud exercitation&lt;/li&gt;
+              &lt;li&gt;sunt in culpa qui&lt;/li&gt;
+            &lt;/ol&gt;
+          &lt;/li&gt;
+          &lt;li&gt;officia deserunt mollit anim id est laborum.&lt;/li&gt;
+          &lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre><h3 id="inline-block-list-the-code-css"><span class="counter"></span>CSS<span> <a href="#inline-block-list-the-code-css" name="inline-block-list-the-code-css" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h3><pre id="clickable-css" class="line-numbers linkable-line-numbers" data-line="null"><code class="language-css">ol:not([type]) {
+  list-style-type: decimal;
+}
+
+ol:not([type]) ol:not([type]) {
+  list-style-type: lower-alpha;
+}
+
+ol:not([type]) ol:not([type]) ol:not([type]) {
+  list-style-type: lower-roman;
+}
+
+ol:not([type]) ol:not([type]) ol:not([type]) ol:not([type]) {
+  list-style-type: decimal;
+}
+
+ol:not([type]) ol:not([type]) ol:not([type]) ol:not([type]) ol:not([type]) {
+  list-style-type: lower-alpha;
+}
+
+ol:not([type]) ol:not([type]) ol:not([type]) ol:not([type]) ol:not([type]) ol:not([type]) {
+  list-style-type: lower-roman;
+}
+
+ol:not([type]) ol:not([type]) ol:not([type]) ol:not([type]) ol:not([type]) ol:not([type]) ol:not([type]) {
+  list-style-type: decimal;
+}
+
+ol:not([type]) ol:not([type]) ol:not([type]) ol:not([type]) ol:not([type]) ol:not([type]) ol:not([type]) ol:not([type]) {
+  list-style-type: lower-alpha;
+}
+
+ol:not([type]) ol:not([type]) ol:not([type]) ol:not([type]) ol:not([type]) ol:not([type]) ol:not([type]) ol:not([type]) ol:not([type]) {
+  list-style-type: lower-roman;
+}
+
+ol:not([type]) ol:not([type]) ol:not([type]) ol:not([type]) ol:not([type]) ol:not([type]) ol:not([type]) ol:not([type]) ol:not([type]) ol:not([type]) {
+  list-style-type: decimal;
+}
+
+ul:not([type]) {
+  list-style-type: disc;
+}
+
+ul:not([type]) ul:not([type]) {
+  list-style-type: circle;
+}
+
+ul:not([type]) ul:not([type]) ul:not([type]) {
+  list-style-type: square;
+}
+
+ul:not([type]) ul:not([type]) ul:not([type]) ul:not([type]) {
+  list-style-type: disc;
+}
+
+ul:not([type]) ul:not([type]) ul:not([type]) ul:not([type]) ul:not([type]) {
+  list-style-type: circle;
+}
+
+ul:not([type]) ul:not([type]) ul:not([type]) ul:not([type]) ul:not([type]) ul:not([type]) {
+  list-style-type: square;
+}
+
+ul:not([type]) ul:not([type]) ul:not([type]) ul:not([type]) ul:not([type]) ul:not([type]) ul:not([type]) {
+  list-style-type: disc;
+}
+
+ul:not([type]) ul:not([type]) ul:not([type]) ul:not([type]) ul:not([type]) ul:not([type]) ul:not([type]) ul:not([type]) {
+  list-style-type: circle;
+}
+
+ul:not([type]) ul:not([type]) ul:not([type]) ul:not([type]) ul:not([type]) ul:not([type]) ul:not([type]) ul:not([type]) ul:not([type]) {
+  list-style-type: square;
+}
+
+ul:not([type]) ul:not([type]) ul:not([type]) ul:not([type]) ul:not([type]) ul:not([type]) ul:not([type]) ul:not([type]) ul:not([type]) ul:not([type]) {
+  list-style-type: disc;
+}
+
+ol.list--inline-block,ol.list--inline-block ol {
+  counter-reset: counter_list;
+}
+
+ol.list--inline-block li {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+
+ol.list--inline-block li::before {
+  text-align: right;
+  counter-increment: counter_list;
+  display: inline-block;
+  min-width: 1.75em;
+  padding-right: 0.25em;
+  margin-left: -1.75em;
+  counter-increment: counter_list;
+}
+
+ol.list--inline-block li::before {
+  content: counter(counter_list, decimal) &quot;.&quot;;
+}
+
+ol.list--inline-block ol li::before {
+  content: counter(counter_list, lower-alpha) &quot;.&quot;;
+}
+
+ol.list--inline-block ol ol li::before {
+  content: counter(counter_list, lower-roman) &quot;.&quot;;
+}
+
+ol.list--inline-block ol ol ol li::before {
+  content: counter(counter_list, decimal) &quot;.&quot;;
+}
+
+ol.list--inline-block ol ol ol ol li::before {
+  content: counter(counter_list, lower-alpha) &quot;.&quot;;
+}
+
+ol.list--inline-block ol ol ol ol ol li::before {
+  content: counter(counter_list, lower-roman) &quot;.&quot;;
+}
+
+ol.list--inline-block ol ol ol ol ol ol li::before {
+  content: counter(counter_list, decimal) &quot;.&quot;;
+}
+
+ol.list--inline-block ol ol ol ol ol ol ol li::before {
+  content: counter(counter_list, lower-alpha) &quot;.&quot;;
+}
+
+ol.list--inline-block ol ol ol ol ol ol ol ol li::before {
+  content: counter(counter_list, lower-roman) &quot;.&quot;;
+}
+
+ol.list--inline-block ol ol ol ol ol ol ol ol ol li::before {
+  content: counter(counter_list, decimal) &quot;.&quot;;
+}
+
+ol.list--inline-block ol ol ol ol ol ol ol ol ol ol li::before {
+  content: counter(counter_list, lower-alpha) &quot;.&quot;;
+}
+
+ol.list--inline-block ol ol ol ol ol ol ol ol ol ol ol li::before {
+  content: counter(counter_list, lower-roman) &quot;.&quot;;
+}
+
+ol.list--inline-block[type=&quot;1&quot;] li:before {
+  content: counter(counter_list, decimal) &quot;.&quot;;
+}
+
+ol.list--inline-block[type=&quot;A&quot;].list--upper-alpha li:before {
+  content: counter(counter_list, upper-alpha) &quot;.&quot;;
+}
+
+ol.list--inline-block[type=&quot;a&quot;].list--lower-alpha li:before {
+  content: counter(counter_list, lower-alpha) &quot;.&quot;;
+}
+
+ol.list--inline-block[type=&quot;I&quot;].list--upper-roman li:before {
+  content: counter(counter_list, upper-roman) &quot;.&quot;;
+}
+
+ol.list--inline-block[type=&quot;i&quot;].list--lower-roman li:before {
+  content: counter(counter_list, lower-roman) &quot;.&quot;;
+}
+
+ul.list--inline-block li {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+
+ul.list--inline-block li::before {
+  position: absolute;
+  left: -16px;
+  top: 0;
+}
+
+ul.list--inline-block li::before {
+  content: &apos;\2022&apos;;
+  font-size: 1.375rem;
+}
+
+ul.list--inline-block ul li::before {
+  content: &apos;\25CB&apos;;
+  font-size: 0.875rem;
+}
+
+ul.list--inline-block ul ul li::before {
+  content: &apos;\ffed&apos;;
+  font-size: 1rem;
+}
+
+ul.list--inline-block ul ul ul li::before {
+  content: &apos;\2022&apos;;
+  font-size: 1.375rem;
+}
+
+ul.list--inline-block ul ul ul ul li::before {
+  content: &apos;\25CB&apos;;
+  font-size: 0.875rem;
+}
+
+ul.list--inline-block ul ul ul ul ul li::before {
+  content: &apos;\ffed&apos;;
+  font-size: 1rem;
+}
+
+ul.list--inline-block ul ul ul ul ul ul li::before {
+  content: &apos;\2022&apos;;
+  font-size: 1.375rem;
+}
+
+ul.list--inline-block ul ul ul ul ul ul ul li::before {
+  content: &apos;\25CB&apos;;
+  font-size: 0.875rem;
+}
+
+ul.list--inline-block ul ul ul ul ul ul ul ul li::before {
+  content: &apos;\ffed&apos;;
+  font-size: 1rem;
+}
+
+ul.list--inline-block ul ul ul ul ul ul ul ul ul li::before {
+  content: &apos;\2022&apos;;
+  font-size: 1.375rem;
+}
+
+ul.list--inline-block ul ul ul ul ul ul ul ul ul ul li::before {
+  content: &apos;\25CB&apos;;
+  font-size: 0.875rem;
+}
+
+ul.list--inline-block ul ul ul ul ul ul ul ul ul ul ul li::before {
+  content: &apos;\ffed&apos;;
+  font-size: 1rem;
+}
+
+ul.list--inline-block[type=&quot;disc&quot;] li:before {
+  content: &apos;\2022&apos;;
+  font-size: 1.375rem;
+}
+
+ul.list--inline-block[type=&quot;circle&quot;] li:before {
+  content: &apos;\25CB&apos;;
+  font-size: 0.875rem;
+}
+
+ul.list--inline-block[type=&quot;square&quot;] li:before {
+  content: &apos;\ffed&apos;;
+  font-size: 1rem;
+}
+
+ul.list--inline-block[type=&quot;none&quot;] li:before {
+  content: &quot;&quot;;
+}
+
+.list--columns {
+  -webkit-column-gap: 32px;
+  -moz-column-gap: 32px;
+  column-gap: 32px;
+}
+
+.list--columns.col-default-1 {
+  -webkit-column-count: 1;
+  -moz-column-count: 1;
+  column-count: 1;
+}
+
+.list--columns.col-default-2 {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+}
+
+.list--columns.col-default-3 {
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+}
+
+.list--columns.col-default-4 {
+  -webkit-column-count: 4;
+  -moz-column-count: 4;
+  column-count: 4;
+}
+
+.list--columns.col-default-5 {
+  -webkit-column-count: 5;
+  -moz-column-count: 5;
+  column-count: 5;
+}
+
+.list--columns.col-default-6 {
+  -webkit-column-count: 6;
+  -moz-column-count: 6;
+  column-count: 6;
+}
+
+.list--columns.col-default-7 {
+  -webkit-column-count: 7;
+  -moz-column-count: 7;
+  column-count: 7;
+}
+
+.list--columns.col-default-8 {
+  -webkit-column-count: 8;
+  -moz-column-count: 8;
+  column-count: 8;
+}
+
+@media (min-width: 321px) {
+  .list--columns.col-phone-1 {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+  }
+
+  .list--columns.col-phone-2 {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+
+  .list--columns.col-phone-3 {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+  }
+
+  .list--columns.col-phone-4 {
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    column-count: 4;
+  }
+
+  .list--columns.col-phone-5 {
+    -webkit-column-count: 5;
+    -moz-column-count: 5;
+    column-count: 5;
+  }
+
+  .list--columns.col-phone-6 {
+    -webkit-column-count: 6;
+    -moz-column-count: 6;
+    column-count: 6;
+  }
+
+  .list--columns.col-phone-7 {
+    -webkit-column-count: 7;
+    -moz-column-count: 7;
+    column-count: 7;
+  }
+
+  .list--columns.col-phone-8 {
+    -webkit-column-count: 8;
+    -moz-column-count: 8;
+    column-count: 8;
+  }
+}
+
+@media (min-width: 769px) {
+  .list--columns.col-tablet-1 {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+  }
+
+  .list--columns.col-tablet-2 {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+
+  .list--columns.col-tablet-3 {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+  }
+
+  .list--columns.col-tablet-4 {
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    column-count: 4;
+  }
+
+  .list--columns.col-tablet-5 {
+    -webkit-column-count: 5;
+    -moz-column-count: 5;
+    column-count: 5;
+  }
+
+  .list--columns.col-tablet-6 {
+    -webkit-column-count: 6;
+    -moz-column-count: 6;
+    column-count: 6;
+  }
+
+  .list--columns.col-tablet-7 {
+    -webkit-column-count: 7;
+    -moz-column-count: 7;
+    column-count: 7;
+  }
+
+  .list--columns.col-tablet-8 {
+    -webkit-column-count: 8;
+    -moz-column-count: 8;
+    column-count: 8;
+  }
+}
+
+@media (min-width: 1025px) {
+  .list--columns.col-desktop-small-1 {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+  }
+
+  .list--columns.col-desktop-small-2 {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+
+  .list--columns.col-desktop-small-3 {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+  }
+
+  .list--columns.col-desktop-small-4 {
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    column-count: 4;
+  }
+
+  .list--columns.col-desktop-small-5 {
+    -webkit-column-count: 5;
+    -moz-column-count: 5;
+    column-count: 5;
+  }
+
+  .list--columns.col-desktop-small-6 {
+    -webkit-column-count: 6;
+    -moz-column-count: 6;
+    column-count: 6;
+  }
+
+  .list--columns.col-desktop-small-7 {
+    -webkit-column-count: 7;
+    -moz-column-count: 7;
+    column-count: 7;
+  }
+
+  .list--columns.col-desktop-small-8 {
+    -webkit-column-count: 8;
+    -moz-column-count: 8;
+    column-count: 8;
+  }
+}</code></pre><h3 id="inline-block-list-the-code-sass-scss"><span class="counter"></span>SASS (SCSS)<span> <a href="#inline-block-list-the-code-sass-scss" name="inline-block-list-the-code-sass-scss" class="anchor ignore--print"><span class="font-icon--interface-link"></span></a></span></h3><pre id="clickable-css" class="line-numbers linkable-line-numbers" data-line="null"><code class="language-scss">$page_gap: 16px;
+
+ol:not([type]) {
+  list-style-type: decimal;
+  &amp; &amp; {
+    list-style-type: lower-alpha;
+  }
+  &amp; &amp; &amp; {
+    list-style-type: lower-roman;
+  }
+
+  &amp; &amp; &amp; &amp; {
+    list-style-type: decimal;
+  }
+  &amp; &amp; &amp; &amp; &amp; {
+    list-style-type: lower-alpha;
+  }
+  &amp; &amp; &amp; &amp; &amp; &amp; {
+    list-style-type: lower-roman;
+  }
+
+  &amp; &amp; &amp; &amp; &amp; &amp; &amp; {
+    list-style-type: decimal;
+  }
+  &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; {
+    list-style-type: lower-alpha;
+  }
+  &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; {
+    list-style-type: lower-roman;
+  }
+
+  &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; {
+    list-style-type: decimal;
+  }
+}
+
+ul:not([type]) {
+  list-style-type: disc;
+  &amp; &amp; {
+    list-style-type: circle;
+  }
+  &amp; &amp; &amp; {
+    list-style-type: square;
+  }
+
+  &amp; &amp; &amp; &amp; {
+    list-style-type: disc;
+  }
+  &amp; &amp; &amp; &amp; &amp; {
+    list-style-type: circle;
+  }
+  &amp; &amp; &amp; &amp; &amp; &amp; {
+    list-style-type: square;
+  }
+
+  &amp; &amp; &amp; &amp; &amp; &amp; &amp; {
+    list-style-type: disc;
+  }
+  &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; {
+    list-style-type: circle;
+  }
+  &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; {
+    list-style-type: square;
+  }
+
+  &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; {
+    list-style-type: disc;
+  }
+}
+
+// =============================================================================
+// Inline Block Lists
+
+ol.list--inline-block {
+  &amp;, &amp; ol {
+    counter-reset: counter_list;
+  }
+
+  &amp; li {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+  }
+  &amp; li::before {
+    counter-increment: counter_list;
+    display: inline-block;
+    margin-left: -1.75em;
+    min-width: 1.75em;
+    padding-right: 0.25em;
+    text-align: right;
+  }
+
+  &amp; li::before {
+    content: counter(counter_list, decimal) &quot;.&quot;;
+  }
+  &amp; ol li::before {
+    content: counter(counter_list, lower-alpha) &quot;.&quot;;
+  }
+  &amp; ol ol li::before {
+    content: counter(counter_list, lower-roman) &quot;.&quot;;
+  }
+
+  &amp; ol ol ol li::before {
+    content: counter(counter_list, decimal) &quot;.&quot;;
+  }
+  &amp; ol ol ol ol li::before {
+    content: counter(counter_list, lower-alpha) &quot;.&quot;;
+  }
+  &amp; ol ol ol ol ol li::before {
+    content: counter(counter_list, lower-roman) &quot;.&quot;;
+  }
+
+  &amp; ol ol ol ol ol ol li::before {
+    content: counter(counter_list, decimal) &quot;.&quot;;
+  }
+  &amp; ol ol ol ol ol ol ol li::before {
+    content: counter(counter_list, lower-alpha) &quot;.&quot;;
+  }
+  &amp; ol ol ol ol ol ol ol ol li::before {
+    content: counter(counter_list, lower-roman) &quot;.&quot;;
+  }
+
+  &amp; ol ol ol ol ol ol ol ol ol li::before {
+    content: counter(counter_list, decimal) &quot;.&quot;;
+  }
+  &amp; ol ol ol ol ol ol ol ol ol ol li::before {
+    content: counter(counter_list, lower-alpha) &quot;.&quot;;
+  }
+  &amp; ol ol ol ol ol ol ol ol ol ol ol li::before {
+    content: counter(counter_list, lower-roman) &quot;.&quot;;
+  }
+
+  &amp;[type=&quot;1&quot;] li:before {
+    content: counter(counter_list, decimal) &quot;.&quot;;
+  }
+  &amp;[type=&quot;A&quot;].list--upper-alpha li:before {
+    content: counter(counter_list, upper-alpha) &quot;.&quot;;
+  }
+  &amp;[type=&quot;a&quot;].list--lower-alpha li:before {
+    content: counter(counter_list, lower-alpha) &quot;.&quot;;
+  }
+  &amp;[type=&quot;I&quot;].list--upper-roman li:before {
+    content: counter(counter_list, upper-roman) &quot;.&quot;;
+  }
+  &amp;[type=&quot;i&quot;].list--lower-roman li:before {
+    content: counter(counter_list, lower-roman) &quot;.&quot;;
+  }
+}
+
+ul.list--inline-block {
+  &amp; li {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+  }
+  &amp; li::before {
+    position: absolute;
+    left: -16px;
+    top: 0;
+  }
+
+  &amp; li::before {
+    content: &apos;\2022&apos;;
+    font-size: 1.375rem;
+  }
+  &amp; ul li::before {
+    content: &apos;\25CB&apos;;
+    font-size: 0.875rem;
+  }
+  &amp; ul ul li::before {
+    content: &apos;\ffed&apos;;
+    font-size: 1rem;
+  }
+
+  &amp; ul ul ul li::before {
+    content: &apos;\2022&apos;;
+    font-size: 1.375rem;
+  }
+  &amp; ul ul ul ul li::before {
+    content: &apos;\25CB&apos;;
+    font-size: 0.875rem;
+  }
+  &amp; ul ul ul ul ul li::before {
+    content: &apos;\ffed&apos;;
+    font-size: 1rem;
+  }
+
+  &amp; ul ul ul ul ul ul li::before {
+    content: &apos;\2022&apos;;
+    font-size: 1.375rem;
+  }
+  &amp; ul ul ul ul ul ul ul li::before {
+    content: &apos;\25CB&apos;;
+    font-size: 0.875rem;
+  }
+  &amp; ul ul ul ul ul ul ul ul li::before {
+    content: &apos;\ffed&apos;;
+    font-size: 1rem;
+  }
+
+  &amp; ul ul ul ul ul ul ul ul ul li::before {
+    content: &apos;\2022&apos;;
+    font-size: 1.375rem;
+  }
+  &amp; ul ul ul ul ul ul ul ul ul ul li::before {
+    content: &apos;\25CB&apos;;
+    font-size: 0.875rem;
+  }
+  &amp; ul ul ul ul ul ul ul ul ul ul ul li::before {
+    content: &apos;\ffed&apos;;
+    font-size: 1rem;
+  }
+
+  &amp;[type=&quot;disc&quot;] li:before {
+    content: &apos;\2022&apos;;
+    font-size: 1.375rem;
+  }
+  &amp;[type=&quot;circle&quot;] li:before {
+    content: &apos;\25CB&apos;;
+    font-size: 0.875rem;
+  }
+  &amp;[type=&quot;square&quot;] li:before {
+    content: &apos;\ffed&apos;;
+    font-size: 1rem;
+  }
+  &amp;[type=&quot;none&quot;] li:before {
+    content: &quot;&quot;;
+  }
+}
+
+// =============================================================================
+// List Columns
+
+.list--columns {
+  column-gap: $page_gap * 2;
+}
+
+.list--columns {
+  &amp;.col-default-1 { column-count: 1; }
+  &amp;.col-default-2 { column-count: 2; }
+  &amp;.col-default-3 { column-count: 3; }
+  &amp;.col-default-4 { column-count: 4; }
+  &amp;.col-default-5 { column-count: 5; }
+  &amp;.col-default-6 { column-count: 6; }
+  &amp;.col-default-7 { column-count: 7; }
+  &amp;.col-default-8 { column-count: 8; }
+}
+
+@media (min-width: 321px) {
+  .list--columns {
+    &amp;.col-phone-1 { column-count: 1; }
+    &amp;.col-phone-2 { column-count: 2; }
+    &amp;.col-phone-3 { column-count: 3; }
+    &amp;.col-phone-4 { column-count: 4; }
+    &amp;.col-phone-5 { column-count: 5; }
+    &amp;.col-phone-6 { column-count: 6; }
+    &amp;.col-phone-7 { column-count: 7; }
+    &amp;.col-phone-8 { column-count: 8; }
+  }
+}
+
+@media (min-width: 769px) {
+  .list--columns {
+    &amp;.col-tablet-1 { column-count: 1; }
+    &amp;.col-tablet-2 { column-count: 2; }
+    &amp;.col-tablet-3 { column-count: 3; }
+    &amp;.col-tablet-4 { column-count: 4; }
+    &amp;.col-tablet-5 { column-count: 5; }
+    &amp;.col-tablet-6 { column-count: 6; }
+    &amp;.col-tablet-7 { column-count: 7; }
+    &amp;.col-tablet-8 { column-count: 8; }
+  }
+}
+
+@media (min-width: 1025px) {
+  .list--columns {
+    &amp;.col-desktop-small-1 { column-count: 1; }
+    &amp;.col-desktop-small-2 { column-count: 2; }
+    &amp;.col-desktop-small-3 { column-count: 3; }
+    &amp;.col-desktop-small-4 { column-count: 4; }
+    &amp;.col-desktop-small-5 { column-count: 5; }
+    &amp;.col-desktop-small-6 { column-count: 6; }
+    &amp;.col-desktop-small-7 { column-count: 7; }
+    &amp;.col-desktop-small-8 { column-count: 8; }
+  }
+}</code></pre></section></div></main><footer><div class="frame--content"><p><span>Content &#xA9; <span id="copyrightyears__author">2024-2025</span> <a href="https://www.exampleauthor.com" title="Example Author: Home">Example Author <span class="font-icon--interface-external"></span> </a><span>, All Rights Reserved.</span> </span><span class="copyright">Website &#xA9; <span id="copyrightyears__brand">2024-2025</span> <a href="/" title="Staticus Website Compiler Full Example: Home">Staticus Website Compiler Full Example</a><span>, All Rights Reserved.</span></span></p></div></footer><script src="/asset/js/main.min.js?v=1.0.1"></script><script src="asset/module/prism/prism.min.js"></script></body></html><!-- Built with Staticus Website Compiler 1.0.0 Alpha -->

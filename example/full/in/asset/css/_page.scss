@@ -1,0 +1,5 @@
+@use 'variable_frame';
+
+main {
+  padding: variable_frame.$frame_unit;
+}

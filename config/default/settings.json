@@ -1,0 +1,8 @@
+{
+    "dir": "./example/full",
+    "dir_recent": [
+        "./example/full",
+        "./example/min"
+    ],
+    "dir_recent_max": 10
+}

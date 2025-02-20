@@ -1,0 +1,1790 @@
+<!-- @@include('_html/frame/top.html') -->
+
+@@include('_html/frame/top.html', {
+  "title": "HTML Style Test - Example",
+  "stylesheets": [
+    "/asset/css/content/example/html_style_test.min.css",
+    "/asset/module/prism/prism.min.css"
+  ]
+})
+
+<section>
+  <h1>HTML Style Test</h1>
+
+  <h2>About</h2>
+
+  <div>
+    <p>This is a test page filled with common HTML elements to be used to provide visual feedback whilst building CSS systems and frameworks.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Text</h2>
+
+  <h3>Heading</h3>
+
+  <p>The <code class="language-html">&lt;h1&gt;</code> to <code class="language-html">&lt;h6&gt;</code> HTML elements represent headings, with <code class="language-html">&lt;h1&gt;</code> being the highest (most important) level and <code class="language-html">&lt;h6&gt;</code> the lowest. They structure content hierarchically, aiding readability and accessibility. These elements are often styled with larger or bolder text by default, but their appearance can be customized with CSS. Proper use of heading levels ensures semantic accuracy, improves SEO, and helps assistive technologies like screen readers navigate content effectively.</p>
+
+  <div class="overflow">
+    <h1 class="toc-ignore">Heading 1</h1>
+    <h2 class="toc-ignore">Heading 2</h2>
+    <h3 class="toc-ignore">Heading 3</h3>
+    <h4 class="toc-ignore">Heading 4</h4>
+    <h5 class="toc-ignore">Heading 5</h5>
+    <h6 class="toc-ignore">Heading 6</h6>
+  </div>
+
+  <hr>
+
+  <h3>Link</h3>
+
+  <p>The <code class="language-html">&lt;a&gt;</code> HTML element, known as the anchor element, is used to create hyperlinks that navigate to other pages, sections within the same page, or external resources. It includes the <code class="language-html">href</code> attribute to specify the link's destination and can be styled with CSS for visual customization. Anchors also support additional attributes like <code class="language-html">target</code> to open links in new tabs or windows and <code class="language-html">rel</code> to define the relationship between the current document and the linked resource. The <code class="language-html">&lt;a&gt;</code> element is a core component for building navigable and interconnected web content.</p>
+
+  <div class="overflow">
+    <p><a href="" onclick="return false;">Lorem ipsum</a></p>
+    <p><a href="" onclick="return false;">Lorem ipsum dolor sit</a></p>
+    <p><a href="" onclick="return false;">Lorem ipsum dolor sit amet</a></p>
+    <p><a href="" onclick="return false;">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a></p>
+    <p><a href="" onclick="return false;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</a></p>
+  </div>
+
+  <h4>Button Style</h4>
+
+  <p>Buttons in HTML can be created using the <code class="language-html">&lt;button&gt;</code> element or styled <code class="language-html">&lt;a&gt;</code> links with a button-like class (e.g., <code class="language-css">.button</code>). They can be displayed inline or as separate elements within <code class="language-html">&lt;p&gt;</code> or <code class="language-html">&lt;div&gt;</code> containers. Inline buttons are positioned next to each other, while separate buttons are placed on distinct lines or blocks. Proper styling with CSS ensures visual consistency and enhances usability, while semantic use of <code class="language-html">&lt;button&gt;</code> is recommended for interactive controls and form submissions.</p>
+
+  <h5>Nested in Paragraph</h5>
+
+  <h6>Inline</h6>
+
+  <div class="overflow">
+    <p>
+      <button type="button">Test Button Elem</button>
+      <a href="" onclick="return false;" class="button">Test - .button class</a>
+    </p>
+  </div>
+
+  <h6>Separate</h6>
+
+  <div class="overflow">
+    <p><button type="button">Test Button Elem</button></p>
+    <p><a href="" onclick="return false;" class="button">Test - .button class</a></p>
+  </div>
+
+  <h5>Nested in Div</h5>
+
+  <h6>Inline</h6>
+
+  <div class="overflow">
+    <div>
+      <button type="button">Test Button Elem</button>
+      <a href="" onclick="return false;" class="button">Test - .button class</a>
+    </div>
+  </div>
+
+  <h6>Separate</h6>
+
+  <div class="overflow">
+    <div><button type="button">Test Button Elem</button></div>
+    <div><a href="" onclick="return false;" class="button">Test - .button class</a></div>
+  </div>
+
+  <hr>
+
+  <h3>Paragraph</h3>
+
+  <p>The <code class="language-html">&lt;p&gt;</code> HTML element represents a paragraph, serving as the basic block of text content in a document. Browsers automatically add spacing before and after <code class="language-html">&lt;p&gt;</code> elements to separate them visually. It is a versatile element for structuring text, supporting inline elements like <code class="language-html">&lt;strong&gt;</code>, <code class="language-html">&lt;em&gt;</code>, and <code class="language-html">&lt;a&gt;</code> for emphasis, links, and formatting. Proper use of <code class="language-html">&lt;p&gt;</code> ensures readability and semantic clarity in HTML documents.</p>
+
+  <div class="overflow">
+    <p>A paragraph (from the Greek paragraphos, “to write beside” or “written beside”) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
+  </div>
+
+  <hr>
+
+  <h3>Blockquote</h3>
+
+  <p>The <code class="language-html">&lt;blockquote&gt;</code> HTML element is used to represent a section of content that is a quotation from another source. Typically, browsers render <code class="language-html">&lt;blockquote&gt;</code> content with indented margins to visually differentiate it from surrounding text. Optional attributes like <code class="language-html">cite</code> can specify the source URL of the quote for attribution. This element is ideal for longer quotations, while shorter quotes are better suited to the <code class="language-html">&lt;q&gt;</code> element.</p>
+
+  <div class="overflow">
+    <blockquote>
+      <p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text.</p>
+      <p>It is typically distinguished visually using indentation and a different typeface or smaller size quotation. It may or may not include a citation, usually placed at the bottom.</p>
+      <cite><a href="" onclick="return false;">Said someone, maybe.</a></cite>
+    </blockquote>
+  </div>
+
+  <hr>
+
+  <h3>Background Color</h3>
+
+  <p>The <code class="language-css">background-color</code> CSS property sets the background color of an element. It supports various color formats, including named colors like <code class="language-css">DodgerBlue</code>, hexadecimal values such as <code class="language-css">#A1F203</code>, RGB(A) values like <code class="language-css">rgba(125, 255, 71, 0.25)</code>, and HSL(A) values such as <code class="language-css">hsl(210deg, 100%, 66%)</code>. This property is commonly used to add color behind content, highlight sections, or define visual themes, and it can be combined with transparency for layered designs.</p>
+
+  <div>
+    <h4>background-color in P</h4>
+
+    <div class="overflow">
+      <h5>Word Color Background</h5>
+
+      <p style="background-color:Tomato;">
+        <span style="margin:0.25em;">Tomato</span>
+        <span style="margin:0.25em;color:#000;">Tomato</span>
+      </p>
+
+      <p style="background-color:MediumSeaGreen;">
+        <span style="margin:0.25em;">MediumSeaGreen</span>
+        <span style="margin:0.25em;color:#000;">MediumSeaGreen</span>
+      </p>
+
+      <p style="background-color:DodgerBlue;">
+        <span style="margin:0.25em;">DodgerBlue</span>
+        <span style="margin:0.25em;color:#000;">DodgerBlue</span>
+      </p>
+
+      <h5>Hexcolor Background</h5>
+
+      <p style="background-color:#FA0;">
+        <span style="margin:0.25em;" >#FA0</span>
+        <span style="margin:0.25em;color:#000;">#FA0</span>
+      </p>
+
+      <p style="background-color:#A1F203;">
+        <span style="margin:0.25em;" >#A1F203</span>
+        <span style="margin:0.25em;color:#000;">#A1F203</span>
+      </p>
+
+      <h6>Newer Method</h6>
+
+      <p style="background-color:#6347ff77;">
+        <span style="margin:0.25em;" >#6347ff77</span>
+        <span style="margin:0.25em;color:#000;">#6347ff77</span>
+      </p>
+
+      <h5>RGB(A) Background</h5>
+
+      <p style="background-color:rgb(82, 255, 146);">
+        <span style="margin:0.25em;">rgb(82, 255, 146)</span>
+        <span style="margin:0.25em;color:#000;">rgb(82, 255, 146)</span>
+      </p>
+
+      <p style="background-color:rgba(125, 255, 71, .25);">
+        <span style="margin:0.25em;">rgba(125, 255, 71, .25)</span>
+        <span style="margin:0.25em;color:#000;">rgba(125, 255, 71, .25)</span>
+      </p>
+
+      <h6>Newer Method</h6>
+
+      <p style="background-color:rgb(255 82 146);">
+        <span style="margin:0.25em;">rgb(255 82 146)</span>
+        <span style="margin:0.25em;color:#000;">rgb(255 82 146)</span>
+      </p>
+
+      <p style="background-color:rgb(82 183 255 / 50%);">
+        <span style="margin:0.25em;">rgb(82 183 255 / 50%)</span>
+        <span style="margin:0.25em;color:#000;">rgb(82 183 255 / 50%)</span>
+      </p>
+
+      <h5>HSL(A) Background</h5>
+
+      <p style="background-color:hsl(0deg, 100%, 66%);">
+        <span style="margin:0.25em;">hsl(0deg, 100%, 66%)</span>
+        <span style="margin:0.25em;color:#000;">hsl(0deg, 100%, 66%)</span>
+      </p>
+
+      <p style="background-color:hsla(210deg, 100%, 66%, .25);">
+        <span style="margin:0.25em;">hsla(210deg, 100%, 66%, .25)</span>
+        <span style="margin:0.25em;color:#000;">hsla(210deg, 100%, 66%, .25)</span>
+      </p>
+
+      <h6>Newer Method</h6>
+
+      <p style="background-color:hsl(0deg 100% 66%);">
+        <span style="margin:0.25em;">hsl(0deg 100% 66%)</span>
+        <span style="margin:0.25em;color:#000;">hsl(0deg 100% 66%)</span>
+      </p>
+
+      <p style="background-color:hsl(75 100% 66% / .5);">
+        <span style="margin:0.25em;">hsl(75 100% 66% / .5)</span>
+        <span style="margin:0.25em;color:#000;">hsl(75 100% 66% / .5)</span>
+      </p>
+    </div>
+
+    <h4>background-color in Div</h4>
+
+    <div class="overflow">
+      <h5>Word Color Background</h5>
+      <div style="background-color:Tomato;">
+        <span style="margin:0.25em;">Tomato</span>
+        <span style="margin:0.25em;color:#000;">Tomato</span>
+      </div>
+      <div style="background-color:MediumSeaGreen;">
+        <span style="margin:0.25em;">MediumSeaGreen</span>
+        <span style="margin:0.25em;color:#000;">MediumSeaGreen</span>
+      </div>
+      <div style="background-color:DodgerBlue;">
+        <span style="margin:0.25em;">DodgerBlue</span>
+        <span style="margin:0.25em;color:#000;">DodgerBlue</span>
+      </div>
+      <h5>Hexcolor Background</h5>
+      <div style="background-color:#FA0;">
+        <span style="margin:0.25em;" >#FA0</span>
+        <span style="margin:0.25em;color:#000;">#FA0</span>
+      </div>
+      <div style="background-color:#A1F203;">
+        <span style="margin:0.25em;" >#A1F203</span>
+        <span style="margin:0.25em;color:#000;">#A1F203</span>
+      </div>
+      <h6>Newer Method</h6>
+      <div style="background-color:#6347ff77;">
+        <span style="margin:0.25em;" >#6347ff77</span>
+        <span style="margin:0.25em;color:#000;">#6347ff77</span>
+      </div>
+      <h5>RGB(A) Background</h5>
+      <div style="background-color:rgb(82, 255, 146);">
+        <span style="margin:0.25em;">rgb(82, 255, 146)</span>
+        <span style="margin:0.25em;color:#000;">rgb(82, 255, 146)</span>
+      </div>
+      <div style="background-color:rgba(125, 255, 71, .25);">
+        <span style="margin:0.25em;">rgba(125, 255, 71, .25)</span>
+        <span style="margin:0.25em;color:#000;">rgba(125, 255, 71, .25)</span>
+      </div>
+      <h6>Newer Method</h6>
+      <div style="background-color:rgb(255 82 146);">
+        <span style="margin:0.25em;">rgb(255 82 146)</span>
+        <span style="margin:0.25em;color:#000;">rgb(255 82 146)</span>
+      </div>
+      <div style="background-color:rgb(82 183 255 / 50%);">
+        <span style="margin:0.25em;">rgb(82 183 255 / 50%)</span>
+        <span style="margin:0.25em;color:#000;">rgb(82 183 255 / 50%)</span>
+      </div>
+      <h5>HSL(A) Background</h5>
+      <div style="background-color:hsl(0deg, 100%, 66%);">
+        <span style="margin:0.25em;">hsl(0deg, 100%, 66%)</span>
+        <span style="margin:0.25em;color:#000;">hsl(0deg, 100%, 66%)</span>
+      </div>
+      <div style="background-color:hsla(210deg, 100%, 66%, .25);">
+        <span style="margin:0.25em;">hsla(210deg, 100%, 66%, .25)</span>
+        <span style="margin:0.25em;color:#000;">hsla(210deg, 100%, 66%, .25)</span>
+      </div>
+      <h6>Newer Method</h6>
+      <div style="background-color:hsl(0deg 100% 66%);">
+        <span style="margin:0.25em;">hsl(0deg 100% 66%)</span>
+        <span style="margin:0.25em;color:#000;">hsl(0deg 100% 66%)</span>
+      </div>
+      <div style="background-color:hsl(75 100% 66% / .5);">
+        <span style="margin:0.25em;">hsl(75 100% 66% / .5)</span>
+        <span style="margin:0.25em;color:#000;">hsl(75 100% 66% / .5)</span>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <h3>Text Color</h3>
+
+  <p>The <code class="language-css">color</code> CSS property sets the text color of an element. It supports various formats, including named colors like <code class="language-css">Tomato</code>, hexadecimal values such as <code class="language-css">#FA0</code>, RGB(A) values like <code class="language-css">rgb(82, 255, 146)</code>, and HSL(A) values such as <code class="language-css">hsl(0deg, 100%, 66%)</code>. Modern syntax allows for enhanced readability, such as space-separated values in <code class="language-css">rgb()</code> and <code class="language-css">hsl()</code>. These formats provide flexibility for defining text colors with precision, transparency, or predefined names, enhancing the visual design of webpages.</p>
+
+  <div>
+    <h4>Word Color</h4>
+
+    <div class="overflow">
+      <p style="color:Tomato;">color:Tomato</p>
+      <p style="color:MediumSeaGreen;">color:MediumSeaGreen</p>
+      <p style="color:DodgerBlue;">color:DodgerBlue</p>
+    </div>
+
+    <h4>Hexcolor</h4>
+
+    <div class="overflow">
+      <p style="color:#FA0;">#FA0</p>
+      <p style="color:#A1F203;">#A1F203</p>
+      <h5>Newer Method</h5>
+      <p style="color:#6347ff77;">#6347ff77</p>
+    </div>
+
+    <h4>RGB(A) Color</h4>
+
+    <div class="overflow">
+      <p style="color:rgb(82, 255, 146);">rgb(82, 255, 146)</p>
+      <p style="color:rgba(125, 255, 71, .25);">rgba(125, 255, 71, .25)</p>
+      <h5>Newer Method</h5>
+      <p style="color:rgb(255 82 146);">rgb(255 82 146)</p>
+      <p style="color:rgb(82 183 255 / 50%);">rgb(82 183 255 / 50%)</p>
+    </div>
+
+    <h4>HSL(A) Color</h4>
+
+    <div class="overflow">
+      <p style="color:hsl(0deg, 100%, 66%);">hsl(0deg, 100%, 66%)</p>
+      <p style="color:hsla(210deg, 100%, 66%, .25);">hsla(210deg, 100%, 66%, .25)</p>
+      <h5>Newer Method</h5>
+      <p style="color:hsl(0deg 100% 66%);">hsl(0deg 100% 66%)</p>
+      <p style="color:hsl(75 100% 66% / .5);">hsl(75 100% 66% / .5)</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <h3>List</h3>
+
+  <p>Lists in HTML are used to group related content, offering a structured way to display items. There are three main types of lists: <code class="language-html">&lt;ul&gt;</code> (unordered list) for items with no specific order, <code class="language-html">&lt;ol&gt;</code> (ordered list) for numbered or ranked items, and <code class="language-html">&lt;dl&gt;</code> (description list) for term-description pairs. Each list type uses <code class="language-html">&lt;li&gt;</code> for individual items, except <code class="language-html">&lt;dl&gt;</code>, which uses <code class="language-html">&lt;dt&gt;</code> (term) and <code class="language-html">&lt;dd&gt;</code> (description). Lists are highly customizable with CSS properties like <code class="language-css">list-style-type</code>, <code class="language-css">margin</code>, and <code class="language-css">padding</code>, allowing developers to tailor their appearance and layout for a variety of use cases such as menus, content groupings, or data presentations.</p>
+
+  <h4>Definition list</h4>
+
+  <p>The <code class="language-html">&lt;dl&gt;</code> element represents a definition list, with <code class="language-html">&lt;dt&gt;</code> for terms and <code class="language-html">&lt;dd&gt;</code> for their definitions.</p>
+
+  <div class="overflow">
+    <dl>
+      <dt>Definition List Title</dt>
+      <dd>This is a definition list division.</dd>
+    </dl>
+  </div>
+
+  <h4>Ordered List</h4>
+
+  <h5>Numerical</h5>
+
+  <p>The <code class="language-html">&lt;ol&gt;</code> element with <code class="language-html">type="1"</code> creates an ordered list with numbers.</p>
+
+  <div class="overflow">
+    <ol type="1">
+      <li>List Item 1</li>
+      <li>List Item 2</li>
+      <li>List Item 3</li>
+    </ol>
+  </div>
+
+  <h5>Alphabetical Uppercase</h5>
+
+  <p>The <code class="language-html">&lt;ol&gt;</code> element with <code class="language-html">type="A"</code> creates an ordered list with uppercase letters.</p>
+
+  <div class="overflow">
+    <ol type="A">
+      <li>List Item 1</li>
+      <li>List Item 2</li>
+      <li>List Item 3</li>
+    </ol>
+  </div>
+
+  <h5>Alphabetical Lowercase</h5>
+
+  <p>The <code class="language-html">&lt;ol&gt;</code> element with <code class="language-html">type="a"</code> creates an ordered list with lowercase letters.</p>
+
+  <div class="overflow">
+    <ol type="a">
+      <li>List Item 1</li>
+      <li>List Item 2</li>
+      <li>List Item 3</li>
+    </ol>
+  </div>
+
+  <h5>Roman Numeral Uppercase</h5>
+
+  <p>The <code class="language-html">&lt;ol&gt;</code> element with <code class="language-html">type="I"</code> creates an ordered list with uppercase Roman numerals.</p>
+
+  <div class="overflow">
+    <ol type="I">
+      <li>List Item 1</li>
+      <li>List Item 2</li>
+      <li>List Item 3</li>
+    </ol>
+  </div>
+
+  <h5>Roman Numeral Lowercase</h5>
+
+  <p>The <code class="language-html">&lt;ol&gt;</code> element with <code class="language-html">type="i"</code> creates an ordered list with lowercase Roman numerals.</p>
+
+  <div class="overflow">
+    <ol type="i">
+      <li>List Item 1</li>
+      <li>List Item 2</li>
+      <li>List Item 3</li>
+    </ol>
+  </div>
+
+  <h4>Unordered List</h4>
+
+  <h5>disc</h5>
+
+  <p>The <code class="language-html">&lt;ul&gt;</code> element with <code class="language-html">type="disc"</code> uses filled circles as bullets.</p>
+
+  <div class="overflow">
+    <ul type="disc">
+      <li>List Item 1</li>
+      <li>List Item 2</li>
+      <li>List Item 3</li>
+    </ul>
+  </div>
+
+  <h5>circle</h5>
+
+  <p>The <code class="language-html">&lt;ul&gt;</code> element with <code class="language-html">type="circle"</code> uses hollow circles as bullets.</p>
+
+  <div class="overflow">
+    <ul type="circle">
+      <li>List Item 1</li>
+      <li>List Item 2</li>
+      <li>List Item 3</li>
+    </ul>
+  </div>
+
+  <h5>square</h5>
+
+  <p>The <code class="language-html">&lt;ul&gt;</code> element with <code class="language-html">type="square"</code> uses squares as bullets.</p>
+
+  <div class="overflow">
+    <ul type="square">
+      <li>List Item 1</li>
+      <li>List Item 2</li>
+      <li>List Item 3</li>
+    </ul>
+  </div>
+
+  <h5>none</h5>
+
+  <p>The <code class="language-html">&lt;ul&gt;</code> element with <code class="language-html">type="none"</code> removes bullet points.</p>
+
+  <div class="overflow">
+    <ul type="none">
+      <li>List Item 1</li>
+      <li>List Item 2</li>
+      <li>List Item 3</li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <h3>Nested List</h3>
+
+  <p>Nesting lists in HTML involves placing one list inside another, creating a hierarchical structure for organizing content. Both <code class="language-html">&lt;ul&gt;</code> (unordered lists) and <code class="language-html">&lt;ol&gt;</code> (ordered lists) can be nested by placing another <code class="language-html">&lt;ul&gt;</code> or <code class="language-html">&lt;ol&gt;</code> inside a <code class="language-html">&lt;li&gt;</code> element. For example, a nested unordered list can appear as a sublist within an item of an ordered list. Developers can use CSS to style nested lists, adjusting <code class="language-css">margin</code>, <code class="language-css">padding</code>, or <code class="language-css">list-style-type</code> for clear visual hierarchy. Nesting lists is commonly used for creating menus, outlines, or structured content with multiple levels of detail.</p>
+
+  <div>
+    <h4>Ordered List</h4>
+
+    <div class="overflow">
+      <ol>
+        <li>Lorem ipsum</li>
+        <li>dolor sit amet,
+          <ol>
+            <li>consectetur adipisicing elit,</li>
+            <li>sed do eiusmod tempor incididunt ut
+              <ol>
+                <li>labore et dolore magna aliqua.</li>
+                <li>Ut enim ad minim veniam,
+                  <ol>
+                    <li>quis nostrud exercitation</li>
+                    <li>ullamco laboris nisi ut
+                      <ol>
+                        <li>aliquip ex ea commodo consequat.</li>
+                        <li>Duis aute irure dolor in reprehenderit
+                          <ol>
+                            <li>in voluptate velit</li>
+                            <li>esse cillum dolore eu fugiat nulla pariatur.
+                              <ol>
+                                <li>Excepteur sint occaecat</li>
+                                <li>cupidatat non proident,
+                                  <ol>
+                                    <li>sunt in culpa qui</li>
+                                    <li>officia deserunt mollit anim id est laborum.</li>
+                                  </ol>
+                                </li>
+                                <li>aliquip ex ea commodo consequat</li>
+                              </ol>
+                            </li>
+                            <li>in voluptate velit</li>
+                          </ol>
+                        </li>
+                        <li>Excepteur sint occaecat</li>
+                      </ol>
+                    </li>
+                    <li>quis nostrud exercitation</li>
+                  </ol>
+                </li>
+                <li>sunt in culpa qui</li>
+              </ol>
+            </li>
+            <li>officia deserunt mollit anim id est laborum.</li>
+          </ol>
+        </li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</li>
+      </ol>
+    </div>
+
+    <h4>Unordered List</h4>
+
+    <div class="overflow">
+      <ul>
+        <li>Lorem ipsum</li>
+        <li>dolor sit amet,
+          <ul>
+            <li>consectetur adipisicing elit,</li>
+            <li>sed do eiusmod tempor incididunt ut
+              <ul>
+                <li>labore et dolore magna aliqua.</li>
+                <li>Ut enim ad minim veniam,
+                  <ul>
+                    <li>quis nostrud exercitation</li>
+                    <li>ullamco laboris nisi ut
+                      <ul>
+                        <li>aliquip ex ea commodo consequat.</li>
+                        <li>Duis aute irure dolor in reprehenderit
+                          <ul>
+                            <li>in voluptate velit</li>
+                            <li>esse cillum dolore eu fugiat nulla pariatur.
+                              <ul>
+                                <li>Excepteur sint occaecat</li>
+                                <li>cupidatat non proident,
+                                  <ul>
+                                    <li>sunt in culpa qui</li>
+                                    <li>officia deserunt mollit anim id est laborum.</li>
+                                  </ul>
+                                </li>
+                                <li>aliquip ex ea commodo consequat</li>
+                              </ul>
+                            </li>
+                            <li>in voluptate velit</li>
+                          </ul>
+                        </li>
+                        <li>Excepteur sint occaecat</li>
+                      </ul>
+                    </li>
+                    <li>quis nostrud exercitation</li>
+                  </ul>
+                </li>
+                <li>sunt in culpa qui</li>
+              </ul>
+            </li>
+            <li>officia deserunt mollit anim id est laborum.</li>
+          </ul>
+        </li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr>
+
+  <h3>Horizontal Rule</h3>
+
+  <p>The <code class="language-html">&lt;hr&gt;</code> HTML element represents a thematic break or division in content, often displayed as a horizontal line. It is typically used to separate sections of a document or indicate a shift in topic. The <code class="language-html">&lt;hr&gt;</code> element is a void element, meaning it does not require a closing tag. Developers can style the appearance of the <code class="language-html">&lt;hr&gt;</code> using CSS properties like <code class="language-css">border</code>, <code class="language-css">width</code>, <code class="language-css">height</code>, and <code class="language-css">background-color</code> to customize its look and fit the design of the page.</p>
+
+  <div class="overflow">
+    <hr>
+  </div>
+
+  <hr>
+
+  <h3>Table (Tabular Data)</h3>
+
+  <p>The <code class="language-html">&lt;table&gt;</code> HTML element is used to create tabular data structures, allowing developers to organize information into rows and columns. It works in conjunction with elements such as <code class="language-html">&lt;tr&gt;</code> for table rows, <code class="language-html">&lt;th&gt;</code> for table headers, and <code class="language-html">&lt;td&gt;</code> for table data cells. Additional elements like <code class="language-html">&lt;caption&gt;</code> provide table descriptions, and <code class="language-html">&lt;thead&gt;</code>, <code class="language-html">&lt;tbody&gt;</code>, and <code class="language-html">&lt;tfoot&gt;</code> organize content into sections for better structure and styling. Developers can use CSS to style tables and JavaScript to enhance interactivity, such as sorting and filtering table data.</p>
+
+  <h4>Table With Caption</h4>
+
+  <div class="overflow">
+    <table>
+      <caption>Table Caption</caption>
+      <thead>
+        <tr>
+          <th>Table Heading 1</th>
+          <th>Table Heading 2</th>
+          <th>Table Heading 3</th>
+          <th>Table Heading 4</th>
+          <th>Table Heading 5</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Table Cell 1</td>
+          <td>Table Cell 2</td>
+          <td>Table Cell 3</td>
+          <td>Table Cell 4</td>
+          <td>Table Cell 5</td>
+        </tr>
+        <tr>
+          <td>Table Cell 1</td>
+          <td>Table Cell 2</td>
+          <td>Table Cell 3</td>
+          <td>Table Cell 4</td>
+          <td>Table Cell 5</td>
+        </tr>
+        <tr>
+          <td>Table Cell 1</td>
+          <td>Table Cell 2</td>
+          <td>Table Cell 3</td>
+          <td>Table Cell 4</td>
+          <td>Table Cell 5</td>
+        </tr>
+        <tr>
+          <td>Table Cell 1</td>
+          <td>Table Cell 2</td>
+          <td>Table Cell 3</td>
+          <td>Table Cell 4</td>
+          <td>Table Cell 5</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th>Table Footer 1</th>
+          <th>Table Footer 2</th>
+          <th>Table Footer 3</th>
+          <th>Table Footer 4</th>
+          <th>Table Footer 5</th>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <h4>Table Without Caption</h4>
+
+  <div class="overflow">
+    <table>
+      <thead>
+        <tr>
+          <th>Table Heading 1</th>
+          <th>Table Heading 2</th>
+          <th>Table Heading 3</th>
+          <th>Table Heading 4</th>
+          <th>Table Heading 5</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Table Cell 1</td>
+          <td>Table Cell 2</td>
+          <td>Table Cell 3</td>
+          <td>Table Cell 4</td>
+          <td>Table Cell 5</td>
+        </tr>
+        <tr>
+          <td>Table Cell 1</td>
+          <td>Table Cell 2</td>
+          <td>Table Cell 3</td>
+          <td>Table Cell 4</td>
+          <td>Table Cell 5</td>
+        </tr>
+        <tr>
+          <td>Table Cell 1</td>
+          <td>Table Cell 2</td>
+          <td>Table Cell 3</td>
+          <td>Table Cell 4</td>
+          <td>Table Cell 5</td>
+        </tr>
+        <tr>
+          <td>Table Cell 1</td>
+          <td>Table Cell 2</td>
+          <td>Table Cell 3</td>
+          <td>Table Cell 4</td>
+          <td>Table Cell 5</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th>Table Footer 1</th>
+          <th>Table Footer 2</th>
+          <th>Table Footer 3</th>
+          <th>Table Footer 4</th>
+          <th>Table Footer 5</th>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <h4>Table Body Only</h4>
+
+  <div class="overflow">
+    <table>
+      <tbody>
+        <tr>
+          <td>Table Cell 1</td>
+          <td>Table Cell 2</td>
+          <td>Table Cell 3</td>
+          <td>Table Cell 4</td>
+          <td>Table Cell 5</td>
+        </tr>
+        <tr>
+          <td>Table Cell 1</td>
+          <td>Table Cell 2</td>
+          <td>Table Cell 3</td>
+          <td>Table Cell 4</td>
+          <td>Table Cell 5</td>
+        </tr>
+        <tr>
+          <td>Table Cell 1</td>
+          <td>Table Cell 2</td>
+          <td>Table Cell 3</td>
+          <td>Table Cell 4</td>
+          <td>Table Cell 5</td>
+        </tr>
+        <tr>
+          <td>Table Cell 1</td>
+          <td>Table Cell 2</td>
+          <td>Table Cell 3</td>
+          <td>Table Cell 4</td>
+          <td>Table Cell 5</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr>
+
+  <h3>Address</h3>
+
+  <p>The <code class="language-html">&lt;address&gt;</code> HTML element represents contact information for the author or owner of a document or article. This can include details such as physical addresses, phone numbers, email addresses, and URLs. When placed within the <code class="language-html">&lt;body&gt;</code>, it pertains to the entire document; within an <code class="language-html">&lt;article&gt;</code>, it relates specifically to that article. Content inside the <code class="language-html">&lt;address&gt;</code> element is typically rendered in italics, with browsers adding line breaks before and after the element. It's important to use <code class="language-html">&lt;address&gt;</code> solely for contact information to maintain semantic accuracy.</p>
+
+  <div class="overflow">
+    <address>
+      Written by <a href="mailto:webmaster@example.com">Jon Doe</a>.<br>
+      Visit us at:<br>
+      Example.com<br>
+      <a href='https://www.google.com/maps/place/221B+Baker+St,+Marylebone,+London+NW1+6XE,+UK/@51.523767,-0.1585557,17z/data=!3m1!4b1!4m5!3m4!1s0x48761acf33628211:0x445d7677a88322e1!8m2!3d51.523767!4d-0.1585557?hl=en'>
+        221b Baker St, <br>
+        Marylebone, <br>
+        London NW1 6XE, <br>
+        United Kingdom
+      </a>
+    </address>
+  </div>
+
+  <hr>
+
+  <h3>Details</h3>
+
+  <p>The <code class="language-html">&lt;details&gt;</code> HTML element is used to create a disclosure widget that allows users to toggle visibility of additional content. It typically works alongside the <code class="language-html">&lt;summary&gt;</code> element, which serves as a label or summary for the collapsible content. When clicked, the <code class="language-html">&lt;summary&gt;</code> reveals or hides the content within the <code class="language-html">&lt;details&gt;</code>. This element is useful for creating collapsible sections, FAQs, or hidden details in a webpage. By default, the content inside <code class="language-html">&lt;details&gt;</code> is hidden until toggled open by the user. Developers can enhance its functionality and appearance with CSS and JavaScript for a more interactive experience.</p>
+
+  <h4>Details with Plain Text Summary</h4>
+
+  <div class="overflow">
+    <details>
+      <summary>Details summary</summary>
+      <p>More details come here.<br>
+      Another sentence.</p>
+    </details>
+  </div>
+
+  <h4>Details with Button Summary</h4>
+
+  <div class="overflow">
+    <details>
+      <summary class="button">Details summary</summary>
+      <p>More details come here.<br>
+      Another sentence.</p>
+    </details>
+  </div>
+
+  <hr>
+
+  <h3>Code</h3>
+
+  <p>HTML provides several elements for displaying code, keyboard input, and preformatted text in a meaningful and visually distinct way. The <code class="language-html">&lt;code&gt;</code> element is used for inline code snippets, such as <code class="language-html">&lt;div&gt;code&lt;/div&gt;</code>. The <code class="language-html">&lt;kbd&gt;</code> element represents user keyboard input, like <kbd>Cmd</kbd>. The <code class="language-html">&lt;samp&gt;</code> element is used for sample output, such as <samp>This is sample output from a computer program.</samp>. For displaying blocks of preformatted text, the <code class="language-html">&lt;pre&gt;</code> element preserves whitespace, line breaks, and formatting, allowing for easy representation of code blocks or structured text. These elements are essential for presenting code or computer-related content in a clear and semantically correct way.</p>
+
+  <div class="overflow">
+    <p><strong>Keyboard input:</strong> <kbd>Cmd</kbd></p>
+    <p><strong>Inline code:</strong> <code class="language-html">&lt;div&gt;code&lt;&#x2F;div&gt;</code></p>
+    <p><strong>Sample output:</strong> <samp>This is sample output from a computer program.</samp></p>
+    <h4>Pre-Formatted Text</h4>
+    <pre>P R E F O R M A T T E D T E X T
+! " # $ % &amp; ' ( ) * + , - . /
+0 1 2 3 4 5 6 7 8 9 : ; &lt; = &gt; ?
+@ A B C D E F G H I J K L M N O
+P Q R S T U V W X Y Z [ \ ] ^ _
+` a b c d e f g h i j k l m n o
+p q r s t u v w x y z { | } ~ </pre>
+  </div>
+
+  <hr>
+
+  <h3>Inline Element</h3>
+
+  <p>Inline elements in HTML are used to format and style parts of text or other content within a document without breaking the flow into a new line. They typically occupy only as much width as necessary, allowing content to flow naturally within its containing block. Examples of inline elements include <code class="language-html">&lt;a&gt;</code> for links, <code class="language-html">&lt;strong&gt;</code> and <code class="language-html">&lt;em&gt;</code> for semantic emphasis, <code class="language-html">&lt;abbr&gt;</code> for abbreviations, <code class="language-html">&lt;mark&gt;</code> for highlighting, and <code class="language-html">&lt;time&gt;</code> for temporal data. These elements are versatile for enhancing text with meaning, style, or interaction while maintaining the inline layout within their parent container.</p>
+
+  <div class="overflow">
+    <p>Here is a <a href="" onclick="return false;">text link</a> shown.</p>
+    <p><strong>Strong is used to indicate strong importance.</strong></p>
+    <p><em>This text has added emphasis.</em></p>
+    <p>The <b>b element</b> is stylistically different text from normal text, without any special importance.</p>
+    <p>The <i>i element</i> is text that is offset from the normal text.</p>
+    <p>The <u>u element</u> is text with an unarticulated, though explicitly rendered, non-textual annotation.</p>
+    <p><del>This text is deleted</del> and <ins>This text is inserted</ins>.</p>
+    <p><s>This text has a strikethrough</s>.</p>
+    <p>Superscript<sup>®</sup>.</p>
+    <p>Subscript for things like H<sub>2</sub>O.</p>
+    <p><small>This small text is small for fine print, etc.</small></p>
+    <p>Abbreviation: <abbr title="HyperText Markup Language">HTML</abbr></p>
+    <p><q cite="https://developer.mozilla.org/en-US/docs/HTML/Element/q">This text is a short inline quotation.</q></p>
+    <p><cite>This is a citation.</cite></p>
+    <p>The <dfn>dfn element</dfn> indicates a definition.</p>
+    <p>The <mark>mark element</mark> indicates a highlight.</p>
+    <p>The <var>variable element</var>, such as <var>x</var> = <var>y</var>.</p>
+    <p>The time element: <time datetime="2013-04-06T12:32+00:00">2 weeks ago</time></p>
+  </div>
+
+  <hr>
+
+  <h3>HTML Comment</h3>
+
+  <p>The <code class="language-html">&lt;!-- --&gt;</code> syntax is used to create comments in HTML. Comments are ignored by the browser and do not appear on the rendered page, serving as notes or explanations for developers. They can be used to temporarily disable code or add annotations within the markup for better readability and collaboration. For example: <code class="language-html">&lt;!-- This is a comment --&gt;</code>. Comments are a useful tool for documenting the structure and purpose of the HTML without affecting the user experience.</p>
+
+  <div class="overflow">
+    <p>There is comment here: <!--This comment should not be displayed--></p>
+    <p>There is a comment spanning multiple tags and lines below here.</p>
+    <!--<p><a href="" onclick="return false;">This is a text link. But it should not be displayed in a comment</a>.</p>
+    <p><strong>Strong is used to indicate strong importance. But, it should not be displayed in a comment</strong></p>
+    <p><em>This text has added emphasis. But, it should not be displayed in a comment</em></p>-->
+  </div>
+
+</section>
+
+<section>
+  <h2>Embedded Content</h2>
+
+  <h3>Image</h3>
+
+  <p>The <code class="language-html">&lt;img&gt;</code> HTML element is used to embed images into a webpage. It includes attributes such as <code class="language-html">src</code> to specify the image URL, <code class="language-html">alt</code> to provide alternative text for accessibility and fallback, <code class="language-html">width</code>, and <code class="language-html">height</code> for sizing. The <code class="language-html">loading</code> attribute can optimize performance by deferring the loading of offscreen images using <code class="language-html">lazy</code>. Developers can enhance user experience by combining the <code class="language-html">&lt;img&gt;</code> element with CSS for styling and JavaScript for interactivity, ensuring images are responsive and accessible across devices.</p>
+
+  <div>
+    <h4>No <code class="language-html">&lt;figure&gt;</code> element</h4>
+    <p><img src="/asset/image/content/example/html_style_test/480x480.png" alt="Image alt text"></p>
+    <h4>Wrapped in a <code class="language-html">&lt;figure&gt;</code> element, no <code class="language-html">&lt;figcaption&gt;</code></h4>
+    <figure><img src="/asset/image/content/example/html_style_test/420x420.png" alt="Image alt text"></figure>
+    <h4>Wrapped in a <code class="language-html">&lt;figure&gt;</code> element, with a <code class="language-html">&lt;figcaption&gt;</code></h4>
+    <figure>
+      <img src="/asset/image/content/example/html_style_test/420x420.png" alt="Image alt text">
+      <figcaption>Here is a caption for this image.</figcaption>
+    </figure>
+  </div>
+
+  <hr>
+
+  <h3>Background Image</h3>
+
+  <p>The <code class="language-css">background-image</code> CSS property allows developers to set an image as the background for an element. It supports various types of values, such as URLs to external images, gradients, or none to remove the background image. Additional properties like <code class="language-css">background-size</code>, <code class="language-css">background-position</code>, and <code class="language-css">background-repeat</code> provide control over the image's scaling, alignment, and tiling behavior. Combining <code class="language-css">background-image</code> with other background properties using <code class="language-css">background</code> shorthand enables efficient styling for visually engaging designs.</p>
+
+  <div>
+    <div id="image-background"></div>
+  </div>
+
+  <hr>
+
+  <h3>Picture</h3>
+
+  <p>The <code class="language-html">&lt;picture&gt;</code> HTML element provides a container for multiple image sources, enabling developers to implement responsive images and art direction. It works with <code class="language-html">&lt;source&gt;</code> elements that use attributes like <code class="language-html">media</code> and <code class="language-html">srcset</code> to define images for specific screen sizes or conditions. The fallback <code class="language-html">&lt;img&gt;</code> element ensures compatibility with browsers that do not support the <code class="language-html">&lt;picture&gt;</code> element or when no <code class="language-html">&lt;source&gt;</code> matches. This setup optimizes loading and presentation by selecting the most appropriate image for the user’s device and context.</p>
+
+  <blockquote>
+    <p>Resize the browser window to see other images. The image shown changes based on screen width:</p>
+    <ul>
+      <li>When the screen is at least <code>1200</code> pixels wide.</li>
+      <li>When the screen is at least <code>1000</code> pixels wide.</li>
+      <li>When the screen is at least <code>800</code> pixels wide.</li>
+      <li>When the screen is at least <code>600</code> pixels wide.</li>
+      <li>When the screen is at least <code>400</code> pixels wide.</li>
+      <li>When the screen is less than <code>400</code> pixels wide.</li>
+    </ul>
+  </blockquote>
+
+  <picture>
+    <source media="(min-width:1200px)" srcset="/asset/image/content/example/html_style_test/1000x200.png">
+    <source media="(min-width:1000px)" srcset="/asset/image/content/example/html_style_test/800x200.png">
+    <source media="(min-width:800px)" srcset="/asset/image/content/example/html_style_test/600x200.png">
+    <source media="(min-width:600px)" srcset="/asset/image/content/example/html_style_test/400x200.png">
+    <source media="(min-width:400px)" srcset="/asset/image/content/example/html_style_test/200x200.png">
+    <img src="/asset/image/content/example/html_style_test/100x200.png" alt="Kittens" style="width:auto;">
+  </picture>
+
+  <hr>
+
+  <h3>Audio</h3>
+
+  <p>The <code class="language-html">&lt;audio&gt;</code> HTML element enables embedding audio content into a webpage, supporting formats like MP3, WAV, and Ogg. It includes attributes such as <code class="language-html">controls</code>, <code class="language-html">autoplay</code>, <code class="language-html">loop</code>, and <code class="language-html">muted</code> for customizing playback. Multiple source files can be specified using the <code class="language-html">&lt;source&gt;</code> element for cross-browser compatibility. Developers can use JavaScript to control playback, create custom audio controls, and integrate additional features like visualizers or synchronized captions for an enhanced user experience.</p>
+
+  <h4>Audio Without Loop</h4>
+
+  <div class="overflow">
+    <audio src="/asset/audio/content/example/shitefromaheight/Piano_at_140_bpm/SteinwayPiano_bip_5.mp3" type="audio/mpeg" controls="">Your browser does not support the audio element.</audio>
+  </div>
+
+  <h4>Audio With Loop</h4>
+
+  <div class="overflow">
+    <audio src="/asset/audio/content/example/shitefromaheight/Piano_at_140_bpm/SteinwayPiano_bip_5.mp3" type="audio/mpeg" controls="" loop>Your browser does not support the audio element.</audio>
+  </div>
+
+  <hr>
+
+  <h3>Video</h3>
+
+  <p>The <code class="language-html">&lt;video&gt;</code> HTML element is used to embed videos directly into a webpage, providing support for a variety of formats like MP4, WebM, and Ogg. It includes attributes such as <code class="language-html">controls</code>, <code class="language-html">autoplay</code>, <code class="language-html">loop</code>, and <code class="language-html">muted</code> for seamless playback customization. With the ability to define multiple source files using <code class="language-html">&lt;source&gt;</code>, it ensures compatibility across different browsers. Developers can enhance user experience with JavaScript by controlling playback, creating custom controls, and integrating advanced features like captions and subtitles via the <code class="language-html">&lt;track&gt;</code> element.</p>
+
+  <div class="overflow">
+    <div class="aspect_ratio__4_3">
+      <video src="/asset/video/content/example/cure/CureIntro_2012.mp4" controls="">video</video>
+    </div>
+  </div>
+
+  <hr>
+
+  <h3>Canvas</h3>
+
+  <p>The <code class="language-html">&lt;canvas&gt;</code> HTML element is a versatile container for graphics and animations, allowing developers to draw shapes, images, text, and complex visual effects dynamically using JavaScript. Paired with the <code class="language-js">CanvasRenderingContext2D</code> API or WebGL, it supports both 2D and 3D rendering. Commonly used for games, data visualizations, and interactive media, <code class="language-html">&lt;canvas&gt;</code> provides a pixel-based drawing surface that scales flexibly to various screen sizes. Its lightweight nature and broad browser support make it a powerful tool for creating engaging and responsive web content.</p>
+
+  <blockquote>This interactive canvas demo features dynamic bubbles that react to user input. Mouse hover or touch to create white lights that repel bubbles and altering their motion.</blockquote>
+
+  <div class="overflow">
+    <canvas id="colorfulCanvas">Your browser does not support the canvas element.</canvas>
+  </div>
+
+  <hr>
+
+  <h3>Meter</h3>
+
+  <p>The <code class="language-html">&lt;meter&gt;</code> HTML element represents a scalar value within a known range, often used to display measurements like progress, ratings, or usage levels. It includes attributes such as <code class="language-html">min</code>, <code class="language-html">max</code>, <code class="language-html">value</code>, <code class="language-html">low</code>, <code class="language-html">high</code>, and <code class="language-html">optimum</code> for precise customization and semantic meaning. Unlike the <code class="language-html">&lt;progress&gt;</code> element, it is designed for measurements with meaningful ranges and thresholds. Developers can style the <code class="language-html">&lt;meter&gt;</code> element with <code class="language-css">CSS</code> or enhance its interactivity with JavaScript for more dynamic applications.</p>
+
+  <div class="overflow">
+    <p>0 out of 10</p>
+    <div><meter value="0" min="0" max="10" low="3" high="7" optimum="8">0 out of 10</meter></div>
+    <p>1 out of 10</p>
+    <div><meter value="1" min="0" max="10" low="3" high="7" optimum="8">1 out of 10</meter></div>
+    <p>4 out of 10</p>
+    <div><meter value="4" min="0" max="10" low="3" high="7" optimum="8">4 out of 10</meter></div>
+    <p>7 out of 10</p>
+    <div><meter value="7" min="0" max="10" low="3" high="7" optimum="8">7 out of 10</meter></div>
+    <p>10 out of 10</p>
+    <div><meter value="10" min="0" max="10" low="3" high="7" optimum="8">10 out of 10</meter></div>
+  </div>
+
+  <hr>
+
+  <h3>Progress</h3>
+
+  <p>The <code class="language-html">&lt;progress&gt;</code> HTML element is used to display the completion progress of a task, such as downloads, file transfers, or installations. It includes attributes like <code class="language-html">max</code> and <code class="language-html">value</code> to define the total and current progress. Unlike the <code class="language-html">&lt;meter&gt;</code> element, it is designed for tasks with indeterminate or determinate progress. Developers can style the <code class="language-html">&lt;progress&gt;</code> element with <code class="language-css">CSS</code> or use JavaScript to dynamically update its value for real-time feedback to users.</p>
+
+  <h4>Intermediate Progress</h4>
+
+  <div class="overflow">
+    <progress>progress</progress>
+  </div>
+
+  <h4>Determinate Progress</h4>
+
+  <div class="overflow">
+    <progress max="100" value="80"></progress>
+  </div>
+
+  <hr>
+
+  <h3>Inline SVG</h3>
+
+  <p>The <code class="language-html">&lt;svg&gt;</code> HTML element is a container for Scalable Vector Graphics, allowing developers to create resolution-independent shapes, paths, text, and images. It supports a variety of attributes such as <code class="language-html">viewBox</code>, <code class="language-html">width</code>, <code class="language-html">height</code>, and <code class="language-html">fill</code> for customizing appearance and behavior. The <code class="language-html">&lt;svg&gt;</code> element integrates seamlessly with HTML and CSS and supports interactivity through JavaScript. It is ideal for creating icons, charts, animations, and other dynamic visualizations with crisp rendering across devices.</p>
+
+  <div class="overflow">
+    <svg width="100px" height="100px"><circle cx="50" cy="50" r="50" fill="#1fa3ec"></circle></svg>
+  </div>
+
+  <hr>
+
+  <h3>IFrame</h3>
+
+  <p>The <code class="language-html">&lt;iframe&gt;</code> HTML element embeds an external resource, such as another webpage or media, within the current document. It includes attributes like <code class="language-html">src</code> for specifying the resource URL, <code class="language-html">width</code> and <code class="language-html">height</code> for size adjustments, and <code class="language-html">allow</code> for controlling permissions like autoplay or fullscreen. The <code class="language-html">&lt;iframe&gt;</code> element is versatile for embedding videos, maps, or interactive content, with optional sandboxing for enhanced security and controlled interactions.</p>
+
+  <div class="overflow">
+    <iframe src="/index.html" height="100%" width="100%"></iframe>
+  </div>
+
+  <hr>
+
+  <h3>Embed</h3>
+
+  <p>The <code class="language-html">&lt;embed&gt;</code> HTML element is used to embed external resources like multimedia, plugins, or interactive content into a webpage. It includes attributes such as <code class="language-html">src</code> for specifying the resource URL and <code class="language-html">type</code> for defining the media type. The <code class="language-html">&lt;embed&gt;</code> element is versatile and does not provide fallback content but integrates seamlessly with various media and plugins, including PDFs, Flash, and custom applications.</p>
+
+  <blockquote>
+    The <code class="language-html">&lt;embed&gt;</code> element is lightweight and straightforward, suitable for embedding content when fallback content is not necessary. However, if the embedded resource cannot load, it will not display any alternative content.
+  </blockquote>
+
+  <h4>Embedded PDF Document</h4>
+
+  <div class="overflow">
+    <p>Below is an example of an embedded PDF:</p>
+    <embed src="/asset/file/content/example/example_pdf.pdf" type="application/pdf">
+    <p>If you cannot view the PDF, <a href="/asset/file/content/example/example_pdf.pdf" download>click here to download it</a>.</p>
+  </div>
+
+  <hr>
+
+  <h3>Object</h3>
+
+  <p>The <code class="language-html">&lt;object&gt;</code> HTML element embeds external resources, such as multimedia, PDFs, or even other webpages, into a document. It includes attributes like <code class="language-html">data</code> for specifying the resource URL, <code class="language-html">type</code> for declaring the content type, and <code class="language-html">width</code> and <code class="language-html">height</code> for size adjustments. Unlike the <code class="language-html">&lt;embed&gt;</code> element, the <code class="language-html">&lt;object&gt;</code> element allows for fallback content within its tags for unsupported environments, making it a flexible choice for embedding resources.</p>
+
+  <blockquote>
+    The <code class="language-html">&lt;object&gt;</code> element is more versatile than <code class="language-html">&lt;embed&gt;</code> because it supports fallback content for unsupported browsers. This makes it ideal for ensuring accessibility and providing alternative options if the embedded resource fails to load.
+  </blockquote>
+
+  <h4>Embedded PDF Document using Object</h4>
+
+  <div class="overflow">
+    <object data="/asset/file/content/example/example_pdf.pdf" type="application/pdf">
+      <p>Your browser does not support displaying PDFs.
+      <a href="/asset/file/content/example/example_pdf.pdf">Download the PDF</a> instead.</p>
+    </object>
+  </div>
+
+  <hr>
+
+  <h3>YouTube Video</h3>
+
+  <p>Embedding a YouTube video typically uses the <code class="language-html">&lt;iframe&gt;</code> HTML element with attributes like <code class="language-html">src</code> to specify the video URL, <code class="language-html">width</code> and <code class="language-html">height</code> for defining size, and <code class="language-html">allow</code> for permissions such as autoplay or fullscreen. A typical YouTube embed URL looks like <code class="language-html">https://www.youtube.com/embed/&lt;video_id&gt;</code>. Customization options can be added as query parameters, such as <code class="language-html">?autoplay=1</code> or <code class="language-html">&mute=1</code>, enabling enhanced user experiences and control over playback.</p>
+
+  <div class="overflow">
+    <div class="aspect_ratio__16_9">
+      <iframe
+        src="https://www.youtube.com/embed/_oqr06cHAGw"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Form Element</h2>
+
+  <p>The <code class="language-html">&lt;form&gt;</code> HTML element is a container for user input, enabling data submission to a server. It includes attributes like <code class="language-html">action</code> to define the target URL, <code class="language-html">method</code> for the HTTP method (e.g., <code class="language-html">GET</code> or <code class="language-html">POST</code>), and <code class="language-html">enctype</code> for encoding types. Inside the <code class="language-html">&lt;form&gt;</code>, elements like <code class="language-html">&lt;input&gt;</code>, <code class="language-html">&lt;textarea&gt;</code>, and <code class="language-html">&lt;button&gt;</code> are used to collect data. Developers can enhance form behavior with JavaScript for validation and interactivity.</p>
+
+  <form>
+    <h3>Input Field</h3>
+    <div class="overflow">
+      <fieldset id="forms__input">
+        <legend>Input Field</legend>
+        <p>
+          <label for="input__text">Text Input</label>
+          <input id="input__text" type="text" placeholder="Text Input" autocomplete="autocomplete-text">
+        </p>
+        <p>
+          <label for="input__password">Password</label>
+          <input id="input__password" type="password" placeholder="Type your Password" autocomplete="autocomplete-password">
+        </p>
+        <p>
+          <label for="input__webaddress">Web Address</label>
+          <input id="input__webaddress" type="url" placeholder="http://yoursite.com" autocomplete="autocomplete-webaddress">
+        </p>
+        <p>
+          <label for="input__emailaddress">Email Address</label>
+          <input id="input__emailaddress" type="email" placeholder="name@email.com" autocomplete="autocomplete-email">
+        </p>
+        <p>
+          <label for="input__phone">Phone Number</label>
+          <input id="input__phone" type="tel" placeholder="(999) 999-9999" autocomplete="autocomplete-phone">
+        </p>
+        <p>
+          <label for="input__search">Search</label>
+          <input id="input__search" type="search" placeholder="Enter Search Term" autocomplete="autocomplete-search">
+        </p>
+        <p>
+          <label for="input__search__icon">Search with Icon</label>
+          <span class="input__search__icon"><input id="input__search__icon" type="search" placeholder="Enter Search Term" autocomplete="autocomplete-search-icon"></span>
+        </p>
+        <p>
+          <label for="input__text2">Number Input</label>
+          <input id="input__text2" type="number" placeholder="Enter a Number" autocomplete="autocomplete-number">
+        </p>
+        <p>
+          <label for="input__text4" class="valid">Valid</label>
+          <input id="input__text4" class="valid" type="text" placeholder="Valid Text Input" autocomplete="autocomplete-text-valid">
+        </p>
+        <p>
+          <label for="input__text3" class="invalid">Invalid</label>
+          <input id="input__text3" class="invalid" type="text" placeholder="Invalid Text Input" autocomplete="autocomplete-text-error">
+        </p>
+        <p>
+          <label for="input__text__disabled" class="disabled">Disabled</label>
+          <input id="input__text__disabled" type="text" placeholder="Disabled Text Input" autocomplete="autocomplete-text-disabled" disabled="disabled">
+        </p>
+        <p>
+          <label for="input__file">File Input</label>
+          <input id="input__file" type="file" autocomplete="autocomplete-file">
+        </p>
+      </fieldset>
+    </div>
+
+    <hr>
+
+    <h3>HTML5 Input</h3>
+
+    <blockquote>
+      The <code class="language-html">&lt;datalist&gt;</code> element has significant styling limitations because its dropdown behavior and appearance are controlled by the browser. Customizing the dropdown arrow, hover states, or the overall styling of options is not fully possible with CSS alone. Browser-specific handling of <code class="language-html">&lt;datalist&gt;</code> further adds inconsistency, making it challenging to achieve uniform designs across different environments. For complete control, replacing the native <code class="language-html">&lt;datalist&gt;</code> with a custom dropdown using HTML, CSS, and JavaScript is recommended.
+    </blockquote>    
+
+    <div class="overflow">
+      <fieldset id="forms__html5">
+        <legend>HTML5 Input</legend>
+
+        <p>
+          <label for="ic">Color Input</label>
+          <input type="color" id="ic" value="#FF7700" autocomplete="autocomplete-color">
+        </p>
+
+        <p>
+          <label for="in">Number Input</label>
+          <input type="number" id="in" min="0" max="10" value="5" autocomplete="autocomplete-number-2">
+        </p>
+
+        <p>
+          <label for="ir">Range Input</label>
+          <input type="range" id="ir" min="0" max="10" value="10" autocomplete="autocomplete-range">
+        </p>
+
+        <p>
+          <label for="idd">Date Input</label>
+          <input type="date" id="idd" value="1970-01-01" autocomplete="autocomplete-date">
+        </p>
+
+        <p>
+          <label for="idm">Month Input</label>
+          <input type="month" id="idm" value="1970-01" autocomplete="autocomplete-month">
+        </p>
+
+        <p>
+          <label for="idw">Week Input</label>
+          <input type="week" id="idw" value="1970-W01" autocomplete="autocomplete-week">
+        </p>
+
+        <p>
+          <label for="idt">Datetime Input</label>
+          <input type="datetime" id="idt" value="1970-01-01T00:00:00Z" autocomplete="autocomplete-datetime">
+        </p>
+
+        <p>
+          <label for="idtl">Datetime-local Input</label>
+          <input type="datetime-local" id="idtl" value="1970-01-01T00:00" autocomplete="autocomplete-datetime-local">
+        </p>
+
+        <p>
+          <label for="idatal">Datalist</label>
+          <input type="text" id="idatal" list="example-list" autocomplete="autocomplete-datalist">
+          <datalist id="example-list">
+            <option value="Example #1">
+            <option value="Example #2">
+            <option value="Example #3">
+          </datalist>
+        </p>
+
+        <p>
+          <label for="ikeygen">Keygen</label>
+          <keygen id="ikeygen">
+        </p>
+      </fieldset>
+    </div>
+
+    <h4>Why is the &lt;keygen&gt; Element Not Included?</h4>
+
+    <p>
+      The <code class="language-html">&lt;keygen&gt;</code> element is not included in this CSS demo because it is a deprecated HTML element.
+      It was used historically for generating cryptographic key pairs in web forms but is no longer supported in modern browsers due to security concerns and lack of consistent implementation.
+    </p>
+
+    <p>Developers are now encouraged to use the Web Crypto API or other modern alternatives for cryptographic functionality.</p>
+
+    <hr>
+
+    <h3>Textarea</h3>
+
+    <p>The <code class="language-html">&lt;textarea&gt;</code> HTML element is used to create multi-line text input fields, allowing users to input or edit larger blocks of text. It includes attributes such as <code class="language-html">rows</code> and <code class="language-html">cols</code> for defining dimensions, <code class="language-html">placeholder</code> for hint text, and <code class="language-html">maxlength</code> for limiting input length. Developers can use the <code class="language-html">value</code> attribute or JavaScript to set or retrieve the text content within the <code class="language-html">&lt;textarea&gt;</code> for dynamic interactivity and data handling.</p>
+
+    <div class="overflow">
+      <fieldset id="forms__textareas">
+        <legend>Textarea</legend>
+
+        <p>
+          <label for="textarea">Textarea</label>
+          <br>
+          <textarea id="textarea" rows="8" placeholder="Enter your message here" autocomplete="autocomplete-textarea"></textarea>
+        </p>
+
+        <p>
+          <label for="textarea__disabled" class="disabled">Disabled Textarea</label>
+          <br>
+          <textarea id="textarea__disabled" rows="8" placeholder="You shall not enter your message here" autocomplete="autocomplete-textarea-disabled" disabled="disabled"></textarea>
+        </p>
+      </fieldset>
+    </div>
+
+    <hr>
+
+    <h3>Select Menu</h3>
+
+    <p>The <code class="language-html">&lt;select&gt;</code> HTML element creates a drop-down menu for selecting one or more options. It works in conjunction with <code class="language-html">&lt;option&gt;</code> elements to define the available choices. Attributes like <code class="language-html">multiple</code> enable selecting multiple options, while <code class="language-html">size</code> controls the visible number of options. Developers can use JavaScript to dynamically update or retrieve the selected value(s) from the <code class="language-html">&lt;select&gt;</code> element for enhanced user interaction.</p>
+
+    <blockquote>
+      Customizing <code class="language-html">&lt;select&gt;</code> elements and their dropdown options is limited due to browser-controlled styling. For full control:
+      <ul>
+        <li>Custom arrows must be added via wrappers rather than directly applied. Wrappers hide the default dropdown arrow and allow for custom designs using CSS and additional HTML elements, ensuring cross-browser compatibility and better control over appearance and positioning.</li>
+        <li>Styling native <code class="language-html">&lt;select&gt;</code> and dropdown options, including <code class="language-html">&lt;option&gt;</code> and <code class="language-html">&lt;optgroup&gt;</code> elements, is not fully possible because their appearance, including hover states, is controlled by the browser and operating system. For complete customization, building a custom dropdown using HTML, CSS, and JavaScript is required.</li>
+      </ul>
+    </blockquote>
+    
+    <div class="overflow">
+      <fieldset id="forms__select">
+        <legend>Select Menu</legend>
+        <p>
+          <label for="select_singular">Select</label>
+          <br>
+          <span class="interact_arrow">
+            <select id="select_singular" autocomplete="autocomplete-select">
+              <optgroup label="Option Group">
+                <option>Option One</option>
+                <option>Option Two</option>
+                <option>Option Three</option>
+              </optgroup>
+            </select>
+          </span>
+        </p>
+        <p>
+          <label for="select_multiple">Select (multiple)</label>
+          <br>
+          <select id="select_multiple" multiple="multiple" autocomplete="autocomplete-select-multiple">
+            <optgroup label="Option Group">
+              <option>Option One</option>
+              <option>Option Two</option>
+              <option>Option Three</option>
+            </optgroup>
+          </select>
+        </p>
+      </fieldset>
+    </div>
+
+    <hr>
+
+    <h3>Checkbox</h3>
+
+    <p>The <code class="language-html">&lt;input&gt;</code> element with <code class="language-html">type="checkbox"</code> is used to create a checkbox, allowing users to toggle selections on or off. It includes attributes like <code class="language-html">checked</code> to set the initial state, <code class="language-html">name</code> for grouping, and <code class="language-html">value</code> to define the submitted data. Checkboxes are often used in forms and can be dynamically controlled or validated using <code class="language-js">JavaScript</code> for advanced functionality.</p>
+
+    <!-- <h4>Normal Checkbox</h4> -->
+
+    <div class="overflow">
+      <fieldset id="forms__checkbox">
+        <legend>Checkbox</legend>
+        <ul type="none">
+          <li><input id="checkbox1" name="checkbox1" type="checkbox" autocomplete="autocomplete-checkbox1"><label for="checkbox1">Choice A</label></li>
+          <li><input id="checkbox2" name="checkbox2" type="checkbox" autocomplete="autocomplete-checkbox2" checked="checked"><label for="checkbox2">Choice B</label></li>
+        </ul>
+        <ul type="none">
+          <li><input id="checkbox3" name="checkbox3" type="checkbox" disabled="disabled"><label for="checkbox3" class="disabled">Disabled Choice C</label></li>
+          <li><input id="checkbox4" name="checkbox4" type="checkbox" disabled="disabled" checked="checked"><label for="checkbox4" class="disabled">Disabled Choice D</label></li>
+        </ul>
+      </fieldset>
+    </div>
+<!--
+    <h4>Switch Style Checkbox</h4>
+
+    <div class="overflow">
+      <fieldset id="forms__checkbox_switches">
+        <legend>Switch (Checkbox)</legend>
+        <ul type="none">
+          <li><input id="switch_checkbox1" class="switch" name="switch1" autocomplete="autocomplete-switch_checkbox1" type="checkbox"><label for="switch_checkbox1">Choice A</label></li>
+          <li><input id="switch_checkbox2" class="switch" name="switch2" autocomplete="autocomplete-switch_checkbox2" type="checkbox" checked="checked"><label for="switch_checkbox2">Choice B</label></li>
+        </ul>
+        <ul type="none">
+          <li><input id="switch_checkbox3" class="switch" name="switch3" type="checkbox" disabled="disabled"><label for="switch_checkbox3" class="disabled">Disabled Choice C</label></li>
+          <li><input id="switch_checkbox4" class="switch" name="switch4" type="checkbox" disabled="disabled" checked="checked"><label for="switch_checkbox4" class="disabled">Disabled Choice D</label></li>
+        </ul>
+      </fieldset>
+    </div> -->
+
+    <hr>
+
+    <h3>Radio Button</h3>
+
+    <p>The <code class="language-html">&lt;input&gt;</code> element with <code class="language-html">type="radio"</code> creates a radio button, allowing users to select one option from a group. All radio buttons in the same group share the same <code class="language-html">name</code> attribute, ensuring mutual exclusivity. Additional attributes like <code class="language-html">checked</code> set the default selection, and <code class="language-html">value</code> defines the data submitted. Radio buttons are commonly used in forms and can be dynamically managed with <code class="language-js">JavaScript</code> for enhanced usability.</p>
+
+    <div class="overflow">
+      <fieldset id="forms__radio">
+        <legend>Radio Button</legend>
+        <ul type="none">
+          <li><input id="radio1" name="radio1" type="radio" class="radio" autocomplete="autocomplete-select" value="1"><label for="radio1">Option 1</label></li>
+          <li><input id="radio2" name="radio1" type="radio" class="radio" autocomplete="autocomplete-select" value="2" checked="checked"><label for="radio2">Option 2</label></li>
+        </ul>
+        <ul type="none">
+          <li><input id="radio3" name="radio2" type="radio" class="radio" value="3" disabled="disabled"><label for="radio3" class="disabled">Disabled Option 3</label></li>
+          <li><input id="radio4" name="radio2" type="radio" class="radio" value="4" disabled="disabled" checked="checked"><label for="radio4" class="disabled">Disabled Option 4</label></li>
+        </ul>
+      </fieldset>
+    </div>
+
+    <hr>
+
+    <h3>Action Button</h3>
+
+    <p>The <code class="language-html">&lt;input&gt;</code> and <code class="language-html">&lt;button&gt;</code> elements are used to create action buttons in HTML forms, supporting various types like <code class="language-html">submit</code>, <code class="language-html">button</code>, and <code class="language-html">reset</code>.
+      The <code class="language-html">type="submit"</code> triggers form submission, <code class="language-html">type="reset"</code> clears form fields, and <code class="language-html">type="button"</code> is used for custom actions with JavaScript.
+      Both elements support attributes like <code class="language-html">disabled</code> to prevent interaction and <code class="language-js">onclick</code> for event handling. While <code class="language-html">&lt;input&gt;</code> provides simple buttons,
+      <code class="language-html">&lt;button&gt;</code> offers flexibility for including content like text or icons within the button.</p>
+
+    <div class="overflow">
+      <fieldset id="forms__action">
+        <legend>Action Button</legend>
+        <p>
+          <input onclick="return false;" type="submit" value="<input type=submit>">
+          <input onclick="return false;" type="button" value="<input type=button>">
+          <input onclick="return false;" type="reset" value="<input type=reset>">
+          <input onclick="return false;" type="submit" value="<input type=submit disabled>" disabled>
+        </p>
+        <p>
+          <button onclick="return false;" type="submit">&lt;button type=submit&gt;</button>
+          <button onclick="return false;" type="button">&lt;button type=button&gt;</button>
+          <button onclick="return false;" type="reset">&lt;button type=reset&gt;</button>
+          <button onclick="return false;" type="button" disabled>&lt;button type=button disabled&gt;</button>
+        </p>
+      </fieldset>
+    </div>
+  </form>
+</section>
+
+<section>
+  <h2>Scrollbar</h2>
+
+  <p>The scrollbar in HTML refers to the visual element that allows users to scroll through overflow content in containers or the entire webpage. While scrollbars are typically controlled by the browser, developers can customize their appearance and behavior using CSS properties like <code class="language-css">overflow</code>, <code class="language-css">scrollbar-width</code>, and the <code class="language-css">::-webkit-scrollbar</code> pseudo-element for WebKit-based browsers. JavaScript can further enhance scroll interactions by handling events like <code class="language-js">scroll</code> to trigger dynamic actions or animations. Scrollbars play a vital role in improving accessibility and user experience for content-heavy layouts.</p>
+
+  <h3>X Scrollbar</h3>
+  <div class="scrollbar interface--grab overflow overflow--x">
+    <div></div>
+  </div>
+  <h3>Y Scrollbar</h3>
+  <div class="scrollbar interface--grab overflow overflow--y">
+    <div></div>
+  </div>
+  <h3>2D Scrollbar</h3>
+  <div class="scrollbar interface--grab overflow overflow--x overflow--y">
+    <div></div>
+  </div>
+</section>
+
+<section>
+  <h2>Sources</h2>
+  <div>
+    <p>This page is comprised of additions and partially or heavily modified elements from the following source(s):</p>
+    <ul>
+      <li>Most elements used are from the following project and it's forks here: <a class="button" href="https://github.com/cbracco/html5-test-page/blob/master/index.html">https://github.com/cbracco/html5-test-page/blob/master/index.html <span class="font-icon--interface-external"></span></a></li>
+      <li>Checkboxes, radio buttons, and switch variants of checkboxes were based on buttons found here: <a class="button" href="https://codepen.io/aaroniker/pen/ZEYoxEY">https://codepen.io/aaroniker/pen/ZEYoxEY <span class="font-icon--interface-external"></span></a></li>
+      <li>Range inputs were based on work found here: <a class="button" href="https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/">https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/ <span class="font-icon--interface-external"></span></a></li>
+      <li>Images generated by Dynamic Dummy Image Generator: <a class="button" href="https://dummyimage.com/">https://dummyimage.com/ <span class="font-icon--interface-external"></span></a></li>
+    </ul>
+  </div>
+</section>
+
+@@include('_html/frame/bottom.html', {
+  "scripts": [
+    "/asset/module/prism/prism.min.js"
+  ]
+})
+
+<script>
+  const interfaceGrabs = document.querySelectorAll(".interface--grab");
+
+  interfaceGrabs.forEach((interface_grab) => {
+    const interface_grab_first_child = interface_grab.firstElementChild;
+
+    let isDragging = false;
+    let startX, startY, scrollLeft, scrollTop;
+
+    const stopDragging = () => {
+      isDragging = false;
+    };
+
+    interface_grab_first_child.addEventListener("mousedown", (e) => {
+      if (e.target.nodeName === "TEXTAREA" || e.target.nodeName === "INPUT") {
+        return; // Allow text selection in input/textarea fields
+      }
+      e.preventDefault(); // Prevent native text drag
+      isDragging = true;
+      startX = e.pageX - interface_grab.offsetLeft;
+      startY = e.pageY - interface_grab.offsetTop;
+      scrollLeft = interface_grab.scrollLeft;
+      scrollTop = interface_grab.scrollTop;
+    });
+
+    interface_grab_first_child.addEventListener("mousemove", (e) => {
+      if (!isDragging) return;
+      e.preventDefault();
+      const x = e.pageX - interface_grab.offsetLeft;
+      const y = e.pageY - interface_grab.offsetTop;
+      const walkX = (x - startX) * 2; // Adjust sensitivity as needed
+      const walkY = (y - startY) * 2;
+      interface_grab.scrollLeft = scrollLeft - walkX;
+      interface_grab.scrollTop = scrollTop - walkY;
+    });
+
+    document.addEventListener("mouseup", stopDragging);
+    interface_grab_first_child.addEventListener("mouseleave", stopDragging);
+
+    // Prevent text selection during drag
+    interface_grab_first_child.addEventListener("selectstart", (e) => {
+      if (isDragging) e.preventDefault();
+    });
+  });
+</script>
+
+<script>
+  function lerp(a, b, t) {
+    return a + (b - a) * t;
+  }
+
+  function drawGradientAtPoint(x, y) {
+    const gradientRadius = 75; // Radius of the gradient effect
+    const gradient = ctx.createRadialGradient(x, y, 0, x, y, gradientRadius);
+
+    // Define the gradient stops
+    gradient.addColorStop(0, "rgba(255, 255, 255, 0.5)"); // White at the center
+    gradient.addColorStop(1, "rgba(255, 255, 255, 0)"); // Transparent at the edge
+
+    // Save current state
+    ctx.save();
+
+    // Set composite operation for blending
+    ctx.globalCompositeOperation = "lighter"; // Creates a glowing effect
+    ctx.fillStyle = gradient;
+    ctx.beginPath();
+    ctx.arc(x, y, gradientRadius, 0, Math.PI * 2, false);
+    ctx.fill();
+
+    // Restore previous state
+    ctx.restore();
+  }
+
+  const canvas = document.getElementById("colorfulCanvas");
+  const ctx = canvas.getContext("2d");
+
+  function resizeCanvas() {
+    const rect = canvas.getBoundingClientRect();
+    canvas.width = rect.width;
+    canvas.height = rect.height;
+  }
+
+  let circles = [];
+  const radiusMax = 40;
+  const radiusMin = 10;
+  const density = 0.0003;
+  let resizeTimeout;
+  let animationId;
+  const speedMax = 0.25;
+  const speedMin = 0.01;
+
+  let mouse = { x: null, y: null, isHovering: false };
+  let activeTouches = []; // Track active touch points
+
+  class Circle {
+    constructor(x, y, speed, angle, radius, a, da, hue) {
+      this.x = x;
+      this.y = y;
+      this.radius = radius;
+      this.speed = speed;
+      this.angle = angle;
+      this.dx = Math.cos(this.angle) * this.speed;
+      this.dy = Math.sin(this.angle) * this.speed;
+      this.hue = hue;
+      this.a = a;
+      this.da = da;
+    }
+
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+      ctx.fillStyle = `hsla(${this.hue}, 70%, 60%, ${this.a * 0.625 + 0.05})`;
+      ctx.fill();
+    }
+
+    update(deltaTime) {
+      const speedFactor = deltaTime / 16.67;
+
+      // Combine mouse and touch points into a single array
+      const interactionPoints = [];
+
+      // Add mouse point if hovering
+      if (mouse.isHovering) {
+        interactionPoints.push({ x: mouse.x, y: mouse.y });
+      }
+
+      // Add active touch points
+      interactionPoints.push(...activeTouches);
+
+      // Loop through interaction points to calculate influence
+      interactionPoints.forEach(point => {
+        const dx = point.x - this.x;
+        const dy = point.y - this.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < this.radius * 2) {
+          this.dx -= dx / distance;
+          this.dy -= dy / distance;
+          this.speed += (2 * radiusMax - distance) * 0.01; // Stronger force scaling
+          this.angle = Math.atan2(this.dy, this.dx);
+        }
+      });
+
+      // Occasionally adjust speed for variability
+      if (Math.random() < 0.5) { // chance per frame
+        const speedChange = (Math.random() - 0.5) * (speedMax - speedMin) * speedFactor * 0.1; // Small speed adjustment
+        this.speed = Math.min(Math.max(this.speed + speedChange, speedMin), speedMax * 10); // Clamp between speedMin and speedMax
+      }
+
+      // Occasionally adjust angle for variability
+      if (Math.random() < 0.5) { // chance per frame
+        const angleChange = (Math.random() - 0.5) * Math.PI * 0.0125; // Small angle adjustment
+        this.angle += angleChange;
+      }
+
+      // Bounce off edges and reposition just outside bounds
+      let bounced = false;
+
+      if (this.x + this.radius < -1) { // Left edge
+        this.x = -1 * this.radius; // Reposition just outside the left boundary
+        this.angle = Math.PI - this.angle; // Reflect angle horizontally
+        bounced = true;
+      } else if (this.x - this.radius > canvas.width + 1) { // Right edge
+        this.x = canvas.width + this.radius; // Reposition just outside the right boundary
+        this.angle = Math.PI - this.angle; // Reflect angle horizontally
+        bounced = true;
+      }
+
+      if (this.y + this.radius < -1) { // Top edge
+        this.y = -1 * this.radius; // Reposition just outside the top boundary
+        this.angle = -this.angle; // Reflect angle vertically
+        bounced = true;
+      } else if (this.y - this.radius > canvas.height + 1) { // Bottom edge
+        this.y = canvas.height + this.radius; // Reposition just outside the bottom boundary
+        this.angle = -this.angle; // Reflect angle vertically
+        bounced = true;
+      }
+
+      if (bounced) {
+        this.speed *= 1.2; // Reduce speed slightly
+      }
+
+      if (this.speed > speedMax) {
+        // Apply drag (linear)
+        const dragCoefficient = 0.99; // Lower values mean stronger drag
+        this.speed *= Math.pow(dragCoefficient, speedFactor);
+
+        // Apply drag (optional quadratic drag for high speeds)
+        // const dragCoefficient = 0.001; // Customize based on desired effect
+        // this.speed -= dragCoefficient * Math.pow(this.speed, 2) * speedFactor;
+        // this.speed = Math.max(this.speed, 0); // Prevent negative speed
+      }
+
+      const speedPercent = (this.speed - speedMin) / (speedMax - speedMin);
+
+      // Update position
+      this.x += Math.cos(this.angle) * this.speed * speedFactor;
+      this.y += Math.sin(this.angle) * this.speed * speedFactor;
+
+      // Gradually shift hue
+      this.hue += lerp(0.5, 0.7, speedPercent) * speedFactor;
+      if (this.hue > 360) this.hue = 0;
+
+      // Pulse alpha
+      this.a += this.da * lerp(0, 0.2, speedPercent) * speedFactor;
+      if (this.a >= 1 || this.a <= 0) {
+        this.da = -this.da;
+      }
+
+      // Occasionally reverse Pulse alpha
+      if (Math.random() < 0.01) { // chance per frame
+        this.da = -this.da;
+      }
+
+      this.draw();
+    }
+  }
+
+  function createCircles() {
+    circles = [];
+    const canvasArea = canvas.width * canvas.height;
+    const numCircles = Math.ceil(canvasArea * density);
+
+    for (let i = 0; i < numCircles; i++) {
+      const radius = Math.random() * (radiusMax - radiusMin) + radiusMin;
+      const x = Math.random() * (canvas.width + radius * 2) - radius;
+      const y = Math.random() * (canvas.height + radius * 2) - radius;
+      const speed = Math.random() * (speedMax - speedMin) + speedMin;
+      const angle = Math.random() * Math.PI * 2;
+      const a = Math.random();
+      const da = (Math.random() > 0.5 ? 1 : -1) * 0.005;
+      const hue = Math.random() * 360;
+
+      circles.push(new Circle(x, y, speed, angle, radius, a, da, hue));
+    }
+  }
+
+  let lastTime = 0;
+
+  function animate(currentTime) {
+    animationId = requestAnimationFrame(animate);
+
+    const deltaTime = currentTime - lastTime;
+    lastTime = currentTime;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    circles.forEach(circle => circle.update(deltaTime));
+
+    // Draw gradient effects at interaction points
+    if (mouse.isHovering) {
+        drawGradientAtPoint(mouse.x, mouse.y);
+    }
+
+    activeTouches.forEach(touch => {
+        drawGradientAtPoint(touch.x, touch.y);
+    });
+  }
+
+  function startAnimation() {
+    lastTime = performance.now();
+    animationId = requestAnimationFrame(animate);
+  }
+
+  function stopAnimation() {
+    cancelAnimationFrame(animationId);
+  }
+
+  function initCanvas() {
+    if (!canvas || !ctx) {
+      console.error("Canvas or context not found!");
+      return;
+    }
+
+    resizeCanvas();
+    createCircles();
+    startAnimation();
+
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        const rect = canvas.getBoundingClientRect();
+        if (canvas.width !== rect.width || canvas.height !== rect.height) {
+          resizeCanvas();
+          createCircles();
+        }
+      }, 500);
+    });
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) {
+        stopAnimation();
+      } else {
+        startAnimation();
+      }
+    });
+
+    canvas.addEventListener("mousemove", event => {
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = event.clientX - rect.left;
+      mouse.y = event.clientY - rect.top;
+      mouse.isHovering = true;
+    });
+
+    canvas.addEventListener("mouseleave", () => {
+      mouse.isHovering = false;
+    });
+
+    // Handle touch events
+    canvas.addEventListener("touchstart", event => {
+      event.preventDefault();
+      activeTouches = Array.from(event.touches).map(touch => ({
+        x: touch.clientX - canvas.getBoundingClientRect().left,
+        y: touch.clientY - canvas.getBoundingClientRect().top,
+      }));
+    });
+
+    canvas.addEventListener("touchmove", event => {
+      event.preventDefault();
+      activeTouches = Array.from(event.touches).map(touch => ({
+        x: touch.clientX - canvas.getBoundingClientRect().left,
+        y: touch.clientY - canvas.getBoundingClientRect().top,
+      }));
+    });
+
+    canvas.addEventListener("touchend", event => {
+      activeTouches = Array.from(event.touches).map(touch => ({
+        x: touch.clientX - canvas.getBoundingClientRect().left,
+        y: touch.clientY - canvas.getBoundingClientRect().top,
+      }));
+    });
+
+    canvas.addEventListener("touchcancel", () => {
+      activeTouches = [];
+    });
+  }
+
+  initCanvas();
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  // Function to validate inputs
+  const validateInput = (input) => {
+    const value = input.value.trim();
+    const type = input.type;
+
+    // Regular expressions for validation
+    const patterns = {
+      text: /^[a-zA-Z0-9\s]*$/, // Allow letters, numbers, and spaces
+      password: /^.{6,}$/, // At least 6 characters
+      url: /^(https?:\/\/)?[\w-]+(\.[\w-]+)+[/#?]?.*$/, // Basic URL pattern
+      email: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, // Email pattern
+      tel: /^\(\d{3}\) \d{3}-\d{4}$/, // U.S. phone number format (999) 999-9999
+      search: /^.+$/, // Any non-empty value
+      number: /^\d+$/, // Only numbers
+      file: /.+/ // Any non-empty file value
+    };
+
+    // Validate based on type
+    if (type in patterns) {
+      return patterns[type].test(value);
+    }
+
+    // If no specific validation, consider valid
+    return true;
+  };
+
+  // Auto-format phone number input
+  const formatPhoneNumber = (value) => {
+    const digits = value.replace(/\D/g, ''); // Remove non-numeric characters
+    const match = digits.match(/^(\d{0,3})(\d{0,3})(\d{0,4})$/);
+    if (!match) return value;
+
+    const [, area, prefix, line] = match;
+    if (line) return `(${area}) ${prefix}-${line}`;
+    if (prefix) return `(${area}) ${prefix}`;
+    if (area) return `(${area}`;
+    return '';
+  };
+
+  // Add event listeners to inputs
+  const inputs = document.querySelectorAll('#forms__input input');
+  inputs.forEach((input) => {
+    input.addEventListener('input', (event) => {
+      // Remove existing classes
+      input.classList.remove('valid', 'invalid');
+
+      // Skip validation for disabled inputs
+      if (input.disabled) return;
+
+      // Auto-format phone number
+      if (input.type === 'tel') {
+        const formatted = formatPhoneNumber(input.value);
+        input.value = formatted;
+      }
+
+      // If input is empty, do not add any class
+      if (input.value.trim() === '') {
+        return;
+      }
+
+      // Add class based on validation result
+      if (validateInput(input)) {
+        input.classList.add('valid');
+      } else {
+        input.classList.add('invalid');
+      }
+    });
+  });
+});
+
+</script>

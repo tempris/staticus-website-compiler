@@ -1,0 +1,42 @@
+{
+  "data": {
+    "manifest.webmanifest": "68ce1751b55007a9b90fb0483f8ddea4d7c269ef",
+    "browserconfig.xml": "b98cf94b24a137ad34127bdf1cd4879e5ae3917c"
+  },
+  "favicon": {
+    "favicon.ico": "34cdbc7bc80d125b6f42b205ca6788a16e289f6d"
+  },
+  "html": {
+    "404.html": "b6766ba5b46822e99a88cc4db2f8b9ecaccb6255",
+    "503.html": "ca2897abd38be7d4ffc082f1db73d3ccc91c4598",
+    "index.html": "99189f22cba946bea5e74d58fc01b86d5ef599de"
+  },
+  "image": {
+    "asset\\image\\brand\\icon.svg": "b56547a355f8ea69d09cb75d2f78ed6606ea3deb",
+    "asset\\image\\brand\\logo.svg": "c677bf825eb6753f6ce62b9900b13166f4973a03",
+    "asset\\image\\favicon\\apple-touch-icon-114x114.png": "7c87c13e22bbf2cfd2b5df60f722eb50af9f0db5",
+    "asset\\image\\favicon\\apple-touch-icon-120x120.png": "04225db53d3950a2601e2a30fee5b059f1757014",
+    "asset\\image\\favicon\\apple-touch-icon-144x144.png": "3baec4bbbbf7593c99966ca1ddc0b49e084de2ee",
+    "asset\\image\\favicon\\apple-touch-icon-152x152.png": "8e90cc7ac01d2a424fe70905a92182f4612b57ed",
+    "asset\\image\\favicon\\apple-touch-icon-57x57.png": "57089937994836b8b9a54a711e829a2e5adf3224",
+    "asset\\image\\favicon\\apple-touch-icon-60x60.png": "f2c87e1dd0b5e55df796e33d5575b6198dce3253",
+    "asset\\image\\favicon\\apple-touch-icon-72x72.png": "b96462d1ff767a06b90bc2a37809dc22d325cb48",
+    "asset\\image\\favicon\\apple-touch-icon-76x76.png": "fb7137d3d40d7f19ac1f2b910bbdfe832aea5d0c",
+    "asset\\image\\favicon\\favicon-192.png": "45bb59df2e6e2daf5e23d5488176b2e79a0734b8",
+    "asset\\image\\favicon\\favicon-196.png": "d14269e4d8b1312793d70bd8073f393d34d582d4",
+    "asset\\image\\favicon\\favicon-512.png": "a137b0ea1b8b4ab08f351a7b3b572c4bcfc1ba1c",
+    "asset\\image\\favicon\\mstile-128x128.png": "a2fdd5bd78a8c89b67c9ebbb7839a5ba8e029d43",
+    "asset\\image\\favicon\\mstile-144x144.png": "3baec4bbbbf7593c99966ca1ddc0b49e084de2ee",
+    "asset\\image\\favicon\\mstile-150x150.png": "dd43296754bf7cbf5a5bd2981ed8ce19d42e6d7a",
+    "asset\\image\\favicon\\mstile-270x270.png": "1f37143236bb0b008156d9e4f3f78773af500202",
+    "asset\\image\\favicon\\mstile-310x150.png": "618d0bc59179d5cee940e1630f2ab3c2dcfa42cf",
+    "asset\\image\\favicon\\mstile-310x310.png": "3a53c586c423cccd836094b78264561a52da03ea",
+    "asset\\image\\favicon\\mstile-558x270.png": "e53522470582e240aad30697756573a97604532e",
+    "asset\\image\\favicon\\mstile-558x558.png": "f8fde665e69f16d235b35ee979eb4dfae64ea1aa",
+    "asset\\image\\favicon\\mstile-70x70.png": "85d08ba58abcb0030799a9e6a89c793a0c4ab960",
+    "asset\\image\\favicon\\pagethumb.png": "3179391efa821c173700fb36c59038d00a363baa"
+  },
+  "javascript": {
+    "asset\\js\\main.js": "aae6d51675b6fa9f13e7c0ce6bb60df0398f29af"
+  }
+}

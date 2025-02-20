@@ -1,0 +1,206 @@
+<!-- @@include('_html/frame/top.html') -->
+
+@@include('_html/frame/top.html', {
+  "title": "Font Icon - Example",
+  "stylesheets": [ 
+    "/asset/css/font_icon/font_icon_browser.min.css",
+    "/asset/css/font_icon/font_icon_social.min.css",
+    "/asset/css/font_icon/font_icon_system.min.css",
+    "/asset/css/font_icon/font_icon_web.min.css",
+    "/asset/module/prism/prism.min.css"
+  ]
+})
+
+<section>
+  <h1>Font Icon</h1>
+
+  <p>Below are svg icons that are automatically compiled into fonts for use as text using Gulp.</p>
+
+  <h2>Demonstration</h2>
+
+  <h3>Browser</h3>
+
+  <div class="font-icon--set">
+    <div class="font-icon--container font-icon--color--browser-brave--background"><p><span class="font-icon--browser-brave"></span><br><span>Brave</span></p></div>
+    <div class="font-icon--container font-icon--color--browser-chrome--background"><p><span class="font-icon--browser-chrome"></span><br><span>Chrome</span></p></div>
+    <div class="font-icon--container font-icon--color--browser-edge--background"><p><span class="font-icon--browser-edge"></span><br><span>Edge</span></p></div>
+    <div class="font-icon--container font-icon--color--browser-firefox--background"><p><span class="font-icon--browser-firefox"></span><br><span>Firefox</span></p></div>
+    <div class="font-icon--container font-icon--color--browser-internet-explorer--background"><p><span class="font-icon--browser-internet-explorer"></span><br><span>Internet Explorer</span></p></div>
+    <div class="font-icon--container font-icon--color--browser-opera--background"><p><span class="font-icon--browser-opera"></span><br><span>Opera</span></p></div>
+  </div>
+
+  <h3>Interface</h3>
+
+  <div class="font-icon--set">
+    <div class="font-icon--container"><p><span class="font-icon--interface-arrow_down"></span><br>arrow_down</p></div>
+    <div class="font-icon--container"><p><span class="font-icon--interface-download"></span><br>download</p></div>
+    <div class="font-icon--container"><p><span class="font-icon--interface-arrow_fill_down"></span><br>ellipsis</p></div>
+    <div class="font-icon--container"><p><span class="font-icon--interface-arrow_fill_down_circle"></span><br>ellipsis_vertical</p></div>
+    <div class="font-icon--container"><p><span class="font-icon--interface-external"></span><br>external</p></div>
+    <div class="font-icon--container"><p><span class="font-icon--interface-home"></span><br>home</p></div>
+    <div class="font-icon--container"><p><span class="font-icon--interface-link"></span><br>link</p></div>
+    <div class="font-icon--container"><p><span class="font-icon--interface-menu"></span><br>menu</p></div>
+  </div>
+
+  <h3>Social</h3>
+
+  <div class="font-icon--set">
+    <div class="font-icon--container font-icon--color--social-facebook--background"><p><span class="font-icon--social-facebook"></span><br><span>Facebook</span></p></div>
+    <div class="font-icon--container font-icon--color--social-instagram--background"><p><span class="font-icon--social-instagram"></span><br><span>Instagram</span></p></div>
+    <div class="font-icon--container font-icon--color--social-linkedin--background"><p><span class="font-icon--social-linkedin"></span><br><span>LinkedIn</span></p></div>
+    <div class="font-icon--container font-icon--color--social-twitch--background"><p><span class="font-icon--social-twitch"></span><br><span>Twitch</span></p></div>
+    <!-- <div class="font-icon--container font-icon--color--social-twitter--background"><p><span class="font-icon--social-twitter"></span><br><span>Twitte</span></p></div> -->
+    <div class="font-icon--container font-icon--color--social-x--background"><p><span class="font-icon--social-x"></span><br><span>X</span></p></div>
+    <div class="font-icon--container font-icon--color--social-youtube--background"><p><span class="font-icon--social-youtube"></span><br><span>YouTube</span></p></div>
+  </div>
+
+  <h3>System</h3>
+
+  <div class="font-icon--set">
+    <div class="font-icon--container font-icon--color--system-android--background"><p><span class="font-icon--system-android"></span><br><span>Android</span></p></div>
+    <div class="font-icon--container font-icon--color--system-debian--background"><p><span class="font-icon--system-debian"></span><br><span>Debian</span></p></div>
+    <div class="font-icon--container font-icon--color--system-ios--background"><p><span class="font-icon--system-ios"></span><br><span>iOS</span></p></div>
+    <div class="font-icon--container font-icon--color--system-linux--background"><p><span class="font-icon--system-linux"></span><br><span>Linux</span></p></div>
+    <div class="font-icon--container font-icon--color--system-macos--background"><p><span class="font-icon--system-macos"></span><br><span>MacOS</span></p></div>
+    <div class="font-icon--container font-icon--color--system-windows--background"><p><span class="font-icon--system-windows"></span><br><span>Windows</span></p></div>
+  </div>
+</section>
+
+<section>
+  <h2>About</h2>
+
+  <p>These SVG icons are automatically grouped into fonts based on the subdirectories that they are stored in. CSS is also separated by group for minimal data transferred to the client.</p>
+</section>
+
+<section>
+  <h2>Implementation Example</h2>
+
+  <h3>HTML</h3>
+
+  <pre id="clickable-html" class="line-numbers linkable-line-numbers" data-line="null"><code class=" language-html">&lt;p class=&quot;iconcolor-ai-openai&quot;&gt;&lt;span class=&quot;icon-ai-openai&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span&gt;OpenAI&lt;&#x2F;span&gt;&lt;&#x2F;p&gt;</code></pre>
+
+  <h3>CSS Compiled</h3>
+
+  <pre id="clickable-css-1" class="line-numbers linkable-line-numbers" data-line="null"><code class=" language-css">@font-face {
+  font-family: font_icon_ai;
+  src: url(&#x2F;font_icon&#x2F;ai&#x2F;font_icon_ai.eot);
+  src: url(&#x2F;font_icon&#x2F;ai&#x2F;font_icon_ai.eot?#iefix) format(&#39;embedded-opentype&#39;), local(&#39;☺&#39;), url(&#x2F;font_icon&#x2F;ai&#x2F;font_icon_ai.woff2) format(&#39;woff2&#39;), url(&#x2F;font_icon&#x2F;ai&#x2F;font_icon_ai.woff) format(&#39;woff&#39;), url(&#x2F;font_icon&#x2F;ai&#x2F;font_icon_ai.ttf) format(&#39;truetype&#39;), url(&#x2F;font_icon&#x2F;ai&#x2F;font_icon_ai.svg#font_icon_ai) format(&#39;svg&#39;);
+  font-weight: 400;
+  font-style: normal
+}
+
+[class*=&quot; icon-ai-&quot;],
+[class^=icon-ai-] {
+  font-family: font_icon_ai
+}
+
+.icon-ai-openai:before {
+  content: &quot;\E001&quot;
+}
+
+.iconcolor-ai-openai {
+  color: #10a37f !important
+}
+
+.iconcolor-ai-openai--background {
+  color: #fff !important;
+  background-color: #10a37f !important
+}</code></pre>
+
+  <h3>Sass (SCSS) + JS Template</h3>
+
+  <pre><code class="language-scss">&lt;%
+var pathParts = fontPath.split(&#39;&#x2F;&#39;); &#x2F;&#x2F; Split the fontPath by &#39;&#x2F;&#39;
+var subDir = pathParts[pathParts.length - 2]; &#x2F;&#x2F; Get the second last part, which is &#39;subdir&#39;
+function getAutoGenColor(hexColor) { &#x2F;&#x2F; Function to check brightness of hex color and return appropriate text color
+    hexColor = hexColor.replace(&#39;#&#39;, &#39;&#39;);
+    var r = parseInt(hexColor.substring(0, 2), 16);
+    var g = parseInt(hexColor.substring(2, 4), 16);
+    var b = parseInt(hexColor.substring(4, 6), 16);
+    var brightness = (r * 299 + g * 587 + b * 114) &#x2F; 1000;
+    return brightness &gt; 128 ? &#39;#000&#39; : &#39;#fff&#39;;
+}
+function isHexColor(color) { &#x2F;&#x2F; Function to check if a string is a valid hex color code
+    return &#x2F;^([0-9A-F]{6})$&#x2F;i.test(color);
+}
+%&gt;@font-face {
+    font-family: &#39;&lt;%= fontName %&gt;&#39;;
+    src: url(&#39;&lt;%= fontPath %&gt;&lt;%= fontName %&gt;.eot&#39;); &#x2F;* IE9 Compat Modes *&#x2F;
+    src: url(&#39;&lt;%= fontPath %&gt;&lt;%= fontName %&gt;.eot?#iefix&#39;) format(&#39;embedded-opentype&#39;),
+          local(&#39;☺&#39;), &#x2F;* css hack to divert IE6-8 from downloading fonts it can&#39;t use *&#x2F;
+          url(&#39;&lt;%= fontPath %&gt;&lt;%= fontName %&gt;.woff2&#39;) format(&#39;woff2&#39;), &#x2F;* Super Modern Browsers *&#x2F;
+          url(&#39;&lt;%= fontPath %&gt;&lt;%= fontName %&gt;.woff&#39;) format(&#39;woff&#39;), &#x2F;* Pretty Modern Browsers *&#x2F;
+          url(&#39;&lt;%= fontPath %&gt;&lt;%= fontName %&gt;.ttf&#39;) format(&#39;truetype&#39;), &#x2F;* Safari, Android, iOS *&#x2F;
+          url(&#39;&lt;%= fontPath %&gt;&lt;%= fontName %&gt;.svg#&lt;%= fontName %&gt;&#39;) format(&#39;svg&#39;); &#x2F;* Legacy iOS *&#x2F;
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^=&quot;icon-&lt;%= subDir %&gt;-&quot;], [class*=&quot; icon-&lt;%= subDir %&gt;-&quot;] {
+    font-family: &#39;&lt;%= fontName %&gt;&#39;;
+}
+&lt;% console.log(glyphs); %&gt;&lt;% glyphs.forEach(function(glyph) {
+    var fileName = glyph.fileName;
+    var fileColor = null;
+    var hexColorMatch = fileName.match(&#x2F;-(\w{6})$&#x2F;);
+    if (hexColorMatch &amp;&amp; isHexColor(hexColorMatch[1])) {
+        fileColor = hexColorMatch[1];
+        fileName = fileName.replace(&#x2F;-(\w{6})$&#x2F;, &#39;&#39;);
+    }%&gt;
+.icon-&lt;%= subDir %&gt;-&lt;%= fileName %&gt;:before {
+    content: &quot;\&lt;%= glyph.codePoint %&gt;&quot;;
+}
+&lt;% if (fileColor) { %&gt;
+.iconcolor-&lt;%= subDir %&gt;-&lt;%= fileName %&gt; {
+    color: #&lt;%= fileColor %&gt; !important;
+}
+.iconcolor-&lt;%= subDir %&gt;-&lt;%= fileName %&gt;--background {
+    color: &lt;%= getAutoGenColor(fileColor) %&gt; !important;
+    background-color: #&lt;%= fileColor %&gt; !important;
+}
+&lt;% } %&gt;
+&lt;% }); %&gt;</code></pre>
+
+</section>
+
+<section>
+  <h2>Sources</h2>
+  <div>
+    <p>This page is comprised of partially or heavily modified elements from the following source(s):</p>
+    <ul>
+      <li>Source: <a class="button" href="https://www.svgrepo.com/">https://www.svgrepo.com/ <span class="font-icon--interface-external"></span></a></li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  .font-icon--set {
+    text-align: center;
+  }
+
+  .font-icon--container {
+    max-width: 10em;
+    width: 100%;
+    display: inline-block;
+    padding: 1rem;
+    margin: 0.5rem;
+    text-align: center;
+    background-color: #0007;
+    border-radius: 0.5rem;
+    font-size: 1em !important;
+  }
+  
+  .font-icon--container span[class*=font-icon--] {
+    font-size: 3em !important;
+  }
+
+  @media (min-width: 320px) {
+    [class^="col-"] {
+      min-height: 11.1em;
+    }
+  }
+</style>
+
+@@include('_html/frame/bottom.html', {
+  "scripts": [ "/asset/module/prism/prism.min.js" ]
+})
