@@ -113,11 +113,13 @@ def modify_html_content(file_path):
         # Retrieve classes to ignore from config
         ignore_package_classes = config_site.get("option", {}).get("package", {}).get("html", {}).get("ignore_class", [])
 
-        # Construct XPath dynamically to match any of the ignore_package_classes
-        xpath_expression = " | ".join(f"//*[contains(@class, '{cls}')]" for cls in ignore_package_classes)
+        # Only run XPath if there are classes to ignore
+        if ignore_package_classes:
+            xpath_expression = " | ".join(f"//*[contains(@class, '{cls}')]" for cls in ignore_package_classes)
+            elements_to_remove = tree.xpath(xpath_expression)
+        else:
+            elements_to_remove = []
 
-        # Find and remove elements matching any of the ignore_package_classes
-        elements_to_remove = tree.xpath(xpath_expression)
         change_summary = []
 
         for element in elements_to_remove:
