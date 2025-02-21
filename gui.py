@@ -39,9 +39,9 @@ def cure_bridge_js_output_handler(output):
 TERMINAL_COLOR_256 = supportsColor.stdout and supportsColor.stdout.has256
 
 cure_bridge_js.process(
-    NODE_CUSTOM_STATICUS_INTRO, 
-    cure_bridge_js_output_handler, 
-    "getIntroString", 
+    NODE_CUSTOM_STATICUS_INTRO,
+    cure_bridge_js_output_handler,
+    "getIntroString",
     TERMINAL_COLOR_256
 )
 
@@ -52,8 +52,8 @@ EXPERIMENT_HIDE_TERMINAL_MAIN = False  # Experimental: Set to True to hide main 
 EXPERIMENT_HIDE_TERMINAL_TASK = False  # Experimental: Set to True to hide terminal for Gulp tasks
 
 cure_bridge_js.process(
-    os.path.join(LOCATION_SCRIPT, 'source/node_modules_custom/staticus-defaults/index.js'), 
-    cure_bridge_js_output_handler, 
+    os.path.join(LOCATION_SCRIPT, 'source/node_modules_custom/staticus-defaults/index.js'),
+    cure_bridge_js_output_handler,
     "configEnsure"
 )
 
@@ -125,7 +125,7 @@ last_valid_dir = config_settings.get('dir', '')  # Store the last valid director
 
 def update_config_dir(new_dir):
     """
-    Update the 'dir' in config.json and validate the directory.
+    Update the 'dir' in config/settings.json and validate the directory.
     Remove invalid directories permanently and ensure the fallback is the last valid directory.
     """
     global last_valid_dir
@@ -137,7 +137,8 @@ def update_config_dir(new_dir):
     if os.path.isabs(new_dir):
         relative_to_script = os.path.relpath(new_dir, LOCATION_SCRIPT)
         if not relative_to_script.startswith('..'):
-            new_dir = relative_to_script  # Use the relative path if within script's location
+            # Replace backslashes with forward slashes and add './' prefix if needed
+            new_dir = f"./{relative_to_script.replace(os.sep, '/')}" if not relative_to_script.startswith('.') else relative_to_script.replace(os.sep, '/')
 
     if not validate_directory(new_dir):
         cure_log_bridge_js.log('warn', LOG_TAG_GUI, "Selected directory is invalid, removing it from recent project directories:", {"invalid": new_dir})
@@ -454,10 +455,10 @@ def get_help_message_multicolor(intro_echo_lines, clear_command):
 
     # Call process and wait for the callback to assemble the color array
     cure_bridge_js.process(
-        NODE_CUSTOM_STATICUS_INTRO, 
-        output_handler_color, 
-        "getColors", 
-        TERMINAL_COLOR_256, 
+        NODE_CUSTOM_STATICUS_INTRO,
+        output_handler_color,
+        "getColors",
+        TERMINAL_COLOR_256,
         num_help_lines
     )
 
@@ -530,10 +531,10 @@ def get_help_message_color(intro_echo_lines, clear_command):
             intro_color = ""  # Fallback to empty string
 
     cure_bridge_js.process(
-        NODE_CUSTOM_STATICUS_INTRO, 
-        output_handler_color, 
-        "getColors", 
-        TERMINAL_COLOR_256, 
+        NODE_CUSTOM_STATICUS_INTRO,
+        output_handler_color,
+        "getColors",
+        TERMINAL_COLOR_256,
         1
     )
 
@@ -575,10 +576,10 @@ def open_terminal_at_directory(path_to_open):
     #     intro_lines.append(output)
 
     # cure_bridge_js.process(
-    #     NODE_CUSTOM_STATICUS_INTRO, 
-    #     output_handler, 
-    #     "getIntroString", 
-    #     TERMINAL_COLOR_256, 
+    #     NODE_CUSTOM_STATICUS_INTRO,
+    #     output_handler,
+    #     "getIntroString",
+    #     TERMINAL_COLOR_256,
     #     True
     # )
 
@@ -609,10 +610,10 @@ def open_terminal_at_directory(path_to_open):
                 intro_lines.append(output)
 
             cure_bridge_js.process(
-                NODE_CUSTOM_STATICUS_INTRO, 
-                output_handler, 
-                "getIntroString", 
-                TERMINAL_COLOR_256, 
+                NODE_CUSTOM_STATICUS_INTRO,
+                output_handler,
+                "getIntroString",
+                TERMINAL_COLOR_256,
                 True
             )
 
@@ -682,7 +683,7 @@ class App(customtkinter.CTk):
             # Configuration UI ===========================
             # Top Frame for Directory Configuration
             self.top_frame = customtkinter.CTkFrame(
-                self, 
+                self,
                 fg_color=color_light_dark("#cccccc", "#333333")
             )
             self.top_frame.grid(
