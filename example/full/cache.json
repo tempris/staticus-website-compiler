@@ -54,6 +54,7 @@
     "example\\watermark.html": "5207fe286ecaf3eb6b101325d4192b045d1cdadc"
   },
   "image": {
+    "asset\\image\\brand\\icon.svg": "b56547a355f8ea69d09cb75d2f78ed6606ea3deb",
     "asset\\image\\favicon\\apple-touch-icon-114x114.png": "7c87c13e22bbf2cfd2b5df60f722eb50af9f0db5",
     "asset\\image\\favicon\\apple-touch-icon-120x120.png": "04225db53d3950a2601e2a30fee5b059f1757014",
     "asset\\image\\favicon\\apple-touch-icon-144x144.png": "3baec4bbbbf7593c99966ca1ddc0b49e084de2ee",
@@ -76,14 +77,7 @@
     "asset\\image\\favicon\\mstile-70x70.png": "85d08ba58abcb0030799a9e6a89c793a0c4ab960",
     "asset\\image\\favicon\\pagethumb.png": "3179391efa821c173700fb36c59038d00a363baa",
     "asset\\image\\interface\\background.png": "ecbc180f3e3a135856f324cec9b7e61649ae1fde",
-    "asset\\image\\brand\\icon.svg": "b56547a355f8ea69d09cb75d2f78ed6606ea3deb",
     "asset\\image\\content\\about\\profile.png": "ef62066bf6fbdcf259a811db3c41c623686feaae",
-    "asset\\image\\content\\example\\watermark\\1024x1024.watermark.png": "3b2c3d759a17fbe10f6cd9c243428304aa9f0cdb",
-    "asset\\image\\content\\example\\watermark\\128x256.watermark.png": "8e6bb139d563120035f47b0c438e6aae939e2231",
-    "asset\\image\\content\\example\\watermark\\2048x1024.watermark.png": "2145c1a70e0ae847334db9360c67bc145383b78a",
-    "asset\\image\\content\\example\\watermark\\256x256.watermark.png": "4882fdd4a4e5615c8b15e035e82a787683d03b92",
-    "asset\\image\\content\\example\\watermark\\512x1024.watermark.png": "a7445d111948db70bb2574e4405d651c97093b5d",
-    "asset\\image\\content\\example\\watermark\\512x256.watermark.png": "d838ab34d010b23b03416c9bee161471d9289b1a",
     "asset\\image\\content\\example\\html_style_test\\1000x200.png": "1441d7b839664dac0d8919bb1be861ea2fcd72e7",
     "asset\\image\\content\\example\\html_style_test\\100x200.png": "12679aabbf853fafcce65197ce8a77fdab496ab7",
     "asset\\image\\content\\example\\html_style_test\\200x200.png": "6989c1be461d188e4201a91a6af4969d9398c6e2",
@@ -104,7 +98,13 @@
     "asset\\image\\content\\example\\photoswipe\\512x1024_no_caption.png": "5601a990d6378f2a6fc2e18b19d8a8da787c6b38",
     "asset\\image\\content\\example\\photoswipe\\512x256.png": "d838ab34d010b23b03416c9bee161471d9289b1a",
     "asset\\image\\content\\example\\photoswipe\\512x256_no_caption.png": "7f35c46ab113576052df9017b1983e62a956e7a2",
-    "asset\\image\\content\\example\\photoswipe\\map_thumb.png": "27597fbb995b2c75df3dca8dbe781fc9a8cd9d27"
+    "asset\\image\\content\\example\\photoswipe\\map_thumb.png": "27597fbb995b2c75df3dca8dbe781fc9a8cd9d27",
+    "asset\\image\\content\\example\\watermark\\1024x1024.watermark.png": "3b2c3d759a17fbe10f6cd9c243428304aa9f0cdb",
+    "asset\\image\\content\\example\\watermark\\128x256.watermark.png": "8e6bb139d563120035f47b0c438e6aae939e2231",
+    "asset\\image\\content\\example\\watermark\\2048x1024.watermark.png": "2145c1a70e0ae847334db9360c67bc145383b78a",
+    "asset\\image\\content\\example\\watermark\\256x256.watermark.png": "4882fdd4a4e5615c8b15e035e82a787683d03b92",
+    "asset\\image\\content\\example\\watermark\\512x1024.watermark.png": "a7445d111948db70bb2574e4405d651c97093b5d",
+    "asset\\image\\content\\example\\watermark\\512x256.watermark.png": "d838ab34d010b23b03416c9bee161471d9289b1a"
   },
   "javascript": {
     "asset\\js\\main.js": "ef0d854fe07a42b18e30b702d4f020e8c6cc33cb",

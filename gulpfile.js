@@ -81,7 +81,7 @@ const NODE_PATH = require('path');
 // ### Initialize - Path (Pre)
 // -----------------------------------------------------------------------------
 
-const PATH_DIR_ROOT = `${NODE_PATH.resolve(__dirname)}/`;
+const PATH_DIR_ROOT = `${NODE_PATH.resolve(__dirname).replace(/\\/g, '/')}/`;
 const PATH_DIR_ROOT_CONFIG = `${PATH_DIR_ROOT}config/`;
 const PATH_DIR_ROOT_CONFIG_DEFAULT = `${PATH_DIR_ROOT_CONFIG}default/`;
 const PATH_DIR_ROOT_CONFIG_DEFAULT_PROJECT = `${PATH_DIR_ROOT_CONFIG_DEFAULT}project/`;
@@ -125,7 +125,7 @@ process.emitWarning = function (message, ...args) {
     // Pass the message to your custom function
     LOG.debug('⚠️ [Warning]', '🚧 [Deprecation]', {message});
   } else {
-    LOG.warning(warningType, {message}, { details: args[1] });
+    LOG.warn(warningType, {message}, { details: args[1] });
     // // Call the original handler for non-deprecation warnings
     // originalEmitWarning.call(process, message, ...args);
   }
@@ -261,7 +261,7 @@ function getPathDirProject() {
 
   // Resolve relative paths based on the script's directory
   if (!NODE_PATH.isAbsolute(dirPath)) {
-    dirPath = NODE_PATH.resolve(__dirname, dirPath);
+    dirPath = NODE_PATH.resolve(__dirname, dirPath).replace(/\\/g, '/');
   }
 
   return `${dirPath}/`;
@@ -302,15 +302,19 @@ function compareVersions(v1, v2) {
 
 const NODE_READLINE = require('readline');
 
-function promptUser(question, callback) {
-  const rl = NODE_READLINE.createInterface({
-    input: process.stdin,
-    output: process.stdout
-  });
+function promptUser(question) {
+  return new Promise((resolve) => {
+    const rl = NODE_READLINE.createInterface({
+      input: process.stdin,
+      output: process.stdout
+    });
 
-  rl.question(question, (answer) => {
-    callback(answer.trim().toLowerCase());
-    rl.close();
+    LOG.notice('[⌨️ Prompt User]', question)
+
+    rl.question('', (answer) => {
+      rl.close();
+      resolve(answer.trim().toLowerCase());
+    });
   });
 }
 
@@ -324,10 +328,30 @@ let configProjectInfo = {};
 let versionInfo = {
   project: '0.0.0',
   current: CONFIG_INFO.version,
-  status: VERSION_COMPARE.EQUAL
+  status: getVersionCompareObject(VERSION_COMPARE.EQUAL)
 };
 
 const PATH_FILE_CONFIG_PROJECT_INFO = NODE_PATH.join(PATH_DIR_PROJECT, `info.json`);
+
+function updateProjectInfo() {
+  LOG.begin(LOG_TAG_PROJECT_INFO, 'Update...');
+
+  LOG.info(LOG_TAG_PROJECT_INFO, 'Updating project info:', {
+    'Current': configProjectInfo || 'None',
+    'New': CONFIG_INFO
+  });
+
+  NODE_FS.writeFileSync(
+    PATH_FILE_CONFIG_PROJECT_INFO,
+    JSON.stringify(CONFIG_INFO, null, 2),
+    'utf8'
+  );
+
+  configProjectInfo = CONFIG_INFO;
+
+  LOG.success(LOG_TAG_PROJECT_INFO, 'Updated project info:', configProjectInfo);
+  LOG.end(LOG_TAG_PROJECT_INFO, 'Update complete.');
+}
 
 function initProjectInfo() {
   LOG.begin(LOG_TAG_PROJECT_INFO, 'Running...');
@@ -335,18 +359,11 @@ function initProjectInfo() {
   LOG.info(LOG_TAG_PROJECT_INFO, 'Checking project version...');
 
   if (!NODE_FS.existsSync(PATH_FILE_CONFIG_PROJECT_INFO)) {
-    const CONFIG_PROJECT_INFO = {
-      version: versionInfo.current
-    };
-    NODE_FS.writeFileSync(
-      PATH_FILE_CONFIG_PROJECT_INFO,
-      JSON.stringify(CONFIG_PROJECT_INFO, null, 2),
-      'utf8'
-    );
-    LOG.info(LOG_TAG_PROJECT_INFO, 'Created new project info file with version:', versionInfo.current);
+    updateProjectInfo();
   }
-
-  configProjectInfo = require(PATH_FILE_CONFIG_PROJECT_INFO);
+  else {
+    configProjectInfo = require(PATH_FILE_CONFIG_PROJECT_INFO);
+  }
 
   LOG.debug(LOG_TAG_PROJECT_INFO, {configProjectInfo});
 
@@ -357,18 +374,29 @@ initProjectInfo();
 
 const LOG_TAG_PROJECT_VERSION_CHECK = LOG_TAG_PROJECT + ' [✅ Version Check]';
 
-versionInfo.project = configProjectInfo.version;
+function getVersionCompareObject(value) {
+  const key = Object.keys(VERSION_COMPARE).find(k => VERSION_COMPARE[k] === value);
+  return { 
+    'key': key, 
+    'value': value 
+  };
+}
 
-function initVersionCheck() {
+function updateVersionInfo() {
+  versionInfo.project = configProjectInfo.version;
+  versionInfo.status = getVersionCompareObject(compareVersions(versionInfo.project, versionInfo.current));
+}
+
+async function initVersionCheck(done) {
   LOG.begin(LOG_TAG_PROJECT_VERSION_CHECK, 'Running...');
 
-  versionInfo.status = compareVersions(versionInfo.project, versionInfo.current);
+  updateVersionInfo();
 
   LOG.detail(LOG_TAG_PROJECT_VERSION_CHECK, 'Version Info:', versionInfo);
 
-  switch (versionInfo.status) {
+  switch (versionInfo.status.value) {
     case VERSION_COMPARE.NEW: // running might fail
-      LOG.warning(LOG_TAG_PROJECT_VERSION_CHECK,
+      LOG.warn(LOG_TAG_PROJECT_VERSION_CHECK,
         'Project was built using a newer version of Staticus, project may not be compatible...'
       );
       break;
@@ -386,28 +414,29 @@ function initVersionCheck() {
     process.exit(0);
   }
 
-  if (versionInfo.status != VERSION_COMPARE.EQUAL) {
-    promptUser('Would you like to continue anyway? (yes/no): ', (response) => {
-      if (!(response === 'yes' || response === 'y')) {
+  if (versionInfo.status.value != VERSION_COMPARE.EQUAL) {
+    const answer = await promptUser('Would you like to continue anyway? [y/N]: ');
+    if (!(answer === 'yes' || answer === 'y')) {
+      userAbort();
+    }
+
+    if (versionInfo.status.value == VERSION_COMPARE.NEW) {
+      const answer = await promptUser('Project may not be compatible, are you absolutely sure? [y/N]: ');
+      if (!(answer === 'yes' || answer === 'y')) {
         userAbort();
       }
-    });
-
-    if (versionInfo.status == VERSION_COMPARE.NEW) {
-      promptUser('Project may not be compatible, are you absolutely sure? (yes/no): ', (response) => {
-        if (!(response === 'yes' || response === 'y')) {
-          userAbort();
-        }
-      });
     }
 
     LOG.info(LOG_TAG_PROJECT_VERSION_CHECK, 'Process continued by user.');
+    
+    updateProjectInfo();
+    updateVersionInfo();
   }
 
   LOG.end(LOG_TAG_PROJECT_VERSION_CHECK, 'Complete.');
-}
 
-initVersionCheck();
+  done();
+}
 
 LOG.init(LOG_TAG_PROJECT_INFO, 'Complete.');
 
@@ -547,7 +576,7 @@ function loadConfigProject() {
     configProject = require(PATH_FILE_CONFIG_PROJECT);
     LOG.success(LOG_TAG_CONFIG_PROJECT, 'Project configuration loaded.');
   } catch (error) {
-    LOG.warning(LOG_TAG_CONFIG_PROJECT, `Failed to load ${PATH_FILE_CONFIG_PROJECT}, using defaults.`, error);
+    LOG.warn(LOG_TAG_CONFIG_PROJECT, `Failed to load ${PATH_FILE_CONFIG_PROJECT}, using defaults.`, error);
     configProject = {};
   }
 
@@ -578,7 +607,7 @@ function loadConfigProject() {
 
   // Log warnings for missing or duplicate keys
   if (missingKeys.length > 0) {
-    LOG.warning(LOG_TAG_CONFIG_PROJECT, `Missing required keys in project config. Using defaults:`, missingKeys);
+    LOG.warn(LOG_TAG_CONFIG_PROJECT, `Missing required keys in project config. Using defaults:`, missingKeys);
   }
   if (duplicateKeys.length > 0) {
     LOG.error(LOG_TAG_CONFIG_PROJECT, `Duplicate values detected in required config fields:`, duplicateKeys);
@@ -2647,8 +2676,8 @@ async function functionProcess_handle_removeDeleted(path, type) {
 
   const PATH_RELATED_OUT = NODE_PATH.resolve(
     PATH_DIR_PROJECT_OUT,
-    NODE_PATH.relative(NODE_PATH.resolve(PATH_DIR_PROJECT_IN), path)
-  );
+    NODE_PATH.relative(NODE_PATH.resolve(PATH_DIR_PROJECT_IN).replace(/\\/g, '/'), path)
+  ).replace(/\\/g, '/');
 
   const PATH_TO_REMOVE_ARRAY = getRelatedFiles(PATH_RELATED_OUT);
 
@@ -2689,6 +2718,8 @@ async function functionProcess_handle_removeDeleted(path, type) {
   LOG.end(LOG_TAG_WATCH_REMOVE_DELETED, 'Complete.');
 }
 
+const LOG_TAG_WATCH_SUB = LOG_TAG_WATCH + ' [📋 Subwatch]';
+
 class SubWatcher {
   constructor(pathRoot, taskname, watcherPatterns, initCallback, mainReady, isInput) {
     // this.debug = true;
@@ -2706,7 +2737,7 @@ class SubWatcher {
     this.includeMatcher = NODE_PICOMATCH(this.watcherPatterns.filter(p => !p.startsWith('!')), { dot: true });
     this.excludeMatcher = NODE_PICOMATCH(this.watcherPatterns.filter(p => p.startsWith('!')).map(p => p.slice(1)), { dot: true });
 
-    LOG.init(LOG_TAG_WATCH, 'initializing:', this.taskname, {
+    LOG.init(LOG_TAG_WATCH_SUB, 'initializing:', this.taskname, {
         pathRoot: this.pathRoot,
         watcherPatterns: this.watcherPatterns
       }
@@ -2715,29 +2746,35 @@ class SubWatcher {
 
   start() {
     const options = {
-      persistent: true,
-      ignoreInitial: !this.mainReady,
-      // depth: undefined, // Recursive watcher by default
-
+      // alwaysStat: false,       // Avoid unnecessary stat calls to minimize locking
       // awaitWriteFinish: {
       //   stabilityThreshold: 500, // Reduce time to stabilize writes
       //   pollInterval: 100
       // },
+      // cwd: __dirname,
+      // cwd: this.pathRoot,
+      // depth: undefined, // Recursive watcher by default
+      // depth: 1,               // Limit depth to reduce unnecessary locking
       // followSymlinks: false,  // Prevent symlink following which may cause locks
-      // usePolling: false,      // Disable polling to avoid high CPU usage and locks
-      // // depth: 1,               // Limit depth to reduce unnecessary locking
-      // alwaysStat: false,       // Avoid unnecessary stat calls to minimize locking
-
-      // persistent: false,
-
-      usePolling: true,
+      followSymlinks: true,
+      ignoreInitial: !this.mainReady,
       interval: 1000,//configProjectMerge.option.watch.delay_change, // being used in async onchange()
+      // persistent: false,
+      persistent: true,
+      // usePolling: false,      // Disable polling to avoid high CPU usage and locks
+      usePolling: true,
     }
-    this.watcher = NODE_CHOKIDAR.watch(this.pathRoot, options);
+    this.watcher = NODE_CHOKIDAR.watch(
+      this.pathRoot,
+      // NODE_PATH.resolve(this.pathRoot),
+      options
+    );
 
-    LOG.debug(LOG_TAG_WATCH, this.taskname, {mainReady: this.mainReady, options: options});
+    LOG.debug(LOG_TAG_WATCH_SUB, this.taskname, {mainReady: this.mainReady, options: options});
 
     this.watcher
+    .on('all', (event, path) => LOG.debug(LOG_TAG_WATCH_SUB, {event, path}))
+
     .on('add', (path) => {
       try {
         path = functionLibrary_path_normalize(path);
@@ -2748,12 +2785,12 @@ class SubWatcher {
         }
 
         // if (this.isReady || this.debugInit) {
-          LOG.detail(LOG_TAG_WATCH, '[ADD] 📄 File:', {taskname: this.taskname, path: path});
+          LOG.detail(LOG_TAG_WATCH_SUB, '[ADD] 📄 File:', {taskname: this.taskname, path: path});
         // }
 
         this.onchange();
       } catch (error) {
-        LOG.error(LOG_TAG_WATCH, this.taskname, '[ADD] 📄 File:', error);
+        LOG.error(LOG_TAG_WATCH_SUB, this.taskname, '[ADD] 📄 File:', error);
       }
     })
     .on('change', (path) => {
@@ -2765,17 +2802,17 @@ class SubWatcher {
           return;
         }
 
-        LOG.detail(LOG_TAG_WATCH, '[CHANGE] 📄 File:', {taskname: this.taskname, path: path});
+        LOG.detail(LOG_TAG_WATCH_SUB, '[CHANGE] 📄 File:', {taskname: this.taskname, path: path});
         this.onchange();
       } catch (error) {
-        LOG.error(LOG_TAG_WATCH, this.taskname, '[CHANGE] 📄 File:', error);
+        LOG.error(LOG_TAG_WATCH_SUB, this.taskname, '[CHANGE] 📄 File:', error);
       }
     })
     .on('error', (error) => {
       if (error.code === 'EPERM') {
         console.notice(ANSI.format(ANSI.bc.fg.yellow, `👁️ Watcher \`${this.taskname}\`: EPERM Error: ${error.message}`));
       } else {
-        LOG.error(LOG_TAG_WATCH, 'Unexpected:', error);
+        LOG.error(LOG_TAG_WATCH_SUB, 'Unexpected:', error);
       }
     })
     .on('ready', () => {
@@ -2784,7 +2821,7 @@ class SubWatcher {
 
       LOG.init([
         '[[NEWLINES]]',
-        ['[[NORMAL]]', LOG_TAG_WATCH, 'Ready:', this.taskname],
+        ['[[NORMAL]]', LOG_TAG_WATCH_SUB, 'Ready:', this.taskname],
         [ '[[LIST]]', 'All paths initialized.' ]
       ]);
 
@@ -2793,7 +2830,7 @@ class SubWatcher {
       }
     });
     // .on('all', (event, path) => {
-    //   LOG.debug(LOG_TAG_WATCH, {event, path});
+    //   LOG.debug(LOG_TAG_WATCH_SUB, {event, path});
     // });
 
     if (this.isInput) {
@@ -2807,12 +2844,12 @@ class SubWatcher {
             return;
           }
 
-          LOG.detail(LOG_TAG_WATCH, '[REMOVE] 📄 File:', {taskname: this.taskname, path: path});
-          const key = NODE_PATH.relative(NODE_PATH.resolve(PATH_DIR_PROJECT_IN), path).trim();
+          LOG.detail(LOG_TAG_WATCH_SUB, '[REMOVE] 📄 File:', {taskname: this.taskname, path: path});
+          const key = NODE_PATH.relative(NODE_PATH.resolve(PATH_DIR_PROJECT_IN), path).replace(/\\/g, '/').trim();
           functionProcess_handle_removeDeleted(path, 'file');
           CACHE_PROJECT.remove(this.cacheNamespace, key);
         } catch (error) {
-          LOG.error(LOG_TAG_WATCH, this.taskname, '[REMOVE] 📄 File:', error);
+          LOG.error(LOG_TAG_WATCH_SUB, this.taskname, '[REMOVE] 📄 File:', error);
         }
       })
       // .on('addDir', (path) => {
@@ -2825,10 +2862,10 @@ class SubWatcher {
       //     }
 
       //     // if (this.isReady || this.debugInit) {
-      //       LOG.detail(LOG_TAG_WATCH, '[ADD] 📄 📂 Directory:', {taskname: this.taskname, path: path});
+      //       LOG.detail(LOG_TAG_WATCH_SUB, '[ADD] 📄 📂 Directory:', {taskname: this.taskname, path: path});
       //     // }
       //   } catch (error) {
-      //     LOG.error(LOG_TAG_WATCH, this.taskname, '[ADD] 📄 📂 Directory:', error);
+      //     LOG.error(LOG_TAG_WATCH_SUB, this.taskname, '[ADD] 📄 📂 Directory:', error);
       //   }
       // })
       .on('unlinkDir', (path) => {
@@ -2840,18 +2877,18 @@ class SubWatcher {
           //   return;
           // }
 
-          LOG.detail(LOG_TAG_WATCH, '[REMOVE] 📄 📂 Directory:', {taskname: this.taskname, path: path});
+          LOG.detail(LOG_TAG_WATCH_SUB, '[REMOVE] 📄 📂 Directory:', {taskname: this.taskname, path: path});
           functionProcess_handle_removeDeleted(path, 'directory');
           // CACHE_PROJECT.remove handled already by unlink
         } catch (error) {
-          LOG.error(LOG_TAG_WATCH, this.taskname, '[ADD] 📄 📂 Directory:', error);
+          LOG.error(LOG_TAG_WATCH_SUB, this.taskname, '[ADD] 📄 📂 Directory:', error);
         }
       });
     }
 
     // LOG.init([
     //   '[[NEWLINES]]',
-    //   ['[[NORMAL]]', LOG_TAG_WATCH, 'Ready:', this.taskname],
+    //   ['[[NORMAL]]', LOG_TAG_WATCH_SUB, 'Ready:', this.taskname],
     //   ['[[LIST]]', 'All paths initialized.']
     // ], {
     //     pathRoot: this.pathRoot,
@@ -2859,7 +2896,7 @@ class SubWatcher {
     // });
     LOG.init([
       '[[NEWLINES]]',
-      ['[[NORMAL]]', LOG_TAG_WATCH, 'Ready:', this.taskname],
+      ['[[NORMAL]]', LOG_TAG_WATCH_SUB, 'Ready:', this.taskname],
       ['[[LIST]]', 'All paths initialized.']
     ]);
 
@@ -2876,7 +2913,7 @@ class SubWatcher {
     const isExcluded = this.excludeMatcher(path);
 
     if (!isIncluded || isExcluded) {
-      LOG.debug(LOG_TAG_WATCH, this.taskname, 'Ignored path:', {path});
+      LOG.debug(LOG_TAG_WATCH_SUB, this.taskname, 'Ignored path:', {path});
       return false;
     }
 
@@ -2889,7 +2926,7 @@ class SubWatcher {
       this.watcher = null;
       LOG.shutdown([
         '[[NEWLINES]]',
-        ['[[NORMAL]]', LOG_TAG_WATCH, this.taskname],
+        ['[[NORMAL]]', LOG_TAG_WATCH_SUB, this.taskname],
         ['[[LIST]]', 'Stopped watching path:', this.pathRoot]
       ]);
     }
@@ -2900,7 +2937,7 @@ class SubWatcher {
 
     if (this.callbackDebouncId) {
       const lastClearedDuration = now - (this.lastCallbackTime || now);
-      LOG.debug(LOG_TAG_WATCH, this.taskname, '[CHANGE] Debounce: Remaining:', lastClearedDuration, 'ms');
+      LOG.debug(LOG_TAG_WATCH_SUB, this.taskname, '[CHANGE] Debounce: Remaining:', lastClearedDuration, 'ms');
       clearTimeout(this.callbackDebouncId);
     }
 
@@ -2913,11 +2950,11 @@ class SubWatcher {
           await NODE_GULP.series(this.taskname)();
         }
       } catch (error) {
-        LOG.error(LOG_TAG_WATCH, this.taskname, 'Callback:', error);
+        LOG.error(LOG_TAG_WATCH_SUB, this.taskname, 'Callback:', error);
       }
     }, delay);
 
-    LOG.debug(LOG_TAG_WATCH, this.taskname, '[CHANGE] Debounce: Duration:', delay, 'ms');
+    LOG.debug(LOG_TAG_WATCH_SUB, this.taskname, '[CHANGE] Debounce: Duration:', delay, 'ms');
 
     this.lastCallbackTime = now;
   }
@@ -2951,8 +2988,10 @@ const TASK_BUILD_MODULE       = 'build_module';
 const TASK_BUILD_STYLESHEET   = 'build_stylesheet';
 const TASK_BUILD_VIDEO        = 'build_video';
 
+const LOG_TAG_WATCH_MAIN = LOG_TAG_WATCH + ' [🏛️ Main]';
+
 // Function to process ignore patterns and debug
-function createIgnoreFunction(watchMainPaths, ignorePatterns) {
+function createWatchIgnoreFunction(watchMainPaths, ignorePatterns) {
   // Compile picomatch functions for ignore patterns
   const ignoreMatchers = ignorePatterns.map(pattern => NODE_PICOMATCH(pattern.replace(/!/g, ''), { dot: true }));
 
@@ -2974,7 +3013,7 @@ function createIgnoreFunction(watchMainPaths, ignorePatterns) {
     // Debug output (optional)
     // LOG.detail(`[DEBUG] Path: ${normalizedPath}, Ignored: ${shouldIgnore}`);
     if (shouldIgnore) {
-      LOG.debug(LOG_TAG_WATCH, '\`MAIN\`: [SKIP] Ignored path:', {normalizedPath});
+      LOG.debug(LOG_TAG_WATCH_MAIN, '[SKIP] Ignored path:', {normalizedPath});
     }
 
     return shouldIgnore;
@@ -3013,22 +3052,30 @@ class WatchManager {
       [PATH_DIR_PROJECT_OUT]:                             { taskname: TASK_WATCH_BROWSER_RELOAD, cacheNamespace: null,                        pattern: PATH_WATCH_BROWSER },
     };
 
-    LOG.debug(LOG_TAG_WATCH, '\`MAIN\`:', {watchPaths: this.watchPaths});
+    LOG.debug(LOG_TAG_WATCH_MAIN, {watchPaths: this.watchPaths});
   }
 
   initMainWatcher() {
-    this.watcher = NODE_CHOKIDAR.watch(this.watchPaths, {
-      persistent: true,
-      depth: 0, // Non-recursive watcher for main paths
-      ignored: createIgnoreFunction(this.watchPaths, createPathIgnoreArray('')),
-    });
+    this.watcher = NODE_CHOKIDAR.watch(
+      this.watchPaths,
+      // this.watchPaths.map(p => NODE_PATH.resolve(p)),
+      {
+        // cwd: __dirname,
+        depth: 0, // Non-recursive watcher for main paths
+        followSymlinks: true,
+        ignored: createWatchIgnoreFunction(this.watchPaths, createPathIgnoreArray('')),
+        persistent: true,
+      }
+    );
 
     this.watcher
+      .on('all', (event, path) => LOG.debug(LOG_TAG_WATCH_MAIN, {event, path}))
+
       .on('add', (path) => {
         path = functionLibrary_path_normalize(path);
 
         if (this.isReady) {
-          LOG.detail(LOG_TAG_WATCH, '\`MAIN\`: 📄 [ADD] File:', {path});
+          LOG.detail(LOG_TAG_WATCH_MAIN, '📄 [ADD] File:', {path});
         }
 
         this.setupSubWatcher(path);
@@ -3037,7 +3084,7 @@ class WatchManager {
         path = functionLibrary_path_normalize(path);
 
         if (this.isReady) {
-          LOG.detail(LOG_TAG_WATCH, '\`MAIN\`: 📂 [ADD] Directory:', {path});
+          LOG.detail(LOG_TAG_WATCH_MAIN, '📂 [ADD] Directory:', {path});
         }
 
         this.setupSubWatcher(path);
@@ -3046,7 +3093,7 @@ class WatchManager {
         path = functionLibrary_path_normalize(path);
 
         if (this.isReady) {
-          LOG.detail(LOG_TAG_WATCH, '\`MAIN\`: 📂 [REMOVE] Directory:', {path});
+          LOG.detail(LOG_TAG_WATCH_MAIN, '📂 [REMOVE] Directory:', {path});
         }
 
         this.removeSubWatcher(path);
@@ -3081,22 +3128,22 @@ class WatchManager {
             CACHE_PROJECT.remove(cacheNamespace);
           }
         } else {
-          LOG.error(LOG_TAG_WATCH, 'Error: Identity not found for path:', path);
+          LOG.error(LOG_TAG_WATCH_MAIN, 'Error: Identity not found for path:', path);
         }
 
       })
       .on('error', (error) => {
         if (error.code === 'EPERM') {
-          LOG.notice(LOG_TAG_WATCH, '\`MAIN\`: 📂 Directory EPERM Error:', error, '\n  > This usually occurs when attempting to watch a deleted or inaccessible path, check if following log reports a deleted or inaccessible path.');
+          LOG.notice(LOG_TAG_WATCH_MAIN, '📂 Directory EPERM Error:', error, '\n  > This usually occurs when attempting to watch a deleted or inaccessible path, check if following log reports a deleted or inaccessible path.');
         } else {
-          LOG.error(LOG_TAG_WATCH, '\`MAIN\`: Unexpected:', error);
+          LOG.error(LOG_TAG_WATCH_MAIN, 'Unexpected:', error);
         }
       })
       .on('ready', () => {
         this.checkIsReady();
       });
 
-      LOG.init(LOG_TAG_WATCH, '▶️ Initializing...');
+      LOG.init(LOG_TAG_WATCH_MAIN, '▶️ Initializing...');
   }
 
   setupSubWatcher(pathRoot) {
@@ -3104,14 +3151,14 @@ class WatchManager {
     const entry = Object.entries(this.watchMainFunctionMap).find(([key]) => {
       const normalizedKey = functionLibrary_path_normalize(key).replace(/\/+$/, ''); // Remove trailing slashes
       pathRoot = pathRoot.replace(/\/+$/, ''); // Remove trailing slashes from pathRoot
-      LOG.debug(LOG_TAG_WATCH, '\`MAIN\`: Pre-Initialization:', this.taskname, 'Comparing normalized path to key:', {pathRoot, normalizedKey});
+      LOG.debug(LOG_TAG_WATCH_MAIN, 'Pre-Initialization:', this.taskname, 'Comparing normalized path to key:', {pathRoot, normalizedKey});
       // return pathRoot.startsWith(normalizedKey);
       return pathRoot === normalizedKey;
     });
 
     // If no match, skip creating the sub-watcher
     if (!entry) {
-      LOG.debug(LOG_TAG_WATCH, '\`MAIN\`: Pre-Initialization:', this.taskname, '[SKIP] No matching pattern for path:', {pathRoot});
+      LOG.debug(LOG_TAG_WATCH_MAIN, 'Pre-Initialization:', this.taskname, '[SKIP] No matching pattern for path:', {pathRoot});
       return;
     }
 
@@ -3119,14 +3166,14 @@ class WatchManager {
     const [matchedKey, configs] = entry;
 
     // Print success for matching entry
-    LOG.debug(LOG_TAG_WATCH, '\`MAIN\`: Pre-Initialization:', this.taskname, '[SUCCESS] Match found for path with key:', {pathRoot, matchedKey});
+    LOG.debug(LOG_TAG_WATCH_MAIN, 'Pre-Initialization:', this.taskname, '[SUCCESS] Match found for path with key:', {pathRoot, matchedKey});
 
     // Ensure configs is always treated as an array
     const watcherConfigs = functionLibrary_variable_ensureIsArray(configs);
 
     watcherConfigs.forEach(({ taskname, pattern }) => {
       if (this.subWatchers.has(`${pathRoot}:${taskname}`)) {
-        LOG.notice(LOG_TAG_WATCH, '\`MAIN\`: Pre-Initialization:', taskname, '[SKIP] Already watching path:', {pathRoot});
+        LOG.notice(LOG_TAG_WATCH_MAIN, 'Pre-Initialization:', taskname, '[SKIP] Already watching path:', {pathRoot});
         return; // Skip duplicate watcher creation
       }
 
@@ -3154,7 +3201,7 @@ class WatchManager {
 
     LOG.init([
       '[[NEWLINES]]',
-      ['[[NORMAL]]', LOG_TAG_WATCH, '\`MAIN\` Ready:'],
+      ['[[NORMAL]]', LOG_TAG_WATCH_MAIN, 'Ready:'],
       ['[[LIST]]', 'All paths initialized:', { subWatcherIdentities: Array.from(this.subWatchers.keys()) }]
     ]);
 
@@ -3181,14 +3228,14 @@ class WatchManager {
       this.browserSyncHandler.stop();
     }
 
-    LOG.detail(LOG_TAG_WATCH, { subWatcherIdentities: Array.from(this.subWatchers.keys()) });
+    LOG.detail(LOG_TAG_WATCH_MAIN, { subWatcherIdentities: Array.from(this.subWatchers.keys()) });
 
     this.subWatchers.forEach((subWatcher) => subWatcher.stop());
     if (this.watcher) this.watcher.close();
 
     LOG.shutdown([
       '[[NEWLINES]]',
-      ['[[NORMAL]]', LOG_TAG_WATCH, '\`MAIN\`:'],
+      LOG_TAG_WATCH_MAIN,
       [
         '[[LIST]]',
         'MAIN and all sub-watchers shut down.',
@@ -3331,7 +3378,11 @@ function intro(done) {
 function createTask(taskName, ...taskFunctions) {
   NODE_GULP.task(taskName, (done) => {
     if (!introComplete) {
-      NODE_GULP.series(intro, ...taskFunctions)(() => {
+      NODE_GULP.series(
+        intro,
+        initVersionCheck,
+        ...taskFunctions
+      )(() => {
         done();
       });
     } else {
