@@ -1,5 +1,6 @@
 import json
 import os
+import re
 import sys
 from zipfile import ZipFile, ZIP_DEFLATED
 
@@ -95,7 +96,6 @@ def should_exclude(file_path, ignore_patterns):
             return True
     return False
 
-# Function to modify HTML content by removing elements with classes to ignore from config
 def modify_html_content(file_path):
     cure_log_bridge_js.log("detail", LOG_TAG_PACKAGE, "Searching HTML file for potential modifications:", {"file_path": file_path})
     try:
@@ -106,33 +106,21 @@ def modify_html_content(file_path):
         with open(file_path, 'r', encoding='utf-8') as html_file:
             content = html_file.read()
 
-        # Parse as HTML instead of XML to handle bad markup
-        parser = html.HTMLParser(recover=True)
-        tree = html.fromstring(content, parser=parser)
-
         # Retrieve classes to ignore from config
         ignore_package_classes = config_site.get("option", {}).get("package", {}).get("html", {}).get("ignore_class", [])
 
-        # Only run XPath if there are classes to ignore
-        if ignore_package_classes:
-            xpath_expression = " | ".join(f"//*[contains(@class, '{cls}')]" for cls in ignore_package_classes)
-            elements_to_remove = tree.xpath(xpath_expression)
-        else:
-            elements_to_remove = []
-
         change_summary = []
 
-        for element in elements_to_remove:
-            if element.getparent() is not None:  # Avoid crashing on orphan elements
-                change_summary.append({
-                    "tag": element.tag,
-                    "attributes": dict(element.attrib),
-                    "content_preview": (element.text or '')[:30]
-                })
-                element.getparent().remove(element)
+        # Regex pattern to match elements with specific classes (non-greedy to avoid capturing too much)
+        for cls in ignore_package_classes:
+            pattern = rf'<[^>]*class="[^"]*{re.escape(cls)}[^"]*"[^>]*>.*?</[^>]+>'
+            matches = re.findall(pattern, content, re.DOTALL)
 
-        # Convert back to HTML
-        modified_content = html.tostring(tree, pretty_print=True, method="html").decode()
+            for match in matches:
+                change_summary.append({
+                    "match_preview": match[:100] + "..." if len(match) > 100 else match
+                })
+                content = content.replace(match, '')  # Remove the matched element
 
         # Logging changes
         if not change_summary:
@@ -141,11 +129,11 @@ def modify_html_content(file_path):
             file_path_relative = os.path.relpath(file_path, path_in)
             cure_log_bridge_js.log("detail", LOG_TAG_PACKAGE, "Modified HTML:", {
                 "file_path_relative": file_path_relative,
-                "Output content bytes": len(modified_content),
+                "Output content bytes": len(content),
                 "change_summary": change_summary
             })
 
-        return modified_content
+        return content
 
     except Exception as e:
         cure_log_bridge_js.log("error", LOG_TAG_PACKAGE, "Failed to modify HTML file:", {
